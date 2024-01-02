@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>JavaScript | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JavaScript知识点入门简记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://example.com/2022/10/31/JavaScript/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript知识点入门简记">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:\workAPP\blog\themes\particle\source\images\230920.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/mydate-prototype-chain.svg">
+<meta property="article:published_time" content="2022-10-31T03:19:11.000Z">
+<meta property="article:modified_time" content="2023-03-14T18:33:28.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\workAPP\blog\themes\particle\source\images\230920.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/31/JavaScript/" class="article-date">
+  <time class="dt-published" datetime="2022-10-31T03:19:11.000Z" itemprop="datePublished">2022-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      JavaScript
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> JavaScript知识点入门简记</p>
+<span id="more"></span>
+
+<ul>
+<li><h5 id="internal-Javascript"><a href="#internal-Javascript" class="headerlink" title="internal Javascript"></a>internal Javascript</h5></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="external-JavaScript"><a href="#external-JavaScript" class="headerlink" title="external JavaScript"></a>external JavaScript</h5></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">defer</span>/<span class="attr">async</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="使用querySelectorAll-可选中所有同类元素"><a href="#使用querySelectorAll-可选中所有同类元素" class="headerlink" title="使用querySelectorAll()可选中所有同类元素"></a>使用querySelectorAll()可选中所有同类元素</h5></li>
+<li><h5 id="使用addEventListener-可获取事件"><a href="#使用addEventListener-可获取事件" class="headerlink" title="使用addEventListener()可获取事件"></a>使用addEventListener()可获取事件</h5></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> buttons = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> button <span class="keyword">of</span> buttons) &#123;</span><br><span class="line">  button.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, createParagraph);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="使用-进行单行注释，使用-进行多行注释"><a href="#使用-进行单行注释，使用-进行多行注释" class="headerlink" title="使用&#x2F;&#x2F;进行单行注释，使用&#x2F;**&#x2F;进行多行注释"></a>使用&#x2F;&#x2F;进行单行注释，使用&#x2F;**&#x2F;进行多行注释</h5></li>
+<li><h5 id="支持字符串-连接操作"><a href="#支持字符串-连接操作" class="headerlink" title="支持字符串+,+&#x3D;连接操作"></a>支持字符串+,+&#x3D;连接操作</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;Bingo&#x27;</span>;</span><br><span class="line">name;</span><br><span class="line"><span class="keyword">const</span> hello = <span class="string">&#x27; says hello!&#x27;</span>;</span><br><span class="line">hello;</span><br><span class="line"><span class="keyword">const</span> greeting = name + hello;</span><br><span class="line">greeting;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name1 = <span class="string">&#x27;Bingo&#x27;</span>;</span><br><span class="line">name1 += <span class="string">&#x27; says hello!&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="支持-、-、"><a href="#支持-、-、" class="headerlink" title="支持&#x3D;&#x3D;&#x3D;、!&#x3D;&#x3D;、&lt;、&gt;"></a>支持&#x3D;&#x3D;&#x3D;、!&#x3D;&#x3D;、&lt;、&gt;</h5><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Name</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>===</code></td>
+<td align="left">Strict equality (is it exactly the same?)</td>
+<td align="left"><code>5 === 2 + 4 // false &#39;Chris&#39; === &#39;Bob&#39; // false 5 === 2 + 3 // true 2 === &#39;2&#39; // false; number versus string </code>Copy to Clipboard</td>
+</tr>
+<tr>
+<td align="left"><code>!==</code></td>
+<td align="left">Non-equality (is it not the same?)</td>
+<td align="left"><code>5 !== 2 + 4 // true &#39;Chris&#39; !== &#39;Bob&#39; // true 5 !== 2 + 3 // false 2 !== &#39;2&#39; // true; number versus string </code>Copy to Clipboard</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;</code></td>
+<td align="left">Less than</td>
+<td align="left"><code>6 &lt; 10 // true 20 &lt; 10 // false</code>Copy to Clipboard</td>
+</tr>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">Greater than</td>
+<td align="left"><code>6 &gt; 10 // false 20 &gt; 10 // true</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><h5 id="和-的用法"><a href="#和-的用法" class="headerlink" title="${} 和 ${}的用法"></a>${} 和 <code>$&#123;&#125;</code>的用法</h5><p><strong>${}</strong></p>
+<p>假设我们定义了一个变量为：<br>file&#x3D;&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt<br>我们可以用 ${ } 分别替换获得不同的值：<br>${file#<em>&#x2F;}：拿掉第一条 &#x2F; 及其左边的字串：dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt<br>${file##</em>&#x2F;}：拿掉最后一条 &#x2F; 及其左边的字串：my.file.txt<br>${file#<em>.}：拿掉第一个 . 及其左边的字串：file.txt<br>${file##</em>.}：拿掉最后一个 . 及其左边的字串：txt<br>${file%&#x2F;<em>}：拿掉最后条 &#x2F; 及其右边的字串：&#x2F;dir1&#x2F;dir2&#x2F;dir3<br>${file%%&#x2F;</em>}：拿掉第一条 &#x2F; 及其右边的字串：(空值)<br>${file%.<em>}：拿掉最后一个 . 及其右边的字串：&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my.file<br>${file%%.</em>}：拿掉第一个 . 及其右边的字串：&#x2F;dir1&#x2F;dir2&#x2F;dir3&#x2F;my<br>记忆的方法为：</p>
+<p>#是去掉左边(在键盘上 # 在 $ 之左边)<br>% 是去掉右边(在键盘上 % 在 $ 之右边)<br>单一符号是最小匹配﹔两个符号是最大匹配。</p>
+<p>${file:0:5}：提取最左边的 5 个字?：&#x2F;dir1<br>${file:5:5}：提取第 5 个字?右边的连续 5 个字?：&#x2F;dir2</p>
+<p>我们也可以对变量值裡的字串作替换：<br>${file&#x2F;dir&#x2F;path}：将第一个 dir 提换为 path：&#x2F;path1&#x2F;dir2&#x2F;dir3&#x2F;my.file.txt<br>${file&#x2F;&#x2F;dir&#x2F;path}：将全部 dir 提换为 path：&#x2F;path1&#x2F;path2&#x2F;path3&#x2F;my.file.txt</p>
+<p>利用 ${ } 还可针对不同的变数状态赋值(没设定、空值、非空值)：<br>${file-my.file.txt} ：假如 $file 为空值，则使用 my.file.txt 作默认值。(保留没设定及非空值)<br>${file:-my.file.txt} ：假如 $file 没有设定或为空值，则使用 my.file.txt 作默认值。 (保留非空值)<br>${file+my.file.txt} ：不管 $file 为何值，均使用 my.file.txt 作默认值。 (不保留任何值)<br>${file:+my.file.txt} ：除非 $file 为空值，否则使用 my.file.txt 作默认值。 (保留空值)<br>${file&#x3D;my.file.txt} ：若 $file 没设定，则使用 my.file.txt 作默认值，同时将 $file 定义为非空值。 (保留空值及非空值)<br>${file:&#x3D;my.file.txt} ：若 $file 没设定或为空值，则使用 my.file.txt 作默认值，同时将 $file 定义为非空值。 (保留非空值)<br>${file?my.file.txt} ：若 $file 没设定，则将 my.file.txt 输出至 STDERR。 (保留空值及非空值))<br>${file:?my.file.txt} ：若 $file 没设定或为空值，则将 my.file.txt 输出至 STDERR。 (保留非空值</p>
+</li>
+</ul>
+<p><img src="D:\workAPP\blog\themes\particle\source\images\230920.png"></p>
+<p><strong>（反单引号）${}（反单引号）</strong></p>
+<p>  可以代替 ‘’ 和 “”<br>在 &#96;&#96; 中可以使用 ${} 直接把变量和字符串拼接起来</p>
+<p>  1、反单引号怎么打出来？<br>将输入法调整为英文输入法，单击键盘上数字键1左边的按键。</p>
+<p>  2、用法<br>  step1： 定义需要拼接进去的字符串变量<br>  step2： 将字符串变量用${}包起来，再写到需要拼接的地方<br>示例代码：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;彭于晏&#x27;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="string">&#x27;名字为：&#x27;</span>+name )</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="string">`名字为：<span class="subst">$&#123;name&#125;</span> `</span> )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a=<span class="string">&#x27;Karry Wang&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str=<span class="string">`I love <span class="subst">$&#123;a&#125;</span>, because he is handsome.`</span>;</span><br><span class="line"><span class="comment">//注意：这行代码是用返单号引起来的</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">alert</span>(str);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5></li>
+</ul>
+<p>使用<code>let</code>或者<code>var</code>声明变量</p>
+<p><code>let</code>先定义后使用，不可重复定义</p>
+<p><code>var</code>可先使用后声明，可重复定义（覆盖）</p>
+<ul>
+<li><h5 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h5></li>
+</ul>
+<p>数字、字符串、布尔值、数组、字典</p>
+<p>使用typeof 变量名可获取变量类型，如 myname &#x3D; ‘john’；typeof myname；输出为string</p>
+<ul>
+<li><h5 id="使用const定义常量"><a href="#使用const定义常量" class="headerlink" title="使用const定义常量"></a>使用const定义常量</h5></li>
+</ul>
+<p>const声明常量时需赋初始值，且后续不可改，但对于对象可修改其内部属性值，如</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bird = &#123; species : <span class="string">&#x27;Kestrel&#x27;</span>&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(bird.<span class="property">species</span>);  <span class="comment">// &quot;Kestrel&quot;</span></span><br><span class="line">bird.<span class="property">species</span> = <span class="string">&#x27;Striated Caracara&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(bird.<span class="property">species</span>);  <span class="comment">// &quot;Striated Caracara&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h5></li>
+</ul>
+<p>使用tofix()可进行取位的操作，如：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lotsOfDecimal = <span class="number">1.766584958675746364</span>;</span><br><span class="line">lotsOfDecimal;<span class="comment">//1.766784.....</span></span><br><span class="line"><span class="keyword">const</span> twoDecimalPlaces = lotsOfDecimal.<span class="title function_">toFixed</span>(<span class="number">2</span>);</span><br><span class="line">twoDecimalPlaces;<span class="comment">//1.77</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">DecimalPlaces</span> = lotsOfDecimal.<span class="title function_">toFixed</span>(<span class="number">0</span>);</span><br><span class="line">twoDecimalPlaces;<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p>使用Number()可进行类型强制转换</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myNumber = <span class="string">&quot;74&quot;</span>;</span><br><span class="line">myNumber += <span class="number">3</span>;</span><br><span class="line"><span class="keyword">let</span> myNumber = <span class="string">&quot;74&quot;</span>;</span><br><span class="line">myNumber = <span class="title class_">Number</span>(myNumber) + <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Arithmetic-operators"><a href="#Arithmetic-operators" class="headerlink" title="Arithmetic operators"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#arithmetic_operators">Arithmetic operators</a></h5><p>Arithmetic operators are the basic operators that we use to do sums in JavaScript:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Name</th>
+<th align="left">Purpose</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>+</code></td>
+<td align="left">Addition</td>
+<td align="left">Adds two numbers together.</td>
+<td align="left"><code>6 + 9</code></td>
+</tr>
+<tr>
+<td align="left"><code>-</code></td>
+<td align="left">Subtraction</td>
+<td align="left">Subtracts the right number from the left.</td>
+<td align="left"><code>20 - 15</code></td>
+</tr>
+<tr>
+<td align="left"><code>*</code></td>
+<td align="left">Multiplication</td>
+<td align="left">Multiplies two numbers together.</td>
+<td align="left"><code>3 * 7</code></td>
+</tr>
+<tr>
+<td align="left"><code>/</code></td>
+<td align="left">Division</td>
+<td align="left">Divides the left number by the right.</td>
+<td align="left"><code>10 / 5</code></td>
+</tr>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">Remainder (sometimes called modulo)</td>
+<td align="left">Returns the remainder left over after you’ve divided the left number into a number of integer portions equal to the right number.</td>
+<td align="left"><code>8 % 3</code> (returns 2, as three goes into 8 twice, leaving 2 left over).</td>
+</tr>
+<tr>
+<td align="left"><code>**</code></td>
+<td align="left">Exponent</td>
+<td align="left">Raises a <code>base</code> number to the <code>exponent</code> power, that is, the <code>base</code> number multiplied by itself, <code>exponent</code> times.</td>
+<td align="left"><code>5 ** 2</code> (returns <code>25</code>, which is the same as <code>5 * 5</code>).</td>
+</tr>
+</tbody></table>
+<p>支持<code>++</code>、<code>--</code>的运算，支持<code>=</code>赋值运算</p>
+<h5 id="Assignment-operators"><a href="#Assignment-operators" class="headerlink" title="Assignment operators"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#assignment_operators">Assignment operators</a></h5><p>Assignment operators are operators that assign a value to a variable. We have already used the most basic one, <code>=</code>, loads of times — it assigns the variable on the left the value stated on the right:</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let x = 3; // x contains the value 3</span><br><span class="line">let y = 4; // y contains the value 4</span><br><span class="line">x = y; // x now contains the same value y contains, 4</span><br></pre></td></tr></table></figure>
+
+<p>But there are some more complex types, which provide useful shortcuts to keep your code neater and more efficient. The most common are listed below:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Name</th>
+<th align="left">Purpose</th>
+<th align="left">Example</th>
+<th align="left">Shortcut for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>+=</code></td>
+<td align="left">Addition assignment</td>
+<td align="left">Adds the value on the right to the variable value on the left, then returns the new variable value</td>
+<td align="left"><code>x += 4;</code></td>
+<td align="left"><code>x = x + 4;</code></td>
+</tr>
+<tr>
+<td align="left"><code>-=</code></td>
+<td align="left">Subtraction assignment</td>
+<td align="left">Subtracts the value on the right from the variable value on the left, and returns the new variable value</td>
+<td align="left"><code>x -= 3;</code></td>
+<td align="left"><code>x = x - 3;</code></td>
+</tr>
+<tr>
+<td align="left"><code>*=</code></td>
+<td align="left">Multiplication assignment</td>
+<td align="left">Multiplies the variable value on the left by the value on the right, and returns the new variable value</td>
+<td align="left"><code>x *= 3;</code></td>
+<td align="left"><code>x = x * 3;</code></td>
+</tr>
+<tr>
+<td align="left"><code>/=</code></td>
+<td align="left">Division assignment</td>
+<td align="left">Divides the variable value on the left by the value on the right, and returns the new variable value</td>
+<td align="left"><code>x /= 5;</code></td>
+<td align="left"><code>x = x / 5;</code></td>
+</tr>
+</tbody></table>
+<h5 id="Comparison-operators"><a href="#Comparison-operators" class="headerlink" title="Comparison operators"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#comparison_operators">Comparison operators</a></h5><p>Sometimes we will want to run true&#x2F;false tests, then act accordingly depending on the result of that test — to do this we use <strong>comparison operators</strong>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Name</th>
+<th align="left">Purpose</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>===</code></td>
+<td align="left">Strict equality</td>
+<td align="left">Tests whether the left and right values are identical to one another</td>
+<td align="left"><code>5 === 2 + 4</code></td>
+</tr>
+<tr>
+<td align="left"><code>!==</code></td>
+<td align="left">Strict-non-equality</td>
+<td align="left">Tests whether the left and right values are <strong>not</strong> identical to one another</td>
+<td align="left"><code>5 !== 2 + 3</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;</code></td>
+<td align="left">Less than</td>
+<td align="left">Tests whether the left value is smaller than the right one.</td>
+<td align="left"><code>10 &lt; 6</code></td>
+</tr>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">Greater than</td>
+<td align="left">Tests whether the left value is greater than the right one.</td>
+<td align="left"><code>10 &gt; 20</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;=</code></td>
+<td align="left">Less than or equal to</td>
+<td align="left">Tests whether the left value is smaller than or equal to the right one.</td>
+<td align="left"><code>3 &lt;= 2</code></td>
+</tr>
+<tr>
+<td align="left"><code>&gt;=</code></td>
+<td align="left">Greater than or equal to</td>
+<td align="left">Tests whether the left value is greater than or equal to the right one.</td>
+<td align="left"><code>5 &gt;= 4</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li><h5 id="string"><a href="#string" class="headerlink" title="string"></a>string</h5></li>
+<li><p>使用toString()可将变量转为string</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myString = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> myNum = <span class="title class_">Number</span>(myString);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> myNum);</span><br><span class="line"><span class="keyword">const</span> myNum2 = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">const</span> myString2 = myNum2.<span class="title function_">toString</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> myString2);</span><br></pre></td></tr></table></figure>
+
+<p>使用length获取string长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line">browserType.<span class="property">length</span>;<span class="comment">//7</span></span><br></pre></td></tr></table></figure>
+
+<p>使用includes()判断字符串内是否含特定字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (browserType.<span class="title function_">includes</span>(<span class="string">&#x27;zilla&#x27;</span>)) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Found zilla!&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;No zilla here!&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用startswith()或endswith()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (browserType.<span class="title function_">startsWith</span>(<span class="string">&#x27;zilla&#x27;</span>)) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Found zilla!&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;No zilla here!&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (browserType.<span class="title function_">endsWith</span>(<span class="string">&#x27;zilla&#x27;</span>)) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Found zilla!&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;No zilla here!&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用indexOf获取字符串位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tagline = <span class="string">&#x27;MDN - Resources for developers, by developers&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tagline.<span class="title function_">indexOf</span>(<span class="string">&#x27;developers&#x27;</span>)); <span class="comment">// 20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tagline.<span class="title function_">indexOf</span>(<span class="string">&#x27;x&#x27;</span>)); <span class="comment">// -1 ,找不到，返回-1</span></span><br><span class="line"><span class="keyword">const</span> firstOccurrence = tagline.<span class="title function_">indexOf</span>(<span class="string">&#x27;developers&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> secondOccurrence = tagline.<span class="title function_">indexOf</span>(<span class="string">&#x27;developers&#x27;</span>, firstOccurrence + <span class="number">1</span>);<span class="comment">//第2个参数为初始搜索位置</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(firstOccurrence); <span class="comment">// 20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(secondOccurrence); <span class="comment">// 35</span></span><br></pre></td></tr></table></figure>
+
+<p>使用slice()切割字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(browserType.<span class="title function_">slice</span>(<span class="number">1</span>, <span class="number">4</span>)); <span class="comment">// &quot;ozi&quot;</span></span><br><span class="line">browserType.<span class="title function_">slice</span>(<span class="number">2</span>); <span class="comment">// &quot;zilla&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"><code>toLowerCase()</code></a> and <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"><code>toUpperCase()</code></a> 进行字符串大小写转换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> radData = <span class="string">&#x27;My NaMe Is MuD&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(radData.<span class="title function_">toLowerCase</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(radData.<span class="title function_">toUpperCase</span>());</span><br></pre></td></tr></table></figure>
+
+<p>使用replace()或replaceAll()对字符串内容进行替换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example 1</span></span><br><span class="line"><span class="keyword">const</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> updated = browserType.<span class="title function_">replace</span>(<span class="string">&#x27;moz&#x27;</span>,<span class="string">&#x27;van&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(updated);      <span class="comment">// &quot;vanilla&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(browserType);  <span class="comment">// &quot;mozilla&quot;</span></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="keyword">let</span> browserType = <span class="string">&#x27;mozilla&#x27;</span>;</span><br><span class="line">browserType = browserType.<span class="title function_">replace</span>(<span class="string">&#x27;moz&#x27;</span>,<span class="string">&#x27;van&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(browserType);  <span class="comment">// &quot;vanilla&quot;</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="keyword">let</span> quote = <span class="string">&#x27;To be or not to be&#x27;</span>;</span><br><span class="line">quote = quote.<span class="title function_">replaceAll</span>(<span class="string">&#x27;be&#x27;</span>,<span class="string">&#x27;code&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(quote);  <span class="comment">// &quot;To code or not to code&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="array"><a href="#array" class="headerlink" title="array"></a>array</h5></li>
+</ul>
+<p>相较于数组，更类似于python的列表</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sequence = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">13</span>];</span><br><span class="line"><span class="keyword">const</span> random = [<span class="string">&#x27;tree&#x27;</span>, <span class="number">795</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用length获取数组长度（类似string）</p>
+<p>  可直接替换数组元素  random[2] &#x3D; 999;<br>可获取数组内元素的内部元素  random[2][2]</p>
+<p>使用indexOf获取数组内元素, </p>
+<p>使用push()添加元素，</p>
+<p>使用unshift()在数组首部添加元素，</p>
+<p>使用pop()弹出数组末元素</p>
+<p>使用shift()移除首部元素</p>
+<p>使用splice()可移除指定位置元素，the first argument says where to start removing items, and the second argument says how many items should be removed. </p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//indexOf()</span></span><br><span class="line"><span class="keyword">const</span> birds = [<span class="string">&#x27;Parrot&#x27;</span>, <span class="string">&#x27;Falcon&#x27;</span>, <span class="string">&#x27;Owl&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(birds.<span class="title function_">indexOf</span>(<span class="string">&#x27;Owl&#x27;</span>));   <span class="comment">//  2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(birds.<span class="title function_">indexOf</span>(<span class="string">&#x27;Rabbit&#x27;</span>)); <span class="comment">// -1</span></span><br><span class="line"><span class="comment">//push()</span></span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>];</span><br><span class="line">cities.<span class="title function_">push</span>(<span class="string">&#x27;Cardiff&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);      <span class="comment">// [ &quot;Manchester&quot;, &quot;Liverpool&quot;, &quot;Cardiff&quot; ]</span></span><br><span class="line">cities.<span class="title function_">push</span>(<span class="string">&#x27;Bradford&#x27;</span>, <span class="string">&#x27;Brighton&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);      <span class="comment">// [ &quot;Manchester&quot;, &quot;Liverpool&quot;, &quot;Cardiff&quot;, &quot;Bradford&quot;, &quot;Brighton&quot; ]</span></span><br><span class="line"><span class="comment">//unshift()</span></span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>];</span><br><span class="line">cities.<span class="title function_">unshift</span>(<span class="string">&#x27;Edinburgh&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);     <span class="comment">// [ &quot;Edinburgh&quot;, &quot;Manchester&quot;, &quot;Liverpool&quot; ]</span></span><br><span class="line"><span class="comment">//pop()</span></span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>];</span><br><span class="line">cities.<span class="title function_">pop</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);     <span class="comment">// [ &quot;Manchester&quot; ]</span></span><br><span class="line"><span class="comment">//shift()</span></span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>];</span><br><span class="line">cities.<span class="title function_">shift</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);     <span class="comment">// [ &quot;Liverpool&quot; ]</span></span><br><span class="line"><span class="comment">//splice()</span></span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;Manchester&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>, <span class="string">&#x27;Edinburgh&#x27;</span>, <span class="string">&#x27;Carlisle&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> index = cities.<span class="title function_">indexOf</span>(<span class="string">&#x27;Liverpool&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span> (index !== -<span class="number">1</span>) &#123;</span><br><span class="line">  cities.<span class="title function_">splice</span>(index, <span class="number">2</span>);<span class="comment">//the first argument says where to start removing items, and the second argument says how many items should be removed. </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cities);     <span class="comment">// [ &quot;Manchester&quot;, &quot;Carlisle&quot; ]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用map()对数组内每个元素执行一遍函数，并返回一个新的数组</p>
+<p>fliter()对数组进行过滤</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//map()</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params">number</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> number * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> doubled = numbers.<span class="title function_">map</span>(double);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(doubled);  <span class="comment">// [ 10, 4, 14, 12 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//fliter</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">isLong</span>(<span class="params">city</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> city.<span class="property">length</span> &gt; <span class="number">8</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> cities = [<span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Liverpool&#x27;</span>, <span class="string">&#x27;Totnes&#x27;</span>, <span class="string">&#x27;Edinburgh&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> longer = cities.<span class="title function_">filter</span>(isLong);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(longer);  <span class="comment">// [ &quot;Liverpool&quot;, &quot;Edinburgh&quot; ]</span></span><br></pre></td></tr></table></figure>
+
+<p>通过split()和toString()进行数组和字符串的转换</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = <span class="string">&#x27;Manchester,London,Liverpool,Birmingham,Leeds,Carlisle&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> cities = data.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">cities;<span class="comment">//[&#x27;Manchester&#x27;, &#x27;London&#x27;, &#x27;Liverpool&#x27;, &#x27;Birmingham&#x27;, &#x27;Leeds&#x27;, &#x27;Carlisle&#x27;]</span></span><br><span class="line"></span><br><span class="line">cities.<span class="property">length</span>;<span class="comment">//6</span></span><br><span class="line">cities[<span class="number">0</span>]; <span class="comment">// the first item in the array</span></span><br><span class="line">cities[<span class="number">1</span>]; <span class="comment">// the second item in the array</span></span><br><span class="line">cities[cities.<span class="property">length</span> - <span class="number">1</span>]; <span class="comment">// the last item in the array</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> commaSeparated = cities.<span class="title function_">join</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">commaSeparated;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dogNames = [<span class="string">&#x27;Rocket&#x27;</span>,<span class="string">&#x27;Flash&#x27;</span>,<span class="string">&#x27;Bella&#x27;</span>,<span class="string">&#x27;Slugger&#x27;</span>];</span><br><span class="line">dogNames.<span class="title function_">toString</span>(); <span class="comment">// &#x27;Rocket,Flash,Bella,Slugger&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="声明函数的方法"><a href="#声明函数的方法" class="headerlink" title="声明函数的方法"></a>声明函数的方法</h5><ul>
+<li><h5 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h5></li>
+</ul>
+<p>现在你可能很清楚这一点，但仅仅为了防止……，要在函数定义之后，实际使用它，你必须运行或调用它。这是通过将函数名包含在代码的某个地方，后跟圆括号来完成的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function myFunction() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myFunction()</span><br><span class="line">// calls the function once</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h5></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myNumber = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myText = <span class="string">&#x27;I am a string&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> newString = myText.<span class="title function_">replace</span>(<span class="string">&#x27;string&#x27;</span>, <span class="string">&#x27;sausage&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h5></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myArray = [<span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;love&#x27;</span>, <span class="string">&#x27;chocolate&#x27;</span>, <span class="string">&#x27;frogs&#x27;</span>];</span><br><span class="line"><span class="keyword">const</span> madeAString = myArray.<span class="title function_">join</span>(<span class="string">&#x27; &#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(madeAString);</span><br><span class="line"><span class="comment">// returns &#x27;I love chocolate frogs&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> madeAnotherString = myArray.<span class="title function_">join</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(madeAnotherString);</span><br><span class="line"><span class="comment">// returns &#x27;I,love,chocolate,frogs&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h5></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">name = <span class="string">&#x27;Chris&#x27;</span></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello</span>(<span class="string">&#x27;Ari&#x27;</span>); <span class="comment">// Hello Ari!</span></span><br><span class="line"><span class="title function_">hello</span>();      <span class="comment">// Hello Chris!</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h5></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;     </span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;hello&#x27;</span>);	        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//匿名函数写法</span></span><br><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">logKey</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`You pressed &quot;<span class="subst">$&#123;event.key&#125;</span>&quot;.`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">textBox.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, logKey);</span><br><span class="line"></span><br><span class="line"><span class="comment">//匿名函数写法</span></span><br><span class="line">textBox.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`You pressed &quot;<span class="subst">$&#123;event.key&#125;</span>&quot;.`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用arrow</span></span><br><span class="line">textBox.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`You pressed &quot;<span class="subst">$&#123;event.key&#125;</span>&quot;.`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//若函数体只有一行代码</span></span><br><span class="line">textBox.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`You pressed &quot;<span class="subst">$&#123;event.key&#125;</span>&quot;.`</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数只有一个参数</span></span><br><span class="line">textBox.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`You pressed &quot;<span class="subst">$&#123;event.key&#125;</span>&quot;.`</span>));</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li><h5 id="匿名函数-1"><a href="#匿名函数-1" class="headerlink" title="匿名函数"></a>匿名函数</h5></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myFunction() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但是您也可以创建一个没有名称的函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个函数叫做<strong>匿名函数</strong> — 它没有函数名！它也不会自己做任何事情。你通常将匿名函数与事件处理程序一起使用，例如，如果单击相关按钮，以下操作将在函数内运行代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myButton = document.querySelector(&#x27;button&#x27;);</span><br><span class="line"></span><br><span class="line">myButton.onclick = function() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>上述示例将要求<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button">&#96;&#96;</a> 在页面上提供可用于选择并单击的元素。您在整个课程中已经看到过这种结构了几次，您将在下一篇文章中了解更多信息并在其中使用。</p>
+<p>你还可以将匿名函数分配为变量的值，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var myGreeting = function() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在可以使用以下方式调用此函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myGreeting();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有效地给变量一个名字;还可以将该函数分配为多个变量的值，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var anotherGreeting = function() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在可以使用以下任一方法调用此函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myGreeting();</span><br><span class="line">anotherGreeting();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但这只会令人费解，所以不要这样做！创建方法时，最好坚持下列形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function myGreeting() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>您将主要使用匿名函数来运行负载的代码以响应事件触发（如点击按钮） - 使用事件处理程序。再次，这看起来像这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myButton.onclick = function() &#123;</span><br><span class="line">  alert(&#x27;hello&#x27;);</span><br><span class="line">  // I can put as much code</span><br><span class="line">  // inside here as I want</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h5></li>
+<li><p>移除事件处理器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用removeEventListener()</span></span><br><span class="line">btn.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, changeBackground);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用abort()</span></span><br><span class="line"><span class="keyword">const</span> controller = <span class="keyword">new</span> <span class="title class_">AbortController</span>();</span><br><span class="line"></span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">`rgb(<span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>)`</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">&#125;, &#123; <span class="attr">signal</span>: controller.<span class="property">signal</span> &#125;); <span class="comment">// pass an AbortSignal to this handler</span></span><br><span class="line"></span><br><span class="line">controller.<span class="title function_">abort</span>(); <span class="comment">// removes any/all event handlers associated with this controller</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他的添加事件处理器的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在对应event前加on，如onclick</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">random</span>(<span class="params">number</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (number+<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.<span class="property">onclick</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">`rgb(<span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>)`</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">random</span>(<span class="params">number</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (number+<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bgChange</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">`rgb(<span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>)`</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.<span class="property">onclick</span> = bgChange;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内联事件处理器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=<span class="string">&quot;bgChange()&quot;</span>&gt;<span class="title class_">Press</span> me&lt;/button&gt;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bgChange</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">`rgb(<span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>, <span class="subst">$&#123;random(<span class="number">255</span>)&#125;</span>)`</span>;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;button onclick=<span class="string">&quot;alert(&#x27;Hello, this is my old-fashioned event handler!&#x27;);&quot;</span>&gt;</span><br><span class="line">  <span class="title class_">Press</span> me</span><br><span class="line">&lt;/button&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1">事件对象</a></h3><p>有时候在事件处理函数内部，您可能会看到一个固定指定名称的参数，例如<code>event</code>，<code>evt</code>或简单的<code>e</code>。这被称为<strong>事件对象</strong>，它被自动传递给事件处理函数，以提供额外的功能和信息。例如，让我们稍稍重写一遍我们的随机颜色示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bgChange</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> rndCol = <span class="string">&#x27;rgb(&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;,&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;,&#x27;</span> + <span class="title function_">random</span>(<span class="number">255</span>) + <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">  e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = rndCol;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, bgChange);</span><br></pre></td></tr></table></figure>
+
+<p>在这里，您可以看到我们在函数中包括一个事件对象<code>e</code>，并在函数中设置背景颜色样式在 <code>e.target</code> 上——它指的是按钮本身。事件对象 <code>e</code> 的 <code>target</code> 属性始终是事件刚刚发生的元素的引用。所以在这个例子中，我们在按钮上设置一个随机的背景颜色，而不是页面。</p>
+</li>
+<li><h5 id="冒泡问题"><a href="#冒泡问题" class="headerlink" title="冒泡问题"></a>冒泡问题</h5></li>
+<li><p>使用stopPropagation() 修复问题</p>
+<p>冒泡是令人讨厌的行为，但有一种方法来解决它！标准事件对象具有可用的名为 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation"><code>stopPropagation()</code></a>的函数，当在事件对象上调用该函数时，它只会让当前事件处理程序运行，但事件不会在<strong>冒泡</strong>链上进一步扩大，因此将不会有更多事件处理器被运行 (不会向上冒泡)。所以，我们可以通过改变前面代码块中的第二个处理函数来解决当前的问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">video.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">  video.<span class="title function_">play</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象常量</p>
+<p>诸如下面此种，在声明时就为其内部成员赋予内容的结构体，成为对象常量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: [<span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Smith&quot;</span>],</span><br><span class="line">  <span class="attr">age</span>: <span class="number">32</span>,</span><br><span class="line">  <span class="attr">function</span>: <span class="title function_">bio</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">0</span>]&#125;</span> <span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">1</span>]&#125;</span> is <span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span> years old.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">0</span>]&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: &#123;</span><br><span class="line">    <span class="attr">first</span>: <span class="string">&quot;Bob&quot;</span>,</span><br><span class="line">    <span class="attr">last</span>: <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// …</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象方法可简写，缺省function</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: [<span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Smith&quot;</span>],</span><br><span class="line">  <span class="attr">age</span>: <span class="number">32</span>,</span><br><span class="line">  <span class="title function_">bio</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">0</span>]&#125;</span> <span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">1</span>]&#125;</span> is <span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span> years old.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name[<span class="number">0</span>]&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: &#123;</span><br><span class="line">    <span class="attr">first</span>: <span class="string">&quot;Bob&quot;</span>,</span><br><span class="line">    <span class="attr">last</span>: <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// …</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于上面结构</span></span><br><span class="line">person.<span class="property">age</span>;</span><br><span class="line">person.<span class="property">name</span>.<span class="property">first</span>;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">person[<span class="string">&quot;age&quot;</span>];</span><br><span class="line">person[<span class="string">&quot;name&quot;</span>][<span class="string">&quot;first&quot;</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量作为索引</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: [<span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Smith&quot;</span>],</span><br><span class="line">  <span class="attr">age</span>: <span class="number">32</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">logProperty</span>(<span class="params">propertyName</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(person[propertyName]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">logProperty</span>(<span class="string">&quot;name&quot;</span>);</span><br><span class="line"><span class="comment">// [&quot;Bob&quot;, &quot;Smith&quot;]</span></span><br><span class="line"><span class="title function_">logProperty</span>(<span class="string">&quot;age&quot;</span>);</span><br><span class="line"><span class="comment">// 32</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置成员（属性，方法）值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">person.<span class="property">age</span> = <span class="number">45</span>;</span><br><span class="line">person[<span class="string">&quot;name&quot;</span>][<span class="string">&quot;last&quot;</span>] = <span class="string">&quot;Cratchit&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//亦可新增成员</span></span><br><span class="line">person[<span class="string">&quot;eyes&quot;</span>] = <span class="string">&quot;hazel&quot;</span>;</span><br><span class="line">person.<span class="property">farewell</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Bye everybody!&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//另一种</span></span><br><span class="line"><span class="keyword">const</span> myDataName = nameInput.<span class="property">value</span>;</span><br><span class="line"><span class="keyword">const</span> myDataValue = nameValue.<span class="property">value</span>;</span><br><span class="line"></span><br><span class="line">person[myDataName] = myDataValue;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">const</span> myDataName = <span class="string">&quot;height&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> myDataValue = <span class="string">&quot;1.75m&quot;</span>;</span><br><span class="line">person[myDataName] = myDataValue;</span><br><span class="line"></span><br><span class="line">person.<span class="property">height</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>this为方法内默认带有，为调用对象的引用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Chris&quot;</span>,</span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person2 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Deepti&quot;</span>,</span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造器</p>
+<p>原理： </p>
+<ol>
+<li>新建对象 	</li>
+<li>链接this与新建对象，对内容进行构造	</li>
+<li>运行构造器，返回新建对象</li>
+</ol>
+<p>	</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;	<span class="comment">//构造器名一般为类型名且以大写字母开头</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">introduceSelf</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>.`</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//call the constructor</span></span><br><span class="line"><span class="keyword">const</span> salva = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Salva&quot;</span>);</span><br><span class="line">salva.<span class="property">name</span>;</span><br><span class="line">salva.<span class="title function_">introduceSelf</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> frankie = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Frankie&quot;</span>);</span><br><span class="line">frankie.<span class="property">name</span>;</span><br><span class="line">frankie.<span class="title function_">introduceSelf</span>();</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="对象原型："><a href="#对象原型：" class="headerlink" title="对象原型："></a>对象原型：</h5><blockquote>
+<p>​	获取对象原型</p>
+</blockquote>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">使用<span class="title class_">Object</span>.<span class="title function_">getPrototypeOf</span>()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myDate = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">let</span> object = myDate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  object = <span class="title class_">Object</span>.<span class="title function_">getPrototypeOf</span>(object);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(object);</span><br><span class="line">&#125; <span class="keyword">while</span> (object);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Date.prototype</span></span><br><span class="line"><span class="comment">// Object &#123; &#125;</span></span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/mydate-prototype-chain.svg" alt="Prototype chain for myDate"></p>
+<blockquote>
+<p>设置对象原型</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">使用<span class="title class_">Object</span>.<span class="title function_">create</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. Using Object.create</span></span><br><span class="line"><span class="keyword">const</span> personPrototype = &#123;</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;hello!&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> carl = <span class="title class_">Object</span>.<span class="title function_">create</span>(personPrototype);</span><br><span class="line">carl.<span class="title function_">greet</span>(); <span class="comment">// hello!</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. Using a constructor</span></span><br><span class="line"><span class="keyword">const</span> personPrototype = &#123;</span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`hello, my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>!`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(<span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>, personPrototype);</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="comment">// Person.prototype.greet = personPrototype.greet;</span></span><br><span class="line"><span class="keyword">const</span> reuben = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Reuben&quot;</span>);</span><br><span class="line">reuben.<span class="title function_">greet</span>(); <span class="comment">// hello, my name is Reuben!</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>对象独有属性</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用 <span class="title class_">Object</span>.<span class="title function_">hasOwn</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> irma = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Irma&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">hasOwn</span>(irma, <span class="string">&quot;name&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">hasOwn</span>(irma, <span class="string">&quot;greet&quot;</span>)); <span class="comment">// false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>对象原型具有继承性</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h5><ol>
+<li><p>类与实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Professor</span></span><br><span class="line">    properties</span><br><span class="line">        name</span><br><span class="line">        teaches</span><br><span class="line">    methods</span><br><span class="line">        <span class="title function_">grade</span>(paper)</span><br><span class="line">        <span class="title function_">introduceSelf</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> test = <span class="title class_">Professor</span>(<span class="string">&#x27;zheng&#x27;</span>,<span class="string">&#x27;math&#x27;</span>);</span><br><span class="line">test.<span class="title function_">introduceSelf</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">    properties</span><br><span class="line">        name</span><br><span class="line">    constructor</span><br><span class="line">        <span class="title class_">Person</span>(name)</span><br><span class="line">    methods</span><br><span class="line">        <span class="title function_">introduceSelf</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Professor</span> : <span class="keyword">extends</span> <span class="title class_">Person</span></span><br><span class="line">    properties</span><br><span class="line">        teaches</span><br><span class="line">    constructor</span><br><span class="line">        <span class="title class_">Professor</span>(name, teaches)</span><br><span class="line">    methods</span><br><span class="line">        <span class="title function_">grade</span>(paper)</span><br><span class="line">        <span class="title function_">introduceSelf</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">extends</span> <span class="title class_">Person</span></span><br><span class="line">    properties</span><br><span class="line">        year</span><br><span class="line">    constructor</span><br><span class="line">        <span class="title class_">Student</span>(name, year)</span><br><span class="line">    methods</span><br><span class="line">        <span class="title function_">introduceSelf</span>()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> : <span class="keyword">extends</span> <span class="title class_">Person</span></span><br><span class="line">    properties</span><br><span class="line">       private year</span><br><span class="line">    constructor</span><br><span class="line">        <span class="title class_">Student</span>(name, year)</span><br><span class="line">    methods</span><br><span class="line">       <span class="title function_">introduceSelf</span>()</span><br><span class="line">       <span class="title function_">canStudyArchery</span>(<span class="params"></span>) &#123; <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">year</span> &gt; <span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line">student = <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&#x27;Weber&#x27;</span>, <span class="number">1</span>)</span><br><span class="line">student.<span class="property">year</span> <span class="comment">// error: &#x27;year&#x27; is a private property of Student</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><ol>
+<li><p>构造器</p>
+<p>使用construcor()构造函数进行类内成员初始化设置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"></span><br><span class="line">  name;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>构造器可缺省，此时类会自动生成一个构造器（不做初始化）</p>
+</li>
+<li><p>继承</p>
+<p>使用extends关键字进行类的继承</p>
+<p>使用super()可调用父类的构造器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Professor</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;</span><br><span class="line"></span><br><span class="line">  teaches;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name, teaches</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(name);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">teaches</span> = teaches;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`My name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>, and I will be your <span class="subst">$&#123;<span class="variable language_">this</span>.teaches&#125;</span> professor.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">grade</span>(<span class="params">paper</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> grade = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (<span class="number">5</span> - <span class="number">1</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(grade);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*调用*/</span></span><br><span class="line"><span class="keyword">const</span> walsh = <span class="keyword">new</span> <span class="title class_">Professor</span>(<span class="string">&#x27;Walsh&#x27;</span>, <span class="string">&#x27;Psychology&#x27;</span>);</span><br><span class="line">walsh.<span class="title function_">introduceSelf</span>();  <span class="comment">// &#x27;My name is Walsh, and I will be your Psychology professor&#x27;</span></span><br><span class="line"></span><br><span class="line">walsh.<span class="title function_">grade</span>(<span class="string">&#x27;my paper&#x27;</span>); <span class="comment">// some random grade</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装</p>
+<ol>
+<li><p>私有变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;</span><br><span class="line"></span><br><span class="line">  #year;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name, year</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(name);</span><br><span class="line">    <span class="variable language_">this</span>.#year = year;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="title function_">introduceSelf</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hi! I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>, and I&#x27;m in year <span class="subst">$&#123;<span class="variable language_">this</span>.#year&#125;</span>.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">canStudyArchery</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.#year &gt; <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*调用*/</span></span><br><span class="line"><span class="keyword">const</span> summers = <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&#x27;Summers&#x27;</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">summers.<span class="title function_">introduceSelf</span>(); <span class="comment">// Hi! I&#x27;m Summers, and I&#x27;m in year 2.</span></span><br><span class="line">summers.<span class="title function_">canStudyArchery</span>(); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">summers.#year; <span class="comment">// SyntaxError</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>私有方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span> &#123;</span><br><span class="line">  <span class="title function_">somePublicMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.#<span class="title function_">somePrivateMethod</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #<span class="title function_">somePrivateMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;You called me?&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myExample = <span class="keyword">new</span> <span class="title class_">Example</span>();</span><br><span class="line"></span><br><span class="line">myExample.<span class="title function_">somePublicMethod</span>(); <span class="comment">// &#x27;You called me?&#x27;</span></span><br><span class="line"></span><br><span class="line">myExample.#<span class="title function_">somePrivateMethod</span>(); <span class="comment">// SyntaxError</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h5 id="异步javascript"><a href="#异步javascript" class="headerlink" title="异步javascript"></a>异步javascript</h5><ol>
+<li><p>使用fetch API</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchPromise = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fetchPromise);</span><br><span class="line"></span><br><span class="line">fetchPromise.<span class="title function_">then</span>( <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`已收到响应：<span class="subst">$&#123;response.status&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;已发送请求……&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*我们在这里：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">调用 fetch() API，并将返回值赋给 fetchPromise 变量。</span></span><br><span class="line"><span class="comment">紧接着，输出 fetchPromise 变量，输出结果应该像这样：Promise &#123; &lt;state&gt;: &quot;pending&quot; &#125;。这告诉我们有一个 Promise 对象，它有一个 state属性，值是 &quot;pending&quot;。&quot;pending&quot; 状态意味着操作仍在进行中。</span></span><br><span class="line"><span class="comment">将一个处理函数传递给 Promise 的 then() 方法。当（如果）获取操作成功时，Promise 将调用我们的处理函数，传入一个包含服务器的响应的 Response 对象。</span></span><br><span class="line"><span class="comment">输出一条信息，说明我们已经发送了这个请求。</span></span><br><span class="line"><span class="comment">完整的输出结果应该是这样的：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Promise &#123; &lt;state&gt;: &quot;pending&quot; &#125;</span></span><br><span class="line"><span class="comment">已发送请求……</span></span><br><span class="line"><span class="comment">已收到响应：200</span></span><br><span class="line"><span class="comment">请注意，已发送请求…… 的消息在我们收到响应之前就被输出了。与同步函数不同，fetch() 在请求仍在进行时返回，这使我们的程序能够保持响应性。响应显示了 200（OK）的状态码，意味着我们的请求成功了。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">可能这看起来很像上一篇文章中的例子中我们把事件处理程序添加到 XMLHttpRequest 对象中。但不同的是，我们这一次将处理程序传递到返回的 Promise 对象的 then() 方法中。*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链式使用Promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchPromise = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fetchPromise.<span class="title function_">then</span>( <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> jsonPromise = response.<span class="title function_">json</span>();</span><br><span class="line">  jsonPromise.<span class="title function_">then</span>( <span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(json[<span class="number">0</span>].<span class="property">name</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">在这个示例中，就像我们之前做的那样，我们给 fetch() 返回的 Promise 对象添加了一个 then() 处理程序。但这次我们的处理程序调用 response.json() 方法，然后将一个新的 then() 处理程序传递到 response.json() 返回的 Promise 中。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">执行代码后应该会输出“baked beans”（“products.json”中第一个产品的名称）。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">等等！还记得上一篇文章吗？我们好像说过，在回调中调用另一个回调会出现多层嵌套的情况？我们是不是还说过，这种“回调地狱”使我们的代码难以理解？这不是也一样吗，只不过变成了用 then() 调用而已？</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">当然如此。但 Promise 的优雅之处在于 then() 本身也会返回一个 Promise，这个 Promise 将指示 then() 中调用的异步函数的完成状态。这意味着我们可以（当然也应该）把上面的代码改写成这样：*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchPromise = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fetchPromise</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> response.<span class="title function_">json</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(json[<span class="number">0</span>].<span class="property">name</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*不必在第一个 then() 的处理程序中调用第二个 then()，我们可以直接返回 json() 返回的 Promise，并在该返回值上调用第二个 &quot;then()&quot;。这被称为 Promise 链，意味着当我们需要连续进行异步函数调用时，我们就可以避免不断嵌套带来的缩进增加。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">在进入下一步之前，还有一件事要补充：我们需要在尝试读取请求之前检查服务器是否接受并处理了该请求。我们将通过检查响应中的状态码来做到这一点，如果状态码不是“OK”，就抛出一个错误：*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchPromise = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fetchPromise</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!response.<span class="property">ok</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`HTTP error: <span class="subst">$&#123;response.status&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response.<span class="title function_">json</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(json[<span class="number">0</span>].<span class="property">name</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>错误捕获</p>
+</li>
+</ol>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Promise 对象提供了一个 catch() 方法来支持错误处理。这很像 then()：你调用它并传入一个处理函数。然后，当异步操作成功时，传递给 then() 的处理函数被调用，而当异步操作失败时，传递给 catch() 的处理函数被调用。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">如果将 catch() 添加到 Promise 链的末尾，它就可以在任何异步函数失败时被调用。于是，我们就可以将一个操作实现为几个连续的异步函数调用，并在一个地方处理所有错误。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">试试这个版本的 fetch() 代码。我们使用 catch() 添加了一个错误处理函数，并修改了 URL（这样请求就会失败）。*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchPromise = <span class="title function_">fetch</span>(<span class="string">&#x27;bad-scheme://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fetchPromise</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!response.<span class="property">ok</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`HTTP 请求错误：<span class="subst">$&#123;response.status&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response.<span class="title function_">json</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(json[<span class="number">0</span>].<span class="property">name</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">catch</span>( <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`无法获取产品列表：<span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//尝试运行这个版本：你应该会看到 catch() 处理函数输出的错误。</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>Promise术语</p>
+<p>Promise 中有一些具体的术语值得我们弄清楚。</p>
+<p>首先，Promise 有三种状态：</p>
+<ul>
+<li><strong>待定（pending）</strong>：初始状态，既没有被兑现，也没有被拒绝。这是调用 <code>fetch()</code> 返回 Promise 时的状态，此时请求还在进行中。</li>
+<li><strong>已兑现（fulfilled）</strong>：意味着操作成功完成。当 Promise 完成时，它的 <code>then()</code> 处理函数被调用。</li>
+<li><strong>已拒绝（rejected）</strong>：意味着操作失败。当一个 Promise 失败时，它的 <code>catch()</code> 处理函数被调用。</li>
+</ul>
+<p>注意，这里的“成功”或“失败”的含义取决于所使用的 API：例如，<code>fetch()</code> 认为服务器返回一个错误（如<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/404">404 Not Found</a>）时请求成功，但如果网络错误阻止请求被发送，则认为请求失败。</p>
+<p>有时我们用 <strong>已敲定（settled）</strong> 这个词来同时表示 <strong>已兑现（fulfilled）</strong> 和 <strong>已拒绝（rejected）</strong> 两种情况。</p>
+<p>如果一个 Promise 处于已决议（resolved）状态，或者它被“锁定”以跟随另一个 Promise 的状态，那么它就是 <strong>已兑现（fulfilled）</strong>。</p>
+<p>文章 <a target="_blank" rel="noopener" href="https://thenewtoys.dev/blog/2021/02/08/lets-talk-about-how-to-talk-about-promises/">Let’s talk about how to talk about promises</a> 对这些术语的细节做了很好的解释。</p>
+</li>
+<li><p>合并使用多个Promise</p>
+<p>当你的操作由几个异步函数组成，而且你需要在开始下一个函数之前完成之前每一个函数时，你需要的就是 Promise 链。但是在其他的一些情况下，你可能需要合并多个异步函数的调用，<code>Promise</code> API 为解决这一问题提供了帮助。</p>
+<p>有时你需要所有的 Promise 都得到实现，但它们并不相互依赖。在这种情况下，将它们一起启动然后在它们全部被兑现后得到通知会更有效率。这里需要 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all"><code>Promise.all()</code></a> 方法。它接收一个 Promise 数组，并返回一个单一的 Promise。</p>
+<p>由<code>Promise.all()</code>返回的 Promise：</p>
+</li>
+</ol>
+<ul>
+<li><p>当且仅当数组中<em>所有</em>的 Promise 都被兑现时，才会通知 <code>then()</code> 处理函数并提供一个包含所有响应的数组，数组中响应的顺序与被传入 <code>all()</code> 的 Promise 的顺序相同。</p>
+</li>
+<li><p>会被拒绝——如果数组中有<em>任何一个</em> Promise 被拒绝。此时，<code>catch()</code> 处理函数被调用，并提供被拒绝的 Promise 所抛出的错误。</p>
+<p>譬如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchPromise1 = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fetchPromise2 = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fetchPromise3 = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([fetchPromise1, fetchPromise2, fetchPromise3])</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">responses</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> response <span class="keyword">of</span> responses) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;response.url&#125;</span>：<span class="subst">$&#123;response.status&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">catch</span>( <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`获取失败：<span class="subst">$&#123;error&#125;</span>`</span>)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里我们向三个不同的 URL 发出三个 <code>fetch()</code> 请求。如果它们都被兑现了，我们将输出每个请求的响应状态。如果其中任何一个被拒绝了，我们将输出失败的情况。</p>
+<p>根据我们提供的 URL，应该所有的请求都会被兑现，尽管因为第二个请求中请求的文件不存在，服务器将返回 <code>404</code>（Not Found）而不是 <code>200</code>（OK）。所以输出应该是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json：200</span><br><span class="line">https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found：404</span><br><span class="line">https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json：200</span><br></pre></td></tr></table></figure>
+
+<p>如果我们用一个错误编码的 URL 尝试同样的代码，就像这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchPromise1 = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fetchPromise2 = <span class="title function_">fetch</span>(<span class="string">&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fetchPromise3 = <span class="title function_">fetch</span>(<span class="string">&#x27;bad-scheme://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([fetchPromise1, fetchPromise2, fetchPromise3])</span><br><span class="line">  .<span class="title function_">then</span>( <span class="function"><span class="params">responses</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> response <span class="keyword">of</span> responses) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;response.url&#125;</span>：<span class="subst">$&#123;response.status&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">catch</span>( <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`获取失败：<span class="subst">$&#123;error&#125;</span>`</span>)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>……然后 <code>catch()</code> 处理程序将被运行，我们应该看到像这样的输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">获取失败：TypeError: Failed to fetch</span><br></pre></td></tr></table></figure>
+
+<p>有时，你可能需要等待一组 Promise 中的某一个 Promise 的执行，而不关心是哪一个。在这种情况下，你需要 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/any"><code>Promise.any()</code></a>。这就像 <code>Promise.all()</code>，不过在 Promise 数组中的任何一个被兑现时它就会被兑现，如果所有的 Promise 都被拒绝，它也会被拒绝。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fetchPromise1 = fetch(&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;);</span><br><span class="line">const fetchPromise2 = fetch(&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found&#x27;);</span><br><span class="line">const fetchPromise3 = fetch(&#x27;https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json&#x27;);</span><br><span class="line"></span><br><span class="line">Promise.any([fetchPromise1, fetchPromise2, fetchPromise3])</span><br><span class="line">  .then( response =&gt; &#123;</span><br><span class="line">    console.log(`$&#123;response.url&#125;：$&#123;response.status&#125;`);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch( error =&gt; &#123;</span><br><span class="line">    console.error(`获取失败：$&#123;error&#125;`)</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>值得注意的是，在这种情况下，我们无法预测哪个获取请求会先被兑现。</p>
+<p>这两个用于组合多个承诺的函数只是额外的 <code>Promise</code> 函数中的两个。要了解其余的内容，参见 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> 参考文档。</p>
+</li>
+</ul>
+<ol start="6">
+<li><p>async 和 await</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function"><code>async</code></a> 关键字为你提供了一种更简单的方法来处理基于异步 Promise 的代码。在一个函数的开头添加 <code>async</code>，就可以使其成为一个异步函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">async function myFunction() &#123;</span><br><span class="line">  // 这是一个异步函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在异步函数中，你可以在调用一个返回 Promise 的函数之前使用 <code>await</code> 关键字。这使得代码在该点上等待，直到 Promise 被完成，这时 Promise 的响应被当作返回值，或者被拒绝的响应被作为错误抛出。</p>
+<p>这使你能够编写像同步代码一样的异步函数。例如，我们可以用它来重写我们的 fetch 示例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">async function fetchProducts() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    // 在这一行之后，我们的函数将等待 `fetch()` 调用完成</span><br><span class="line">    // 调用 `fetch()` 将返回一个“响应”或抛出一个错误</span><br><span class="line">    const response = await fetch(&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;);</span><br><span class="line">    if (!response.ok) &#123;</span><br><span class="line">      throw new Error(`HTTP 请求错误：$&#123;response.status&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">    // 在这一行之后，我们的函数将等待 `response.json()` 的调用完成</span><br><span class="line">    // `response.json()` 调用将返回 JSON 对象或抛出一个错误</span><br><span class="line">    const json = await response.json();</span><br><span class="line">    console.log(json[0].name);</span><br><span class="line">  &#125;</span><br><span class="line">  catch(error) &#123;</span><br><span class="line">    console.error(`无法获取产品列表：$&#123;error&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fetchProducts();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里我们调用 <code>await fetch()</code>，我们的调用者得到的并不是 <code>Promise</code>，而是一个完整的 <code>Response</code> 对象，就好像 <code>fetch()</code> 是一个同步函数一样。</p>
+<p>我们甚至可以使用 <code>try...catch</code> 块来处理错误，就像我们在写同步代码时一样。</p>
+<p>但请注意，这个写法只在异步函数中起作用。异步函数总是返回一个 Pomise，所以你不能做这样的事情：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">async function fetchProducts() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const response = await fetch(&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;);</span><br><span class="line">    if (!response.ok) &#123;</span><br><span class="line">      throw new Error(`HTTP 请求错误：$&#123;response.status&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">    const json = await response.json();</span><br><span class="line">    return json;</span><br><span class="line">  &#125;</span><br><span class="line">  catch(error) &#123;</span><br><span class="line">    console.error(`无法获取产品列表：$&#123;error&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const json = fetchProducts();</span><br><span class="line">console.log(json[0].name);   // json 是一个 Promise 对象，因此这句代码无法正常工作</span><br></pre></td></tr></table></figure>
+
+
+
+<p>相反，你需要做一些事情，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">async function fetchProducts() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    const response = await fetch(&#x27;https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json&#x27;);</span><br><span class="line">    if (!response.ok) &#123;</span><br><span class="line">      throw new Error(`HTTP 请求错误：$&#123;response.status&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">    const json = await response.json();</span><br><span class="line">    return json;</span><br><span class="line">  &#125;</span><br><span class="line">  catch(error) &#123;</span><br><span class="line">    console.error(`无法获取产品列表：$&#123;error&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const jsonPromise = fetchProducts();</span><br><span class="line">jsonPromise.then((json) =&gt; console.log(json[0].name));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>你可能会在需要使用 Promise 链地方使用 <code>async</code> 函数，这也使得 Promise 的工作更加直观。</p>
+<p>请记住，就像一个 Promise 链一样，<code>await</code> 强制异步操作以串联的方式完成。如果下一个操作的结果取决于上一个操作的结果，这是必要的，但如果不是这样，像 <code>Promise.all()</code> 这样的操作会有更好的性能。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/31/JavaScript/" data-id="clqwg479u0004k4vf9d1h31fg" data-title="JavaScript" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/02/dataStructure/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          data Structure
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/31/CSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-composition-principle/" rel="tag">Computer composition principle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-network/" rel="tag">Computer network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-XV6-labs-2021/" rel="tag">OS_XV6_labs_2021</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-Structure/" rel="tag">data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Computer-composition-principle/" style="font-size: 10px;">Computer composition principle</a> <a href="/tags/Computer-network/" style="font-size: 10px;">Computer network</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OS-XV6-labs-2021/" style="font-size: 10px;">OS_XV6_labs_2021</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-Structure/" style="font-size: 10px;">data Structure</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/02/computer%20network/">Computer network</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/Computer%20composition%20principle/">Computer composition principle</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/algorithm/">algorithm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/typescript/">typescript</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/os/">os</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

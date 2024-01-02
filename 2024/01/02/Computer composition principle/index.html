@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Computer composition principle | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算机系统概述计算机系统层次结构： 计算机硬件发展：电子管时代、晶体管时代、中小规模集成电路时代、超大规模集成电路时代 冯诺依曼机特点：  采用“存储程序”的工作方式  计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备5大部件组成  指令和数据以同等地位存储在存储器中，形式上没有区别，但计算机应能区分它们  指令和数据均用二进制代码表示。指令由操作码和地址码组成，操作码指出操作的类型，地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer composition principle">
+<meta property="og:url" content="http://example.com/2024/01/02/Computer%20composition%20principle/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="计算机系统概述计算机系统层次结构： 计算机硬件发展：电子管时代、晶体管时代、中小规模集成电路时代、超大规模集成电路时代 冯诺依曼机特点：  采用“存储程序”的工作方式  计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备5大部件组成  指令和数据以同等地位存储在存储器中，形式上没有区别，但计算机应能区分它们  指令和数据均用二进制代码表示。指令由操作码和地址码组成，操作码指出操作的类型，地">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-8ebe2798fe88473446615cf2bdf7662a_720w.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629113551504.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629113551504.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160024173.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160024173.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160233383.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160233383.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702010854558.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702011523876.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702011533118.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171644314.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171644314.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171709783.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171718684.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171732525.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171732525.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171759105.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704172316479.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704173140968.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704174413435.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704202054405.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704202103534.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705161529280.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163158156.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163207631.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163234468.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163245880.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163955311.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014028898.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014035624.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014042103.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014226245.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014714696.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014742915.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014759930.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170340062.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170348417.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170437986.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170824089.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170832274.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706171345649.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706195742630.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706195755789.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706200749450.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706200805467.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706201637174.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706201646070.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708173111455.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708173119607.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708220928414.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708223112625.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708223103016.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708224256093.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708224326785.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710113311846.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710113228226.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710202525137.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710202551024.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230711154806040.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230711154816188.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712155001020.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/modb_20211227_5016ceb0-66c0-11ec-b728-fa163eb4f6be.png">
+<meta property="og:image" content="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_505c68d0-66c0-11ec-b728-fa163eb4f6be.png">
+<meta property="og:image" content="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_50721b58-66c0-11ec-b728-fa163eb4f6be.png">
+<meta property="og:image" content="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_50a84642-66c0-11ec-b728-fa163eb4f6be.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712211414179.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712211421722.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-8cd4dbbab040e9c5d43f9bca2b3d2278_720w.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002400499.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002424307.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002612263.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002629423.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/modb_20211227_51decc3e-66c0-11ec-b728-fa163eb4f6be.png">
+<meta property="article:published_time" content="2024-01-02T14:29:16.978Z">
+<meta property="article:modified_time" content="2023-12-02T08:57:48.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Computer composition principle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-8ebe2798fe88473446615cf2bdf7662a_720w.webp">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Computer composition principle" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/02/Computer%20composition%20principle/" class="article-date">
+  <time class="dt-published" datetime="2024-01-02T14:29:16.978Z" itemprop="datePublished">2024-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Computer composition principle
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h1><h2 id="计算机系统层次结构："><a href="#计算机系统层次结构：" class="headerlink" title="计算机系统层次结构："></a>计算机系统层次结构：</h2><ul>
+<li>计算机硬件发展：电子管时代、晶体管时代、中小规模集成电路时代、超大规模集成电路时代</li>
+<li>冯诺依曼机特点：</li>
+<li><ul>
+<li><p>采用“存储程序”的工作方式</p>
+</li>
+<li><p>计算机硬件系统由运算器、存储器、控制器、输入设备和输出设备5大部件组成</p>
+</li>
+<li><p>指令和数据以同等地位存储在存储器中，形式上没有区别，但计算机应能区分它们</p>
+</li>
+<li><p>指令和数据均用二进制代码表示。指令由操作码和地址码组成，操作码指出操作的类型，地址码指出操作数的地址</p>
+</li>
+</ul>
+</li>
+<li>计算机的功能部件：运算器、存储器、控制器、输入设备、输出设备</li>
+<li>存储字长是1B或是字节的偶数倍</li>
+<li>MAR用于寻址，其位数对应着存储单元的个数。如MAR为10位，则有1024个存储单元，记为1K。MAR的长度和PC的长度相等</li>
+<li>MDR的位数和存储字长相等，一般为字节的2次幂的整数倍。</li>
+<li>MAR和MDR虽然是存储器的一部分，但在现代计算机中确实存在于CPU中的；另外，Cache也在CPU中</li>
+<li>运算器的算术核心是算术逻辑单元（ALU）</li>
+<li>控制器由PC、IR和控制单元（CU）组成</li>
+<li>CPU和主存之间通过一组总线相连，总线中有地址、控制和数据3组信号线。</li>
+</ul>
+<h3 id="错题小结"><a href="#错题小结" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>冯诺依曼机的基本工作方式是<strong>控制流驱动方式</strong></li>
+<li>相联存储器的特点是<strong>存储器按内容选择地址</strong>，既可按地址寻址又可按内容寻址。</li>
+<li>CPU存取速度：寄存器大于 Cache大于 内存</li>
+<li>数据库系统一般由<strong>数据库、数据库管理系统、应用系统、数据库管理员</strong>组成，其中<strong>数据库管理系统是系统程序</strong></li>
+<li>在冯诺依曼计算机中，<strong>CPU按照指令周期的不同阶段区分指令以及数据</strong></li>
+<li>机器语言是计算机唯一可以直接执行的语言，汇编语言用助记符编写，以便记忆。</li>
+</ol>
+<h2 id="计算机性能指标"><a href="#计算机性能指标" class="headerlink" title="计算机性能指标"></a>计算机性能指标</h2><h3 id="字长"><a href="#字长" class="headerlink" title="字长"></a>字长</h3><p>​	字长是指计算机进行一次整数运算（即定点整数运算）所能处理的二进制数据的位数，通常与CPU的寄存器位数、加法器有关。因此，字长一般等于内部寄存器的大小，字长越长，数的表示范围越大，计算精度越高。计算机字长通常选定为字节的整数倍。</p>
+<p>​	指令字长：指令的二进制代码的位数</p>
+<p>​	存储字长：一个存储单元存储的二进制代码的位数</p>
+<p>​	<strong>指令字长通常为存储字长的倍数。</strong></p>
+<h3 id="数据通路带宽"><a href="#数据通路带宽" class="headerlink" title="数据通路带宽"></a>数据通路带宽</h3><p>​	数据通路带宽是指数据总线一次所能并行传输信息的位数。这里所说的数据通路宽度是指外部数据总线的宽度，它与CPU内部的数据总线宽度（内部寄存器的大小）有可能不同。</p>
+<h3 id="主存容量"><a href="#主存容量" class="headerlink" title="主存容量"></a>主存容量</h3><p>​	主存容量是指主存储器所能存储信息的最大容量，通常以字节来衡量，也可用字数字长（如512K*64位）来表示存储容量。</p>
+<h3 id="运算速度"><a href="#运算速度" class="headerlink" title="运算速度"></a>运算速度</h3><ol>
+<li>吞吐量和相应时间</li>
+<li>主频和CPU时钟周期</li>
+<li>CPI，即执行一条指令所需的时钟周期数</li>
+<li>CPU执行时间，指运行一个程序所花费的时间</li>
+<li>MIPS，即每秒执行多少百万条指令</li>
+<li>MFLPOS、GFLOPS、TFLPOS、PFLOPS、EDLOPS、ZFLOPS</li>
+</ol>
+<h3 id="基准程序"><a href="#基准程序" class="headerlink" title="基准程序"></a>基准程序</h3><p>​	专门用来进行性能评价的一组程序，能够很好地反映机器在运行实际负载时的性能。</p>
+<h3 id="错题小结-1"><a href="#错题小结-1" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li><p>寄存器由触发器构成</p>
+</li>
+<li><p>数据字长是数据总线一次能并行传送信息的位数，它可以不等于MDR的位数</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fragrant-breeze/p/12307658.html">辨析：机器字长、存储字长、指令字长和操作系统位数 - Breezerf - 博客园 (cnblogs.com)</a></p>
+</li>
+<li><p>汇编程序员可以通过JMP指令设置PC的值。状态寄存器、通用寄存器只有为汇编程序员可见才能实现编程，而IR，MAR，MDR是CPU的内部各自寄存器，对程序员均不可见。</p>
+</li>
+<li><p>周期之间的关系：</p>
+<p><a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F">指令周期</a>（Instruction Cycle）：取出并执行一条指令的时间。</p>
+<p>CPU周期：一条指令执行过程被划分为若干阶段，每一阶段完成所需时间。</p>
+<p><a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E5%91%A8%E6%9C%9F">时钟周期</a>（Clock Cycle）：又称震荡周期，是处理操作的最基本单位。</p>
+<p>对于一个指令周期来说，我们取出一条指令，然后执行它，至少需要两个 CPU 周期。取出指令至少需要一个 CPU 周期，执行至少也需要一个 CPU 周期，复杂的指令则需要更多的 CPU 周期。而一个CPU周期是若干时钟周期之和。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-8ebe2798fe88473446615cf2bdf7662a_720w.webp" alt="img"></p>
+<p>所以，我们说一个指令周期，包含多个 CPU 周期，而一个 CPU 周期包含多个时钟周期。</p>
+</li>
+<li><p>计算机“运算速度”指标的含义是每秒能执行多少条指令。</p>
+</li>
+<li><p>用户观点看，吞吐率是评价计算机系统性能的综合参数</p>
+</li>
+<li><p>CPU时间为90s，若CPU速度提高50%，则CPU时间变为60s</p>
+</li>
+</ol>
+<h1 id="数据的表示和运算"><a href="#数据的表示和运算" class="headerlink" title="数据的表示和运算"></a>数据的表示和运算</h1><h2 id="数制与编码"><a href="#数制与编码" class="headerlink" title="数制与编码"></a>数制与编码</h2><h3 id="不同进制之间的转换"><a href="#不同进制之间的转换" class="headerlink" title="不同进制之间的转换"></a>不同进制之间的转换</h3><ol>
+<li><p>二进制转为八进制、十六进制</p>
+</li>
+<li><p>任意进制转十进制</p>
+</li>
+<li><p>十进制转任意进制</p>
+<p>整数部分：除基取余法</p>
+<p>小数部分：乘基取整法</p>
+</li>
+</ol>
+<blockquote>
+<p>注意：不是每一个十进制小数都可以准确地用二进制表示，如0.3. <strong>但任意一个二进制小数可以用十进制小数表示</strong>.</p>
+</blockquote>
+<h3 id="真值与机器数"><a href="#真值与机器数" class="headerlink" title="真值与机器数"></a>真值与机器数</h3><p>带”+”或”-“符号的数称为真值.真值是机器数所代表的实际值.</p>
+<h3 id="定点数的编码表示"><a href="#定点数的编码表示" class="headerlink" title="定点数的编码表示"></a>定点数的编码表示</h3><p>通常用定点补码整数表示整数,用定点原码小数表示浮点数的尾数部分,用移码表示浮点数的阶码部分.</p>
+<h4 id="机器数的顶点表示"><a href="#机器数的顶点表示" class="headerlink" title="机器数的顶点表示"></a>机器数的顶点表示</h4><ol>
+<li><p>机器数的定点表示</p>
+<ol>
+<li>定点小数(纯小数)</li>
+<li>定点整数(纯整数)</li>
+</ol>
+</li>
+<li><p>原码, 补码, 反码, 移码<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/118432554">原码、反码、补码 - 知乎 (zhihu.com)</a></p>
+<ol>
+<li><p>原码</p>
+<ol>
+<li><p>若字长为n+1,原码小数的表示范围$-(1-2^{-n}) \leq x \leq (1-2^{-n})$（关于原点对称）</p>
+</li>
+<li><p>若字长为n+1,原码整数的表示范围为$-(2^n-1) \leq x \leq (2^n-1)$（关于原点对称）</p>
+<blockquote>
+<p>注意: 真值0的原码表示有正零和负零两种形式.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>补码</p>
+<ol>
+<li><p>若字长为n+1，补码小数的表示范围为$-1\leq x \leq 1-2^{-n}$(比原码多表示-1)</p>
+</li>
+<li><p>若字长为n+1，补码整数的表示范围为$-2^n\leq x\leq 2^n-1$( 比原码多表示-2^n^)</p>
+<blockquote>
+<p>注意：0的补码表示是唯一的，为0，0000000 &#x3D; 0. 0000000</p>
+</blockquote>
+</li>
+<li><p>变形补码</p>
+<p>模4补码双符号位00表示正，11表示负，01表示上溢，10表示下溢</p>
+</li>
+<li><p>补码与真值之间的转换</p>
+<p>~</p>
+</li>
+</ol>
+</li>
+<li><p>反码表示法</p>
+<p>~</p>
+</li>
+<li><p>移码表示法</p>
+<p>​	<strong>移码常用来表示浮点数的阶码。它只能表示整数。</strong></p>
+<p>​	移码就是在真值X上加上一个常数（偏置值），通常这个常数取2^n^，相当于X在数轴上向正方向偏移了若干单位，这就是移码一词的由来。移码定义为<br>$$<br>[x_{移}] &#x3D; 2^n + x (-2^n &lt;x &lt; 2^n,其中机器字长为n+1)<br>$$<br>​	<strong>移码的特点：</strong></p>
+<ol>
+<li>移码中0的表示唯一</li>
+<li>一个真值的移码和补码仅差一个符号位（移码等于补码符号位取反）</li>
+<li>移码全0，对应真值最小值-2^n^,移码全1，对应真值最大值2^n^</li>
+<li>移码保持了数据原有的大小顺序，移码大真值就大，移码小真值就小</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>原码、补码、反码、移码这4种编码表示的总结如下：</p>
+<ol>
+<li>原码、补码、反码的符号位相同，整数的机器码相同</li>
+<li>原码、反码的表述在数轴上对称，二者都存在+0和-0两个0</li>
+<li>移码、补码的表示在数轴上不对称，0的表示唯一，它们比原码、反码多表示一个数</li>
+<li>整数的补码、移码的符号位相反，数值位相同</li>
+<li>负数的反码、补码末位相差1.</li>
+<li>原码很容易判断大小，而负数的反码、补码很难直接判断大小，可采用如下规则快速判断：对于负数，数值部分越大，绝对值越小，真值越大（更靠近0）</li>
+</ol>
+</li>
+</ol>
+<h3 id="错题小结-2"><a href="#错题小结-2" class="headerlink" title="错题小结"></a>错题小结</h3><p>1. </p>
+<h2 id="运算方法和运算电路"><a href="#运算方法和运算电路" class="headerlink" title="运算方法和运算电路"></a>运算方法和运算电路</h2><h3 id="基本运算部件"><a href="#基本运算部件" class="headerlink" title="基本运算部件"></a>基本运算部件</h3><ol>
+<li><p>一位全加器</p>
+</li>
+<li><p>串行进位加法器</p>
+</li>
+<li><p>并行进位加法器</p>
+</li>
+<li><p>带标志加法器</p>
+</li>
+<li><p>算术逻辑单元（ALU）</p>
+<p>ALU的核心是带标志加法器，同时也能进行“与”，“或”，“非”等逻辑运算。</p>
+</li>
+</ol>
+<h3 id="定点数的移位运算"><a href="#定点数的移位运算" class="headerlink" title="定点数的移位运算"></a>定点数的移位运算</h3><ol>
+<li><p>算术移位</p>
+<p><strong>算术移位的对象是有符号数，因此在移位过程中符号位保持不变</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>码制</th>
+<th>添补代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正数</td>
+<td>原码、反码、补码</td>
+<td>0</td>
+</tr>
+<tr>
+<td>负数</td>
+<td>原码</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>反码</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>补码</td>
+<td>左移添0，右移添1</td>
+</tr>
+</tbody></table>
+<p>三种机器数算术移位后的符号位均不变。</p>
+<p>对于正数，左移时，高位丢1，结果出错。右移时，低位丢1，影响精度。</p>
+<p>对于负数原码，左移时，高位丢1，结果出错。右移时，低位丢1，影响精度。</p>
+<p>对于负数补码，左移时，高位丢0，结果出错。右移时，低位丢1，影响精度。</p>
+<p>对于负数反码，左移时，高位丢0，结果出错。右移时，低位丢0，影响精度。</p>
+</li>
+<li><p>逻辑移位</p>
+<p><strong>逻辑移位将操作数视为无符号数。</strong></p>
+<p>移位规则：</p>
+<p>逻辑左移，高位移丢，低位添0；</p>
+<p>逻辑右移，低位移丢，高位添0.</p>
+</li>
+<li><p>循环移位</p>
+<p>循环移位分为带进位标志位CF的循环移位（大循环）和不带进位标志位的循环移位（小循环）</p>
+<p>循环移位特别适合将数据的低字节数据与高字节数据互换。</p>
+</li>
+</ol>
+<h3 id="定点数的加减运算"><a href="#定点数的加减运算" class="headerlink" title="定点数的加减运算"></a>定点数的加减运算</h3><ol>
+<li><p>补码的加减法运算(机器字长为n+1)<br>$$<br>[A+B]<em>{补} &#x3D; [A]</em>{补} + [B]<em>{补} (mod 2^{n+1})\<br>[A-B]</em>{补} &#x3D; [A]<em>{补} + [-B]</em>{补} (mod 2^{n+1})<br>$$</p>
+</li>
+<li><p>补码加减运算电路</p>
+</li>
+<li><p>溢出判别方法</p>
+<p><strong>仅当两个符号相同的数相加或两个符号相异的数相减才有可能产生溢出。</strong>补码定点数加减运算溢出判断的方法有3种。</p>
+<ol>
+<li><p>采用一位符号位</p>
+<p>设A的符号为A，B的符号为B，运算结果的符号为S，则溢出逻辑表达式为<br>$$<br>V &#x3D; AB\overline{S} + \overline{AB}S<br>$$<br>若V &#x3D; 0，表示无溢出；若V &#x3D; 1，表示有溢出。</p>
+</li>
+<li><p>采用双符号位</p>
+<p>即模4运算，前面已经提到了</p>
+</li>
+<li><p>采用一位符号位根据数据位的进位情况判断溢出</p>
+<p>若符号位的进位与最高数位的进位相同，则说明没有溢出，否则表示发生溢出。</p>
+</li>
+</ol>
+</li>
+<li><p>原码的加减法运算（了解）</p>
+</li>
+</ol>
+<h3 id="定点数的乘除运算"><a href="#定点数的乘除运算" class="headerlink" title="定点数的乘除运算"></a>定点数的乘除运算</h3><ol>
+<li><p>定点数的乘法运算</p>
+<ol>
+<li><p>原码一位乘法（X*Y）</p>
+<p>符号位与数值位分开求，符号位进行异或操作，数值位进行相乘操作</p>
+<p>X与Y的每一位相乘（最低位开始），若Y<del>n</del>&#x3D; 1，则部分积（初始为0）加上X，若Y<del>n</del> &#x3D; 0，则部分积加上0；<strong>然后右移一位</strong>，继续对Y的下一位进行相同操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629113551504.png" alt="image-20230629113551504"></p>
+</li>
+<li><p>无符号数乘法运算电路</p>
+</li>
+<li><p>补码一位乘法（Booth算法）</p>
+<p>这是一种有符号数的乘法，采用相加和相减操作计算补码数据的乘积。</p>
+<p>运算规则：</p>
+<ol>
+<li><p>符号位参与运算，运算的数均以补码表示</p>
+</li>
+<li><p>被乘数一般取双符号为参与运算，部分积取双符号位，初值为0，乘数取单符号位</p>
+</li>
+<li><p><strong>乘数末位增设附加位y<del>n+1</del>，初值为0</strong></p>
+</li>
+<li><p><strong>根据（y<del>n</del>,y<del>n+1</del>）的取值来确定操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>y<del>n</del>(高位)</th>
+<th>y<del>n+1</del>（低位）</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>部分积右移一位</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>部分积加[X]<del>补</del>,右移一位</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>部分积加[-X]<del>补</del>,右移一位</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>部分积右移一位</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>移位按补码右移规则进行</p>
+</li>
+<li><p><strong>按照上述算法进行n+1步操作，但第n+1步不再移位（共进行n+1次累加和n次右移）</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629113551504.png"/>
+
+<p>所以[x*y]<del>补</del> &#x3D; 1. 0110001, 得x*y &#x3D;  -0. 10001111</p>
+</li>
+</ol>
+</li>
+<li><p>补码乘法运算电路</p>
+</li>
+</ol>
+</li>
+<li><p>定点数的除法运算</p>
+<ol>
+<li><p>符号扩展</p>
+</li>
+<li><p>原码除法运算（不恢复余数法）</p>
+<p>符号位异或运算，数值为运算先用被除数减去除数，当余数为正，商上1，余数和商左移一位；当余数为负，商上0，余数和商左移一位；当n+1步余数为负时，需加上|Y|得到第n+1步正确的余数（余数和被除数同号）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160024173.png" alt="image-20230629160024173"></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160024173.png"/>
+</li>
+<li><p>补码除法运算（加减交替法）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160233383.png" alt="image-20230629160233383"></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230629160233383.png"/></li>
+</ol>
+</li>
+</ol>
+<h3 id="C语言中的整数类型及类型转换"><a href="#C语言中的整数类型及类型转换" class="headerlink" title="C语言中的整数类型及类型转换"></a>C语言中的整数类型及类型转换</h3><ol>
+<li>有符号数和无符号数的转换</li>
+<li>不同字长整数之间的转换</li>
+</ol>
+<h3 id="数据的存储和排列"><a href="#数据的存储和排列" class="headerlink" title="数据的存储和排列"></a>数据的存储和排列</h3><ol>
+<li>数据的“大端方式”和”小端方式“存储</li>
+<li>数据按”边界对齐”方式存储</li>
+<li>精简指令系统计算机RISC通常采用边界对齐方式，因为对齐方式取指令时间相同，因此能适应指令流水。</li>
+</ol>
+<h3 id="错题小结-3"><a href="#错题小结-3" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li><p>在定点运算器中，无论是采用双符号位还是单符号位，必须有溢出判断电路，它一般用“异或”门来实现。</p>
+</li>
+<li><p>模4补码具有模2补码的全部优点且更易检查<strong>加减运算</strong>中的溢出问题，而不是乘除运算。</p>
+</li>
+<li><p>若$[X]_{补} &#x3D; X_0.X_1X_2…X_n$，其中$X_0$为符号位，$X_1$为最高数位。当补码左移时，判断是否溢出的方法有两个：</p>
+<ol>
+<li><p>双符号法</p>
+<p>变单符号位为双符号位，然后左移，若两符号不同则溢出，因此$X_0\neq X_1$时溢出</p>
+</li>
+<li><p>单符号法</p>
+<p>数值位最高位进位和符号位不同则溢出，同样可知$X_0\neq X_1$时溢出</p>
+</li>
+</ol>
+</li>
+<li><p>实现N位（不包括符号位）补码一位乘时，乘积为2N+1位（加上符号位）。</p>
+</li>
+<li><p>补码不恢复余数除法中，异号相除时，够减商0，不够减商1.</p>
+</li>
+<li><p>双符号位的最高符号位代表真正的符号，而低位符号位用于参与移位操作以判断是否发生溢出。</p>
+</li>
+<li><p>加法器输入的低位进位信息Sub和当前所进行的是加法还是减法有关：</p>
+<ol>
+<li>若当前进行的是加法，则两个输入端信息位为<strong>x的补码和y的补码</strong>，Sub &#x3D; 0 ，Cout &#x3D; X + Y</li>
+<li>若当前进行的是减法，则两个输入端信息为为<strong>x的补码和y的补码取反</strong>，Sub &#x3D; 1，$Cout &#x3D; X + \overline{Y} + Sub$</li>
+</ol>
+</li>
+<li><p>判断OF：符号位进位与数值位进位异或</p>
+</li>
+<li><p>判断CF：视为两个无符号数相加减，最高位进位异或（加0减1）</p>
+</li>
+<li></li>
+</ol>
+<h2 id="浮点数的表示和运算"><a href="#浮点数的表示和运算" class="headerlink" title="浮点数的表示和运算"></a>浮点数的表示和运算</h2><h3 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h3><ol>
+<li><p>浮点数的表示格式</p>
+<p>通常，浮点数表示为<br>$$<br>N &#x3D; (-1)^S \times M \times R^E<br>$$<br>式中，S取值0或1，用来决定浮点数的符号</p>
+<p>M是一个二进制定点小数，称为尾数，一般用定点原码小数表示</p>
+<p>E是一个二进制定点整数，称为阶码或指数，用移码表示</p>
+<p>R是基数（隐含），可以规定为2、4、16等</p>
+</li>
+<li><p>浮点数的表示范围</p>
+<p>运算结果大于最大正数称为正上溢，小于绝对值最大负数时称为负上溢，正上溢和负上溢统称为上溢。</p>
+<p><strong>数据一旦产生上溢，计算机必须中断运算操作，进行溢出处理。</strong></p>
+<p>当运算结果在0至最小正数之间时称为正下溢，在0至绝对值最小负数之间称为正下溢，正下溢和负下溢统称下溢。</p>
+<p><strong>数据下溢时，浮点数值趋于0，计算机仅将其当作机器数处理。</strong></p>
+</li>
+<li><p><strong>浮点数的规格化</strong></p>
+<p>所谓规格化操作，是指通过调整一个非规格化浮点数的尾数和阶码的大小，使非0的浮点数在尾数的最高数位上保证是一个有效值。</p>
+<ol>
+<li><p>左规</p>
+<p>当运算结果的尾数的最高数位不是有效位，即出现+&#x2F;- 0.00000的形式时，需要进行左规。左规时，尾数每左移一位、阶码减1（基数为2时）。左规可能需要很多次。</p>
+</li>
+<li><p>右规</p>
+<p>当运算结果的尾数的有效位进到小数点前面时，需要进行右规。将尾数右移一位、阶码加1（基数为2时）。需要右规时，只需进行一次。</p>
+</li>
+</ol>
+</li>
+<li><p>IEEE754标准</p>
+<ol>
+<li>偏置值为127，阶码表示范围理论上是-127~128，实际上是-126~127</li>
+<li>阶码全0表示无穷小，阶码全1表示无穷大</li>
+</ol>
+</li>
+<li><p>定点、浮点表示的区别</p>
+<ol>
+<li><p>数值的表示范围</p>
+<p>字长相同，浮点表示能表示的范围大得多。</p>
+</li>
+<li><p>精度</p>
+<p>字长相同，浮点表示精度降低。</p>
+</li>
+<li><p>数的运算</p>
+<p>浮点数包括阶码和尾数两部分，运算时不仅要做尾数的运算，还要做阶码的运算，而且运算结果要求规格化，所以浮点运算比定点运算复杂。</p>
+</li>
+<li><p>溢出问题</p>
+<p>在定点运算中，当运算结果超出数的表示范围时，发生溢出</p>
+<p>浮点运算中，运算结果超出尾数表示范围却不一定溢出，只有规格化后阶码超出所能表示的范围是，才发生溢出。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="浮点数的加减运算"><a href="#浮点数的加减运算" class="headerlink" title="浮点数的加减运算"></a>浮点数的加减运算</h3><ol>
+<li><p>对阶</p>
+<p>对阶的目的是使两个操作数的小数点位置对齐，即使得两个数的阶码相等。</p>
+<p>方法：小阶对大阶，将阶码小的尾数右移，阶码加一直到两个数的阶码相等；尾数右移舍弃掉有效位会产生误差，掉精度。</p>
+</li>
+<li><p>尾数求和</p>
+<p>尾数相加&#x2F;减后，<strong>进一步进行规格化处理。</strong></p>
+</li>
+<li><p>规格化</p>
+<p>IEEE754规格化尾数的形式为$\pm1.\times … \times$。尾数相加减后会得到各种可能结果，例如<br>$$<br>1 .\times … \times + 1.\times … \times &#x3D; \pm 1 \times.\times … \times\<br>1 .\times … \times - 1.\times … \times &#x3D; \pm 0 .0…01\times …\times<br>$$</p>
+<ol>
+<li><p>右规：g当结果为$\pm 1 \times.\times … \times$时，需要进行右规。尾数右移一位，阶码加1.尾数右移时，最高位1被移到小数点前一位作为隐藏位，最后一位移出时，要考虑<strong>舍入。</strong></p>
+</li>
+<li><p>左规：</p>
+<p>当结果位$\pm 0 .0…01\times …\times$时，需要进行左规，尾数每左移一位，阶码减1。可能需要左规多次，直到将第一位1移到小数点左边。</p>
+</li>
+</ol>
+</li>
+<li><p>舍入</p>
+<p>0舍1入法</p>
+<p>恒置1法</p>
+<p>截断法</p>
+</li>
+<li><p>溢出判断</p>
+<p>若一个正指数超过了最大允许值（127或1023），则发生指数上溢，<strong>产生异常</strong>。</p>
+<p>若一个负指数超过了最小允许值（-126或-1022），则发生指数下溢，<strong>通常把结果按机器零处理</strong>。</p>
+<ol>
+<li>右规和尾数舍入</li>
+<li>左规</li>
+</ol>
+<blockquote>
+<p>注意：某些题目可能会指定尾数或阶码采用补码表示。通常采用双符号位，当尾数求和结果溢出（如尾数为$10.\times$或$01.\times$）时，需右规一次；当结果出现$00.0\times$或$11.1\times$时，需要左规，直到尾数变为$00.1\times$或$11.0\times$。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="错题小结-4"><a href="#错题小结-4" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>出现类型转换，以char -&gt; int -&gt; long -&gt; double 和 float -&gt; double最常见</li>
+<li>在浮点数总位数不变的情况下，阶码位数越多，尾数位数越少，表示数的范围越大，精度越低。</li>
+<li>基数越大，范围越大，但精度越低。</li>
+<li>对阶操作，是将较小的阶码调整到与较大的阶码一致，因此不存在阶码减少、尾数左移的情况。</li>
+<li>与非规格化浮点数相比，规格化浮点数主要是为了增加数据的表示精度</li>
+<li>8421码是十进制数的编码，不是二进制数。</li>
+<li>舍入是浮点数的概念，定点数没有舍入的概念。</li>
+<li><strong>浮点数舍入的情况有两种：对阶和右规。</strong></li>
+<li></li>
+</ol>
+<h1 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h1><h2 id="存储器概述"><a href="#存储器概述" class="headerlink" title="存储器概述"></a>存储器概述</h2><h3 id="存储器分类"><a href="#存储器分类" class="headerlink" title="存储器分类"></a>存储器分类</h3><ol>
+<li><p>按在计算机中的作用（层次）分类</p>
+<ol>
+<li>主存储器（内存）</li>
+<li>辅助存储器（外存）</li>
+<li>高速缓冲存储器（Cache），现代计算机通常将Cache制作在CPU中。</li>
+</ol>
+</li>
+<li><p>按存储介质分类</p>
+<p>按存储介质，存储器可分为磁表面存储器（磁盘、磁带）、磁芯存储器、半导体存储器（MOS型存储器、双极型存储器）和光存储器（光盘）。</p>
+</li>
+<li><p>按存取方式分类</p>
+<ol>
+<li><p>随机存储器（RAM）（random-access）</p>
+</li>
+<li><p>只读存储器（ROM）（read-only）</p>
+</li>
+<li><p>串行访问存储器。</p>
+<p>对存储单元进行读、写操作时，需按其物理位置的先后顺序寻址，包括顺序存取存储器（如磁带）与直接存取存储器（如磁盘，光盘）。</p>
+<p>直接存取不像RAM那样随机访问，也不像顺序存取存储器那样完全按顺序存取，而是介于两者之间。存取信息时通常先寻找整个存储器中的某个小区域，再在小区域内顺序查找。</p>
+</li>
+</ol>
+</li>
+<li><p>按信息的可保存性分类</p>
+</li>
+</ol>
+<h3 id="存储器的性能指标"><a href="#存储器的性能指标" class="headerlink" title="存储器的性能指标"></a>存储器的性能指标</h3><p>​	<strong>存储容量、单位成本和存储速度</strong>，这三个指标相互制约，设计存储器系统所追求的目标就是大容量，低成本和高速度。</p>
+<ol>
+<li><p>存储容量 &#x3D; 存储字数 * 字长</p>
+</li>
+<li><p>单位成本： 每位价格 &#x3D; 总成本&#x2F;总容量</p>
+</li>
+<li><p>存储速度：数据传输率 &#x3D; 数据的宽度&#x2F;存取周期（或称存储周期）</p>
+<ol>
+<li>存取时间（$T_a$）：存取时间是指从启动一次存储器操作到完成该操作所经历的时间，分为读出时间和写入时间。</li>
+<li>存取周期（$T_m$）：存取周期又称读写周期或访问周期。它是指存储器进行一次完整的读写操作所需的全部时间。即连续两次独立访问存储器操作（读或写操作）之间所需的最小时间间隔。</li>
+<li>主存带宽（$B_m$）：主存带宽又称数据传输率，表示每秒从主存进出信息的最大数量，单位为字&#x2F;秒、字节&#x2F;秒或位&#x2F;秒。</li>
+</ol>
+<p>存取时间不等于存取周期，通常存取周期大于存取时间。这是因为对任何一种存储器，在读写操作后，总要有一段恢复内部状态的复原时间。对于破坏性读出的存储器，存取周期往往比存取时间大得多，甚至可达$T_m &#x3D; 2T_a$，因为存储器中的信息读出后需要马上再生。</p>
+<p><strong>存取周期和存取时间的关系：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702010854558.png" alt="image-20230702010854558"></p>
+</li>
+</ol>
+<h3 id="多级层次的存储系统"><a href="#多级层次的存储系统" class="headerlink" title="多级层次的存储系统"></a>多级层次的存储系统</h3><p>为了解决存储系统大容量、高速度、低成本3个相互制约的矛盾，在计算机系统中，通常采用多级存储器结构。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702011523876.png" alt="image-20230702011523876"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230702011533118.png" alt="image-20230702011533118"></p>
+<h3 id="错题小结-5"><a href="#错题小结-5" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>相联存储器的基本原理是把存储单元所存内容的某一部分作为检索项（即关键字项）去检索该存储器，并将存储器中与该检索项符合的存储单元内容进行读出或写入，所以它是按内容或地址进行寻址的，价格较为昂贵。一般用来制作TLB、相联Cache等。</li>
+<li>CD-ROM：只读型光盘存储器，采取顺序存取方式</li>
+<li>Cache&#x2F;主存系统的效率 &#x3D; Cache时间&#x2F;平均时间（这里可假设Cache时间为1）</li>
+</ol>
+<h2 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h2><p>​	主存储器由DRAM实现，靠处理器的那一层（Cache）则由SRAM实现，它们都属于易失性存储器，只要电源被切断，原来保存的信息便会丢失。ROM属于非易失性存储器。</p>
+<h3 id="SRAM芯片和DRAM芯片"><a href="#SRAM芯片和DRAM芯片" class="headerlink" title="SRAM芯片和DRAM芯片"></a>SRAM芯片和DRAM芯片</h3><ol>
+<li><p>SRAM的工作原理</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171644314.png" alt="image-20230704171644314"></p>
+</li>
+<li><p>DRAM的工作原理</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171644314.png"/>
+</li>
+<li><p>DRAM芯片的读写周期<br><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171709783.png" alt="image-20230704171709783"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171718684.png" alt="image-20230704171718684"></p>
+</li>
+<li><p>SRAM和DRAM的比较<br><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171732525.png" alt="image-20230704171732525"></p>
+</li>
+<li><p>存储器芯片的内部结构</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171732525.png"/>
+
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704171759105.png" alt="image-20230704171759105"></p>
+</li>
+</ol>
+<h3 id="只读存储器"><a href="#只读存储器" class="headerlink" title="只读存储器"></a>只读存储器</h3><ol>
+<li><p>只读存储器（ROM）的特点</p>
+<ol>
+<li>结构简单，所以位密度比可读写存储器的高。</li>
+<li>具有非易失性，所以可靠性高。</li>
+</ol>
+</li>
+<li><p>ROM的类型</p>
+<ol>
+<li>掩模式只读存储器（MROM）</li>
+<li>一次可编程只读存储器（PROM）</li>
+<li>可擦除可编程只读存储器（EPROM）</li>
+<li>Flash存储器</li>
+<li>固态硬盘（Solid State Drives，SSD）</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704172316479.png" alt="image-20230704172316479"></p>
+</li>
+</ol>
+<h3 id="主存储器的基本组成"><a href="#主存储器的基本组成" class="headerlink" title="主存储器的基本组成"></a>主存储器的基本组成</h3><p>​	<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704173140968.png"/></p>
+<h3 id="多模块存储器"><a href="#多模块存储器" class="headerlink" title="多模块存储器"></a>多模块存储器</h3><p>​	多模块存储器是一种空间并行技术，利用多个结构完全相同的存储模块的并行工作来提高存储器的吞吐率。常用的有单体多字存储器和多体低位交叉存储器。</p>
+<blockquote>
+<p>CPU的速度比存储器快，若同时从存储器中取出多条指令，就可充分利用CPU资源，提高运行速度。多体交叉存储器就是基于这种思想给出的。</p>
+</blockquote>
+<ol>
+<li><p>单体多字存储器</p>
+<p>​	单体多字系统特点是存储器中只有一个存储体，每个存储单元存储m个字，总线宽度也为m个字，一次并行读出m个字，地址必须顺序排列并处于同&#x3D;同一存储单元。</p>
+<p>​	单体多字系统在一个存取周期内，从同一地址取出m条指令，然后将指令逐条送至CPU执行，即每隔1&#x2F;m个存取周期，CPU向主存取一条指令。这<strong>显然提高了单体存储器的工作速度</strong>。</p>
+<p>​	<strong>缺点</strong>：指令和数据在主存内必须是连续存放的，一旦遇到转移指令或操作数不能连续存放，这种方法的效果就不明显。</p>
+</li>
+<li><p>多体并行存储器</p>
+<p>​	多体并行存储器由多体模块组成。每个模块都有相同的容量和存取速度，各模块都有独立的读写控制电路、地址寄存器和数据寄存器。他们既能并行工作，又能交叉工作。</p>
+<p>​	多体并行存储器分为高位交叉编址和低位交叉编址两种。</p>
+<ol>
+<li><p>高位交叉编址（顺序方式）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704174413435.png" alt="image-20230704174413435"></p>
+</li>
+<li><p>低位交叉编址（交叉方式）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704202054405.png" alt="image-20230704202054405"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230704202103534.png" alt="image-20230704202103534"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="错题小结-6"><a href="#错题小结-6" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li><p>芯片引脚数目为地址线+数据线+片选线+读写线</p>
+<blockquote>
+<p>若采用地址复用技术，地址线数量可减半，同时需要加入行通选线以及列通选线，并且片选线可用行通选线代替，</p>
+<p>即引脚数目为地址线（减半）+数据线+行通选+列通选+读写线+片选线（可选）</p>
+</blockquote>
+</li>
+<li><p>低位多体交叉存储器能很好的满足程序的局部性原理。</p>
+</li>
+<li><p>高位四体交叉存储器也可能在一个存储周期内连续访问4个模块（每个模块地址间隔一个存储芯片容量）</p>
+</li>
+<li><p>双端口存储器当两个端口的地址码相同且都为读操作时才会发送冲突。</p>
+</li>
+<li><p>关于ROM，若可读可写，写的速度一定比读的慢，因为写操作需要先将读的数据擦除再进行写入。</p>
+</li>
+<li><p><strong>DRAM默认采用地址复用技术，在计算芯片引脚数时特别注意</strong></p>
+</li>
+<li><p><strong>在一个存储周期内访问相同的模块，即可能发生冲突。</strong></p>
+</li>
+<li><p>低位四体交叉存储器，一个存储周期可对每个芯片各读取1字节（字节编址），若要读取一个double类型数据且该数据起始地址位于第2模块，则需要3个存储周期数才能读出。</p>
+</li>
+<li><p>动态RAM采用分散刷新方式时，不存在死时间</p>
+</li>
+<li><p>随机存取和随机存取存储器（RAM）不同，支持随机存取的不一定是RAM，ROM也支持随机存取</p>
+</li>
+<li></li>
+</ol>
+<h2 id="主存储器与CPU的连接"><a href="#主存储器与CPU的连接" class="headerlink" title="主存储器与CPU的连接"></a>主存储器与CPU的连接</h2><h3 id="连接原理"><a href="#连接原理" class="headerlink" title="连接原理"></a>连接原理</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705161529280.png" alt="image-20230705161529280"></p>
+<h3 id="主存容量的扩展"><a href="#主存容量的扩展" class="headerlink" title="主存容量的扩展"></a>主存容量的扩展</h3><ol>
+<li><p>位扩展法<br><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163158156.png" alt="image-20230705163158156"></p>
+</li>
+<li><p>字扩展法<br><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163207631.png" alt="image-20230705163207631"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163234468.png" alt="image-20230705163234468"></p>
+</li>
+<li><p>字位同时扩展法<br><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163245880.png" alt="image-20230705163245880"></p>
+</li>
+</ol>
+<h3 id="存储芯片的地址分配与片选"><a href="#存储芯片的地址分配与片选" class="headerlink" title="存储芯片的地址分配与片选"></a>存储芯片的地址分配与片选</h3><ol>
+<li>线选法</li>
+<li>译码片选法</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230705163955311.png" alt="image-20230705163955311"></p>
+<h3 id="存储器与CPU的连接"><a href="#存储器与CPU的连接" class="headerlink" title="存储器与CPU的连接"></a>存储器与CPU的连接</h3><ol>
+<li>合理选择存储芯片</li>
+<li>地址线的连接</li>
+<li>数据线的连接</li>
+<li>读&#x2F;写命令线的连接</li>
+<li>片选线的连接</li>
+</ol>
+<h3 id="错题小结-7"><a href="#错题小结-7" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>字扩展时，译码位置应当是地址位的前几位，如总共有16位，后12位为芯片地址位，有4个芯片，那么高3、4位即为译码位而不是高1、2位。<strong>切记勿将默认最高位当成译码位。</strong></li>
+<li>考虑到存储器扩展的需要，MAR应保证到能访问到整个主存地址空间，反过来，MAR决定了主存地址空间的大小。</li>
+</ol>
+<h2 id="外部存储器"><a href="#外部存储器" class="headerlink" title="外部存储器"></a>外部存储器</h2><h3 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h3><p>优点：</p>
+<ol>
+<li>存储容量大，位价格低。</li>
+<li>记录介质可重复使用。</li>
+<li>记录信息可长期保存而不丢失，甚至可脱机存档。</li>
+<li>非破坏性读出，读出时不需要再生。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li><p>存取速度慢</p>
+</li>
+<li><p>机械结构复杂</p>
+</li>
+<li><p>对工作环境要求较高</p>
+</li>
+<li><p>磁盘存储器</p>
+<ol>
+<li><p>磁盘设备的组成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014028898.png" alt="image-20230706014028898"></p>
+</li>
+<li><p>磁记录原理</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014035624.png" alt="image-20230706014035624"></p>
+</li>
+<li><p>磁盘的性能指标</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014042103.png" alt="image-20230706014042103"></p>
+</li>
+<li><p>磁盘地址</p>
+<p>主机向磁盘控制器发送寻址信息，磁盘的地址一般如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014226245.png" alt="image-20230706014226245"></p>
+</li>
+<li><p>磁盘的工作过程（上图）</p>
+</li>
+</ol>
+</li>
+<li><p>磁盘阵列</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014714696.png" alt="image-20230706014714696"></p>
+</li>
+</ol>
+<h3 id="固态硬盘"><a href="#固态硬盘" class="headerlink" title="固态硬盘"></a>固态硬盘</h3><p>​	<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014742915.png" alt="image-20230706014742915"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706014759930.png" alt="image-20230706014759930"></p>
+<h3 id="错题小结-8"><a href="#错题小结-8" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>访问一个扇区的存取时间 &#x3D; 寻道时间 + 旋转延迟时间 + 数据传输时间</li>
+<li>固态硬盘（SSD）的随机读写性能明显高于磁盘，因其没有机械移动的部件，但SSD易磨损。</li>
+</ol>
+<h2 id="高速缓冲存储器"><a href="#高速缓冲存储器" class="headerlink" title="高速缓冲存储器"></a>高速缓冲存储器</h2><h3 id="程序访问的局部性原理"><a href="#程序访问的局部性原理" class="headerlink" title="程序访问的局部性原理"></a>程序访问的局部性原理</h3><p>​	……</p>
+<h3 id="Cache的基本工作原理"><a href="#Cache的基本工作原理" class="headerlink" title="Cache的基本工作原理"></a>Cache的基本工作原理</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170340062.png" alt="image-20230706170340062"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170348417.png" alt="image-20230706170348417"></p>
+<h3 id="Cache和主存的映射方式"><a href="#Cache和主存的映射方式" class="headerlink" title="Cache和主存的映射方式"></a>Cache和主存的映射方式</h3><ol>
+<li><p>直接映射</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170437986.png" alt="image-20230706170437986"></p>
+</li>
+<li><p>全相联映射</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170824089.png" alt="image-20230706170824089"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706170832274.png" alt="image-20230706170832274"></p>
+</li>
+<li><p>组相联映射</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706171345649.png" alt="image-20230706171345649"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706195742630.png" alt="image-20230706195742630"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706195755789.png" alt="image-20230706195755789"></p>
+</li>
+</ol>
+<h3 id="Cache中主存块的替换算法"><a href="#Cache中主存块的替换算法" class="headerlink" title="Cache中主存块的替换算法"></a>Cache中主存块的替换算法</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706200749450.png" alt="image-20230706200749450"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706200805467.png" alt="image-20230706200805467"></p>
+<h3 id="Cache写策略"><a href="#Cache写策略" class="headerlink" title="Cache写策略"></a>Cache写策略</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706201637174.png" alt="image-20230706201637174"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230706201646070.png" alt="image-20230706201646070"></p>
+<h3 id="错题小结-9"><a href="#错题小结-9" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>地址映射表即为标记阵列，每个Cache行对应一个标记项（包括<strong>有效位、标记位Tag、一致性维护位、替换算法控制位</strong>）。</li>
+<li>Cache行的内容为标记项+数据项。</li>
+<li>只有在虚拟存储器中，CPU发出的才是虚拟地址，其他情况均为主存地址。</li>
+<li>关于Cache一次缺失损失多少个时钟周期的问题需要加深理解。P120：T14、T15</li>
+<li>在进行组相联映射时，需要将主存地址的高位（Tag标记）与分组中n个Cache行的Tag标记做<strong>并行比较</strong>，因此组内有多少行就需要有多少个比较器，而比较器的位数取决于Tag的位数。</li>
+<li>注意在计算Cache行号的时候是用<strong>主存的块号</strong> mod Cache的行数，而主存的块号 &#x3D; 主存地址 &#x2F; 块的大小(向下取整)</li>
+</ol>
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p>​	主存和辅存共同构成了虚拟存储器，二者在硬件和系统软件的共同管理下工作。对于应用程序员而言，虚拟存储器是透明的。虚拟存储器具有主存的速度和辅存的容量。</p>
+<h3 id="虚拟存储器的基本概念"><a href="#虚拟存储器的基本概念" class="headerlink" title="虚拟存储器的基本概念"></a>虚拟存储器的基本概念</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708173111455.png" alt="image-20230708173111455"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708173119607.png" alt="image-20230708173119607"></p>
+<h3 id="页式虚拟存储器"><a href="#页式虚拟存储器" class="headerlink" title="页式虚拟存储器"></a>页式虚拟存储器</h3><ol>
+<li><p>页表</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708220928414.png"/>
+</li>
+<li><p>快表（TLB）</p>
+<p>类似Cache的一个存储器，用于存放经常访问的页项。常采用全相联或组相联方式。每个TLB项都由一个TLB标记字段+页表表项内容组成。</p>
+<p>全相联方式下：标记字段即为虚拟页号</p>
+<p>组相联方式下：标记字段为虚拟页号的高位，而虚拟页号的低位则为TLB组索引。</p>
+</li>
+<li><p>具有TLB和Cache的多级存储系统</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708223112625.png" alt="image-20230708223112625"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708223103016.png" alt="image-20230708223103016"></p>
+</li>
+</ol>
+<h3 id="段式虚拟存储器"><a href="#段式虚拟存储器" class="headerlink" title="段式虚拟存储器"></a>段式虚拟存储器</h3><p>优点：段的分界与程序的自然分界相对应，因而具有逻辑独立性，使得它易于编译，管理和保护，也便于多道程序的共享；</p>
+<p>缺点：因为段长度可变，分配空间不便，容易在段间留下碎片，不好利用，造成浪费。</p>
+<h3 id="段页式虚拟存储器"><a href="#段页式虚拟存储器" class="headerlink" title="段页式虚拟存储器"></a>段页式虚拟存储器</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708224256093.png" alt="image-20230708224256093"></p>
+<h3 id="虚拟存储器与Cache的比较"><a href="#虚拟存储器与Cache的比较" class="headerlink" title="虚拟存储器与Cache的比较"></a>虚拟存储器与Cache的比较</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230708224326785.png" alt="image-20230708224326785"></p>
+<h3 id="错题小结-10"><a href="#错题小结-10" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>段式虚拟存储器在与主存交换信息时的单位为段。</li>
+<li>页式、段页式均仅采用页。</li>
+<li>虚拟存储管理系统的基础是程序访问的局部性原理，此理论的基本含义是在程序的执行过程中，程序对主存的访问是不均匀的。</li>
+<li>重点关注虚拟存储器与Cache的比较</li>
+<li>在虚拟存储器中，当程序正在执行时，由操作系统完成地址映射。</li>
+<li>页式虚拟存储器中，页面若很小，虚拟存储器中包含的页面数就会过多，使得页表的体积过大，导致页表本身占据的存储空间过大，使操作速度变慢。当页面很大时，虚拟存储器中的页面会变少，由于主存的容量比虚拟存储器的容量小，主存中的页面数会更少，每次装入页面的时间会变长，每当需要装入新的页面时，速度会变慢。</li>
+<li>快表不存储于主存中，慢表存储于主存中。</li>
+<li>Cache由SRAM组成；TLB通常由相联存储器组成，也可由SRAM组成。</li>
+</ol>
+<h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="指令系统-1"><a href="#指令系统-1" class="headerlink" title="指令系统"></a>指令系统</h2><h3 id="指令的基本格式"><a href="#指令的基本格式" class="headerlink" title="指令的基本格式"></a>指令的基本格式</h3><p>操作码+地址码</p>
+<ol>
+<li>零地址指令</li>
+<li>一地址指令</li>
+<li>二地址指令</li>
+<li>三地址指令</li>
+<li>四地址指令</li>
+</ol>
+<h3 id="定长操作码指令格式"><a href="#定长操作码指令格式" class="headerlink" title="定长操作码指令格式"></a>定长操作码指令格式</h3><p>一般n位操作码字段的指令系统最大能够表示$2^n$条指令。</p>
+<h3 id="扩展操作码指令格式"><a href="#扩展操作码指令格式" class="headerlink" title="扩展操作码指令格式"></a>扩展操作码指令格式</h3><p>~</p>
+<h3 id="指令的操作类型"><a href="#指令的操作类型" class="headerlink" title="指令的操作类型"></a>指令的操作类型</h3><ol>
+<li>数据传送</li>
+<li>算术和逻辑运算</li>
+<li>移位操作</li>
+<li>转移操作</li>
+<li>输入输出操作</li>
+</ol>
+<h3 id="错题小结-11"><a href="#错题小结-11" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>指令系统是计算机硬件的语言系统，这显然和机器语言有关。</li>
+<li>中断指令是由硬件实现的，并不是指令系统中存在的指令，更不可能属于程序控制类指令。</li>
+<li>单操作数指令只有一个地址码，在完成两个操作数的算术运算时，一个操作数由地址码给出，另一个操作数通常存放在累加寄存器（ACC）中，属于<strong>隐含寻址。</strong></li>
+</ol>
+<h2 id="指令的寻址方式"><a href="#指令的寻址方式" class="headerlink" title="指令的寻址方式"></a>指令的寻址方式</h2><h3 id="指令寻址和数据寻址"><a href="#指令寻址和数据寻址" class="headerlink" title="指令寻址和数据寻址"></a>指令寻址和数据寻址</h3><ol>
+<li><p>指令寻址</p>
+<ol>
+<li><p>顺序寻址</p>
+<p>通过程序计数器PC+1（一个指令字长）自动形成下一条指令的地址</p>
+</li>
+<li><p>跳跃寻址</p>
+<p>通过转移类指令实现，跳跃的结果是当前指令修改PC值，所以下一条指令仍然通过PC给出。</p>
+</li>
+</ol>
+</li>
+<li><p>数据寻址</p>
+<p>数据寻址的方式较多，通常在指令字中设一个<strong>寻址特征字段</strong>来区别各种寻址方式。</p>
+</li>
+</ol>
+<h3 id="常见的数据寻址方式"><a href="#常见的数据寻址方式" class="headerlink" title="常见的数据寻址方式"></a>常见的数据寻址方式</h3><ol>
+<li><p>隐含寻址</p>
+<p>有利于缩短指令字长；</p>
+<p>需增加存储操作数或隐含地址的硬件。</p>
+</li>
+<li><p>立即（数）寻址</p>
+<p>执行阶段不访问主存，指令执行时间最短；</p>
+<p>A的位数限制了立即数的范围。</p>
+</li>
+<li><p>直接寻址</p>
+<p>简单，指令在执行阶段仅访问一次主存，不需要专门计算操作数的地址；</p>
+<p>A的位数决定了该指令操作数的寻址范围，操作数的地址不易修改。</p>
+</li>
+<li><p>间接寻址</p>
+<p>可扩大寻址范围（有效地址EA的位数大于形式地址A的位数），便于编制程序（可方便地完成子程序返回）；</p>
+<p>指令在执行阶段要多次访存，由于访存速度过慢，这种寻址方式并不常用。一般问到扩大寻址范围时，通常指的是<strong>寄存器间接寻址</strong>。</p>
+</li>
+<li><p>寄存器寻址</p>
+<p>指令在执行阶段不访问主存，只访问寄存器，因寄存器数量较少，对应地址码长度较小，使得指令字短且因不用访存，所以执行速度快，支持向量&#x2F;矩阵运算；</p>
+<p>寄存器价格昂贵，计算机中的寄存器个数有限。</p>
+</li>
+<li><p>寄存器间接寻址</p>
+<p>比一般间接寻址速度更快，但指令的执行阶段需要访问主存（因为操作数在主存中）</p>
+</li>
+<li><p>相对寻址</p>
+<p>EA &#x3D; （PC） +  A，注意此处A用补码表示</p>
+<p>操作数的地址不是固定的，它随PC的值变化而变化，且与指令地址之间总是相差一个固定值，因此便于程序浮动。相对寻址广泛用于转移指令。</p>
+</li>
+<li><p>基址寻址</p>
+<p>EA &#x3D; （BR）+	A，BR为基址寄存器，可采用专用寄存器，又可采用通用寄存器</p>
+<p>扩大寻址范围，用户不必考虑自己的程序存于主存的哪个空间区域，因此有利于多道程序设计，并可用于编址浮动程序，</p>
+<p>但偏移量（形式地址A）的位数较短。</p>
+</li>
+<li><p>变址寻址</p>
+<p>EA &#x3D; （IX） +	A，IX为变址寄存器，可采用专用寄存器，又可采用通用寄存器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710113311846.png" alt="image-20230710113311846"></p>
+</li>
+<li><p>堆栈寻址</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710113228226.png"/></li>
+</ol>
+<h3 id="错题小结-12"><a href="#错题小结-12" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>指令系统中采用不同寻址方式的目的是缩短指令字长、扩大寻址空间、提高编程的灵活性</li>
+<li>使用转移指令实现程序控制。</li>
+<li>简化地址结构的基本方法是尽量采用隐地址。</li>
+<li>在多道程序设计中，最重要的寻址方式是相对寻址。</li>
+</ol>
+<h2 id="程序的机器级代码表示"><a href="#程序的机器级代码表示" class="headerlink" title="程序的机器级代码表示"></a>程序的机器级代码表示</h2><h1 id="中央处理器"><a href="#中央处理器" class="headerlink" title="中央处理器"></a>中央处理器</h1><h2 id="CPU的功能和基本结构"><a href="#CPU的功能和基本结构" class="headerlink" title="CPU的功能和基本结构"></a>CPU的功能和基本结构</h2><h3 id="CPU的功能"><a href="#CPU的功能" class="headerlink" title="CPU的功能"></a>CPU的功能</h3><p>CPU由运算器和控制器组成。其中，控制器的功能是负责协调并控制计算机各部件执行程序的指令序列，包括取指令、分析指令和执行指令；运算器的功能是对数据进行加工。CPU的具体功能包括：</p>
+<ol>
+<li>指令控制</li>
+<li>操作控制</li>
+<li>时间控制</li>
+<li>数据加工</li>
+<li>中断处理</li>
+</ol>
+<h3 id="CPU的基本结构"><a href="#CPU的基本结构" class="headerlink" title="CPU的基本结构"></a>CPU的基本结构</h3><ol>
+<li><p>运算器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710202525137.png" alt="image-20230710202525137"></p>
+</li>
+<li><p>控制器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230710202551024.png" alt="image-20230710202551024"></p>
+</li>
+</ol>
+<h2 id="指令执行过程"><a href="#指令执行过程" class="headerlink" title="指令执行过程"></a>指令执行过程</h2><h3 id="指令周期"><a href="#指令周期" class="headerlink" title="指令周期"></a>指令周期</h3><p>CPU从主存中取出并执行一条指令的时间称为指令周期，不同周期的指令周期可能不同。</p>
+<p>指令周期常用若干机器周期表示。</p>
+<p>一个机器周期又包括若干时钟周期（也称节拍或T周期，是CPU操作的最基本单位）。</p>
+<p>每个指令周期内的机器周期数可以不等，每个机器周期内的节拍数也可以不等。</p>
+<p>一个完整的指令周期包括取指周期、间址周期、执行周期和中断周期。</p>
+<p>上述四个周期都有访存操作，只是访存目的不同。取指周期是为了取指令，间址周期是为了取有效地址，执行周期是为了取操作数，中断周期是为了保存程序断点。</p>
+<p>CPU内4个标志触发器FE、IND、EX和INT分别代表四个周期，并以状态“1”表示有效。</p>
+<blockquote>
+<p>注意：中断周期的进栈操作是SP-1，与传统意义上的进栈操作相反，这是因为计算机中的堆栈都是向低地址增加。</p>
+</blockquote>
+<h3 id="指令周期的数据流"><a href="#指令周期的数据流" class="headerlink" title="指令周期的数据流"></a>指令周期的数据流</h3><ol>
+<li>取址周期</li>
+<li>间址周期</li>
+<li>执行周期</li>
+<li>中断周期</li>
+</ol>
+<h3 id="指令执行方案"><a href="#指令执行方案" class="headerlink" title="指令执行方案"></a>指令执行方案</h3><ol>
+<li>单指令周期</li>
+<li>多指令周期</li>
+<li>流水线方案</li>
+</ol>
+<h3 id="错题小结-13"><a href="#错题小结-13" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>采用DMA方式传递数据时，每传送一个数据就要占用一个存取周期。</li>
+<li>指令总是根据程序计数器从主存中读出。</li>
+<li>通常把通过一次总线事务访问一次主存或I&#x2F;O的时间定为一个机器周期。</li>
+<li>由于CPU的内部操作的速度较快，而CPU访问一次存储器的时间较长，因此机器周期通常由存取周期来决定。</li>
+<li>控制器可区分存储单元中存放的是指令还是数据。</li>
+<li>指令字长等于存储字长，取址周期等于机器周期。</li>
+<li>每个指令周期一定大于或等于一个CPU时钟周期。</li>
+</ol>
+<h2 id="数据通路的功能和基本结构"><a href="#数据通路的功能和基本结构" class="headerlink" title="数据通路的功能和基本结构"></a>数据通路的功能和基本结构</h2><h3 id="数据通路的功能"><a href="#数据通路的功能" class="headerlink" title="数据通路的功能"></a>数据通路的功能</h3><p>数据在功能部件之间传送的路径称为数据通路，由控制部件控制，控制部件根据每条指令功能的不同生成对数据通路的控制信号。数据通路的功能是实现CPU内部的运算器与寄存器及寄存器之间的数据交换。</p>
+<h3 id="数据通路的基本结构"><a href="#数据通路的基本结构" class="headerlink" title="数据通路的基本结构"></a>数据通路的基本结构</h3><ol>
+<li>CPU内部单总线方式</li>
+<li>CPU内部多总线方式</li>
+<li>专用数据通路方式</li>
+</ol>
+<blockquote>
+<p>注意：内部总线是指同一部件内的总线，系统总线是指连接同一台计算机系统各部件的总线。</p>
+</blockquote>
+<ol>
+<li>寄存器之间的数据传送</li>
+<li>主存与CPU之间的数据传送</li>
+<li>执行算术或逻辑运算</li>
+</ol>
+<h3 id="错题小结-14"><a href="#错题小结-14" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>采用CPU内部总线方式的数据通路的特点：结构简单、实现容易、性能较低，存在较多的冲突现象</li>
+<li>不采用CPU内部总线方式的数据通路的特点：结构复杂、硬件量大、不易实现、性能高、基本不存在数据冲突现象</li>
+<li>控制信号是CU根据指令操作码发出的信号，对于单周期指令来说，每条指令的执行只有一个时钟周期，而在一个时钟周期内控制信号并不会变化；若是多周期处理器，则指令的执行需要多个时钟周期，在每个时钟周期控制器会发出不同信号。</li>
+</ol>
+<h2 id="控制器的功能和工作原理"><a href="#控制器的功能和工作原理" class="headerlink" title="控制器的功能和工作原理"></a>控制器的功能和工作原理</h2><h3 id="控制器的结构和功能"><a href="#控制器的结构和功能" class="headerlink" title="控制器的结构和功能"></a>控制器的结构和功能</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230711154806040.png" alt="image-20230711154806040"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230711154816188.png" alt="image-20230711154816188"></p>
+<h3 id="硬布线控制器"><a href="#硬布线控制器" class="headerlink" title="硬布线控制器"></a>硬布线控制器</h3><ol>
+<li>硬布线控制单元图</li>
+<li>硬布线控制器的时序系统及微操作</li>
+<li>CPU的控制方式</li>
+<li>硬布线控制单元设计步骤</li>
+</ol>
+<h3 id="微程序控制器"><a href="#微程序控制器" class="headerlink" title="微程序控制器"></a>微程序控制器</h3><ol>
+<li><p>微程序控制的基本概念</p>
+<ol>
+<li>微命令与微操作</li>
+<li>微指令与微周期</li>
+<li>主存储器与控制存储器</li>
+<li>程序与微程序</li>
+</ol>
+</li>
+<li><p>微程序控制器的组成和工作过程</p>
+</li>
+<li><p>微指令的编码方式</p>
+<ol>
+<li>直接编码（直接控制）方式</li>
+<li>字段直接编码方式</li>
+<li>字段间接编码方式</li>
+</ol>
+</li>
+<li><p>微指令的地址形成方式</p>
+<ol>
+<li>直接由微指令的下地址字段指出</li>
+<li>根据机器指令的操作码形成</li>
+</ol>
+<ul>
+<li>增量计数器法（CMAR）+	1	-&gt;	CMAR</li>
+<li>根据各种标志决定微指令分支转移的地址</li>
+<li>通过测试网络形成</li>
+<li>由硬件直接产生微程序入口地址</li>
+</ul>
+</li>
+<li><p>微指令的格式</p>
+<ol>
+<li><p>水平型微指令</p>
+<p>优点：微程序短，执行速度快</p>
+<p>缺点：微指令长，编写微程序比较麻烦</p>
+</li>
+<li><p>垂直型微指令</p>
+<p>优点：微指令短，简单，规整</p>
+<p>缺点：微程序长，工作效率低</p>
+</li>
+<li><p>混合型微指令</p>
+<p>微指令较短，仍便于编写；微程序也不长，执行速度加快。</p>
+</li>
+<li><p>水平型微指令和垂直型微指令的比较：</p>
+<ol>
+<li>水平型微指令并行操作能力强、效率高、灵活性强；垂直型微指令则较差</li>
+<li>水平型微指令执行一条指令的时间短；垂直型微指令执行的时间长</li>
+<li>由水平型微指令解释指令的微程序，具有微指令字较长但微程序短的特点；垂直型微指令则与之相反，其微指令字较短而微程序长</li>
+<li>水平型微指令用户难以掌握，而垂直型微指令与指令比较相似，相对容易掌握</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>微程序控制单元的设计步骤</p>
+</li>
+<li><p>动态微程序设计和毫微程序设计</p>
+</li>
+<li><p>硬布线和微程序控制器的特点</p>
+<ol>
+<li><p>硬布线控制器的特点</p>
+<p>硬布线控制器的优点是由于控制器的速度取决于电路延迟，所以速度快。</p>
+<p>缺点是由于将控制部件视为专门产生固定时序信号的逻辑电路，所以把用最少元件和取得最高速度作为设计目标，一旦设计完成，就不可能通过其他额外修改添加新功能。</p>
+</li>
+<li><p>微程序控制器的特点</p>
+<p>微程序控制器的优点是同组合逻辑控制器相比，微程序控制器具有规整性、灵活性、可维护性等一系列优点；</p>
+<p>缺点是由于微程序控制器采用了存储程序原理，所以每条指令都要从控制存储器中去一次，影响速度。</p>
+<table>
+<thead>
+<tr>
+<th>对比项目\类别</th>
+<th>微程序控制器</th>
+<th>硬布线控制器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>工作原理</td>
+<td>微操作控制信号以微程序的形式存放在控制存储器中，执行指令时读出即可</td>
+<td>微操作控制信号由组合逻辑电路根据当前的指令码、状态和时序，即时产生</td>
+</tr>
+<tr>
+<td>执行速度</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>规整性</td>
+<td>较规整</td>
+<td>繁琐、不规整</td>
+</tr>
+<tr>
+<td>应用场合</td>
+<td>CISC CPU</td>
+<td>RISC CPU</td>
+</tr>
+<tr>
+<td>易扩充性</td>
+<td>易扩充修改</td>
+<td>困难</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="错题小结-15"><a href="#错题小结-15" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>CU（控制单元）的输入信号来源如下：<ol>
+<li>经过指令译码器移码产生的指令信息</li>
+<li>时序系统产生的机器周期信号和节拍信号</li>
+<li>来自执行单元的反馈信息即标志。</li>
+<li>前两者是主要因素。</li>
+</ol>
+</li>
+<li>汇编程序员可见的寄存器有基址寄存器、状态&#x2F;标志寄存器、程序计数器以及通用寄存器组；而MAR、MDR、IR是CPU的内部工作寄存器，对汇编程序员不可见。</li>
+</ol>
+<h2 id="异常和中断机制"><a href="#异常和中断机制" class="headerlink" title="异常和中断机制"></a>异常和中断机制</h2><h3 id="异常和中断的基本概念"><a href="#异常和中断的基本概念" class="headerlink" title="异常和中断的基本概念"></a>异常和中断的基本概念</h3><p>异常是CPU执行一条指令时，由CPU在其内部检测到的、与正在执行的指令相关的同步事件。</p>
+<p>中断是一种典型的由外部设备触发的、与当前正在执行的指令无关的异步事件。</p>
+<h3 id="异常和中断的分类"><a href="#异常和中断的分类" class="headerlink" title="异常和中断的分类"></a>异常和中断的分类</h3><ol>
+<li><p>异常的分类</p>
+<ol>
+<li>故障</li>
+<li>自陷</li>
+<li>终止</li>
+</ol>
+<p>故障异常和自陷异常属于程序性异常（软件中断）</p>
+<p>终止异常和外中断属于硬件中断。</p>
+</li>
+<li><p>中断的分类</p>
+<ol>
+<li>可屏蔽中断</li>
+<li>不可屏蔽中断</li>
+</ol>
+</li>
+<li><p>中断和异常在本质上是一样的。但它们之间由两个重要的不同点：</p>
+<ol>
+<li>“缺页”或“溢出”等异常事件是由特定指令在执行过程中产生的，而中断不和任何指令相关联，也不阻止任何指令的完成。</li>
+<li>异常的检测由CPU自身完成，不必通过外部的某个信号通知CPU，对于中断，CPU必须通过中断请求线获取中断源的信息，才能知道哪个设备发生了何种中断。</li>
+</ol>
+</li>
+</ol>
+<h3 id="异常和中断响应过程"><a href="#异常和中断响应过程" class="headerlink" title="异常和中断响应过程"></a>异常和中断响应过程</h3><ol>
+<li>关中断</li>
+<li>保存断点和程序状态</li>
+<li>识别异常和中断并转到相应的处理程序</li>
+</ol>
+<h2 id="指令流水线"><a href="#指令流水线" class="headerlink" title="指令流水线"></a>指令流水线</h2><h3 id="指令流水线的基本概念"><a href="#指令流水线的基本概念" class="headerlink" title="指令流水线的基本概念"></a>指令流水线的基本概念</h3><ol>
+<li><p>时间上并行</p>
+<p>将一个任务拆分为几个不同的子阶段在不同的功能部件上并行执行</p>
+</li>
+<li><p>空间上并行</p>
+<p>在一个处理机内设置多个执行相同任务的功能部件，并让这些部件并行工作，这样的处理机被称为超标量处机。</p>
+</li>
+</ol>
+<h3 id="流水线的基本实现"><a href="#流水线的基本实现" class="headerlink" title="流水线的基本实现"></a>流水线的基本实现</h3><h3 id="流水线的冒险与处理"><a href="#流水线的冒险与处理" class="headerlink" title="流水线的冒险与处理"></a>流水线的冒险与处理</h3><ol>
+<li>结构冒险（资源冲突）</li>
+<li>数据冒险（数据冲突）</li>
+<li>控制冒险（控制冲突）</li>
+</ol>
+<h3 id="流水线的性能指标"><a href="#流水线的性能指标" class="headerlink" title="流水线的性能指标"></a>流水线的性能指标</h3><ol>
+<li>流水线的吞吐率</li>
+<li>流水线的加速比</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712155001020.png" alt="image-20230712155001020"></p>
+<h3 id="高级流水线技术"><a href="#高级流水线技术" class="headerlink" title="高级流水线技术"></a>高级流水线技术</h3><ol>
+<li>超标量流水线技术</li>
+<li>超长指令字技术</li>
+<li>超流水线技术</li>
+</ol>
+<h3 id="错题小结-16"><a href="#错题小结-16" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>数据在功能部件之间传送的路径被称为数据通路，包括数据通路上流经的部件，如程序计数器、ALU、通用寄存器、状态寄存器、异常和中断处理逻辑等。数据通路由控制部件控制，控制部件根据每条指令功能的不同生成对数据通路的控制信号。因此不包括控制部件。</li>
+</ol>
+<h2 id="多处理器的基本概念"><a href="#多处理器的基本概念" class="headerlink" title="多处理器的基本概念"></a>多处理器的基本概念</h2><h3 id="SISD、SIMD、MIMD的基本概念"><a href="#SISD、SIMD、MIMD的基本概念" class="headerlink" title="SISD、SIMD、MIMD的基本概念"></a>SISD、SIMD、MIMD的基本概念</h3><ol>
+<li><p>单指令流单数据流（SISD）结构</p>
+</li>
+<li><p>单指令流多数据流（SIMD）结构</p>
+</li>
+<li><p>多指令流单数据流（MISD）结构</p>
+<p>实际上不存在</p>
+</li>
+<li><p>多指令流多数据流（MIMD）结构</p>
+</li>
+</ol>
+<h3 id="硬件多线程的基本概念"><a href="#硬件多线程的基本概念" class="headerlink" title="硬件多线程的基本概念"></a>硬件多线程的基本概念</h3><p>为了减少线程切换过程中的开销，便诞生了硬件多线程。有3种实现方式：</p>
+<ol>
+<li>细粒度多线程</li>
+<li>粗粒度多线程</li>
+<li>同时多线程</li>
+</ol>
+<h3 id="多核处理器的基本概念"><a href="#多核处理器的基本概念" class="headerlink" title="多核处理器的基本概念"></a>多核处理器的基本概念</h3><h3 id="共享内存多处理器的基本概念"><a href="#共享内存多处理器的基本概念" class="headerlink" title="共享内存多处理器的基本概念"></a>共享内存多处理器的基本概念</h3><h3 id="错题小结-17"><a href="#错题小结-17" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>Flynn分类法将计算机体系结构分为SISD、SIMD、MISD、MIMD四类。常规的单处理器属于SISD，常规的多处理器属于MIMD。</li>
+<li>含有超线程技术的CPU需要芯片组和操作系统的支持才能发挥技术优势。</li>
+<li>双核CPU是空间并行的并行计算。</li>
+<li>UMA框架需要解决的重要问题是Cache一致性，因为每个CPU核心都使用共享内存的一部分副本作为Cache。</li>
+</ol>
+<h1 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h1><h2 id="总线概述"><a href="#总线概述" class="headerlink" title="总线概述"></a>总线概述</h2><h3 id="总线的基本概念"><a href="#总线的基本概念" class="headerlink" title="总线的基本概念"></a>总线的基本概念</h3><p>随着计算机的发展和应用领域的不断扩大，I&#x2F;O 设备的种类和数量也越来越多。为了更好地解决 I&#x2F;O 设备和主机之间连接的灵活性问题，计算机的结构从分散连接发展为总线连接。</p>
+<p>总线是连接多个部件的信息传输线或通路，是负责各部件之间通信的传输介质。同一时刻只允许有一个部件向总线发送消息，但多个部件可以同时从总线上接收相同的消息。</p>
+<p>总线上所连接的各类设备，按其对总线有无控制功能可分为主设备和从设备两种。</p>
+<ul>
+<li>主设备。指获得总线控制权的设备，也称主模块。</li>
+<li>从设备：指被主设备访问的设备，只能响应主设备发来的各种总线命令，也称从模块。</li>
+</ul>
+<p>总线特性包括以下几项。</p>
+<ul>
+<li>机械特性。指总线在机械连接方式上的一些性能，如尺寸、形状与标准等。</li>
+<li>电气特性。指总线的每一根传输线上信号的传输方向和有效的电平范围。</li>
+<li>功能特性。指总线中每根传输线的功能。</li>
+<li>时间特性。指总线中的任一根线在什么时间内有效。每条总线上的各种信号互相存在一种有效时序的关系。</li>
+</ul>
+<h3 id="总线的分类"><a href="#总线的分类" class="headerlink" title="总线的分类"></a>总线的分类</h3><p>计算机系统中的总线，按功能划分为片内总线、系统总线、IO总线和通信总线四类。</p>
+<h4 id="片内总线"><a href="#片内总线" class="headerlink" title="片内总线"></a>片内总线</h4><p>片内总线是指芯片内部的总线，它是 <code>CPU</code>芯片内部，寄存器与寄存器之间、寄存器与算术逻辑单元 <code>ALU</code>之间的公共连接线。</p>
+<h4 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h4><p>系统总线是指 <code>CPU</code>、<code>主存</code>、<code>I/O 接口</code>各功能部件之间相互连接的信息传输线。按系统总线传输信息的不同，又可分为数据总线、地址总线和控制总线三类。</p>
+<ol>
+<li>数据总线用来传输各功能部件之间的数据信息，它是双向传输总线，其位数与机器字长、存储字长有关。</li>
+<li>地址总线用来指出数据总线上的源数据或目的数据在主存单元的地址或 I&#x2F;O 端口的地址，它是单向传输总线，地址线的位数与存储单元的个数有关。</li>
+<li>控制总线传输的是各种控制信息，包括 <code>CPU</code><br>送出的控制命令、主存或外设返回 <code>CPU</code><br>的反馈信号。</li>
+</ol>
+<blockquote>
+<p>各个功能部件通过 <code>数据总线</code>连接形成的数据传输路径称为 <code>数据通路</code>。</p>
+<p><code>数据通路</code>表示的是数据流经的路径，而<code>数据总线</code>是承载的媒介。</p>
+</blockquote>
+<h4 id="IO总线"><a href="#IO总线" class="headerlink" title="IO总线"></a>IO总线</h4><p>I&#x2F;O总线主要用于连接中低速的I&#x2F;O设备，通过I&#x2F;O接口与系统总线相连接，目的是将低速设备与高速总线分离，以提升总线的系统性能，常见的有USB、PCI总线。</p>
+<h4 id="通信总线"><a href="#通信总线" class="headerlink" title="通信总线"></a>通信总线</h4><p>通信总线是在计算机系统之间或计算机系统与其他系统之间传送信息的总线，通信总线也称外部总线。按数据传输方式可分为串行通信和并行通信两种。</p>
+<ul>
+<li>串行通信是指数据在单条 1 位宽的传输线上，一位一位地按顺序分时传送。如在串行传送中，1 字节的数据要通过一条传输线分 8 次由低位到高位按顺序逐位传送。</li>
+<li>并行通信是指数据在多条并行 1 位宽的传输线上，同时由源传送到目的地。如在并行传送中，1 字节的数据要通过 8 条并行传输线同时由源传送到目的地。</li>
+</ul>
+<h3 id="系统总线的结构"><a href="#系统总线的结构" class="headerlink" title="系统总线的结构"></a>系统总线的结构</h3><p>引入总线结构主要是为了</p>
+<ul>
+<li>简化系统结构，便于系统设计制造。</li>
+<li>减少连接数目，便于布线，减小体积，提高系统可靠性。</li>
+<li>便于接口设计，所有与总线连接的设备均采用类似的接口。</li>
+<li>便于系统扩充、更新与灵活配置，易于实现系统模块化。</li>
+<li>便于设备的软件设计，所有接口的软件就是对不同的口地址进行操作。</li>
+<li>便于故障诊断和维修，同时也降低了成本。</li>
+</ul>
+<p>总线结构通常分为单总线结构和多总线结构两种。多总线结构分为双总线、三总线和四总线等等。</p>
+<h4 id="单总线结构"><a href="#单总线结构" class="headerlink" title="单总线结构"></a>单总线结构</h4><p>单总线结构将 <code>CPU</code>、主存、通过 I&#x2F;O 接口的设备都挂在一组总线上，允许 I&#x2F;O 设备之间、I&#x2F;O 设备与 <code>CPU</code>之间或 I&#x2F;O 设备与主存之间直接交换信息，如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/modb_20211227_5016ceb0-66c0-11ec-b728-fa163eb4f6be.png" alt="img"></p>
+<p>优点是结构简单，成本低，易于接入新设备；缺点是带宽低、负载重，多个部件争用唯一总线，且不支持并发传送操作。</p>
+<blockquote>
+<p>单总线并不是指只有一根信号线，系统总线按传递信息的不同可细分为地址总线、数据总线和控制总线。</p>
+</blockquote>
+<h4 id="双总线结构"><a href="#双总线结构" class="headerlink" title="双总线结构"></a>双总线结构</h4><p>双总线结构有两条总线，一条是主存总线，用于在 <code>CPU</code>、主存和通道之间传送数据；另一条是 I&#x2F;O 总线，用于在多个外部设备与通道之间传送数据，如下图所示。</p>
+<p><img src="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_505c68d0-66c0-11ec-b728-fa163eb4f6be.png" alt="img"></p>
+<p>优点是将低速的 I&#x2F;O 设备从单总线上分离出来，实现了主存总线与 I&#x2F;O 总线分离；缺点是需要增加通道等硬件设备。</p>
+<blockquote>
+<p>通道是一个具有特殊功能的处理器，<code>CPU</code><br>将一部分功能下放给通道，使其对 I&#x2F;O 设备具有统一管理的功能，以完成外部设备与主存储器之间的数据传送。</p>
+</blockquote>
+<h4 id="三总线结构"><a href="#三总线结构" class="headerlink" title="三总线结构"></a>三总线结构</h4><p>三总线结构是在计算机系统各部件之间采用三条各自独立的总线来构成信息通路，这三条总线分别为主存总线、I&#x2F;O 总线和DMA总线，如下图所示。</p>
+<p><img src="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_50721b58-66c0-11ec-b728-fa163eb4f6be.png" alt="img"></p>
+<ul>
+<li>主存总线。用于 <code>CPU</code><br>和主存之间传送地址、数据和控制信息。</li>
+<li>I&#x2F;O 总线。用于在 <code>CPU</code><br>和各类 I&#x2F;O 设备之间通信。</li>
+<li>DMA 总线。用于在主存和高速 I&#x2F;O 设备之间直接传送数据。</li>
+</ul>
+<p>优点是提高了 I&#x2F;O 设备的性能，使其更快地响应命令，提高了系统吞吐量；缺点是系统工作效率更低。</p>
+<p>三总线结构中，任一时刻只能使用一种总线。主存总线与 DMA 总线不能同时对主存进行存取，I&#x2F;O 总线只有在 <code>CPU</code><br>执行 I&#x2F;O 指令时才能用到。</p>
+<p>另一种三总线结构采用的是局部总线、系统总线和扩展总线，如下图所示。</p>
+<p><img src="https://oss-emcsprod-public.modb.pro/wechatSpider/modb_20211227_50a84642-66c0-11ec-b728-fa163eb4f6be.png" alt="img"></p>
+<ul>
+<li>局部总线。用于在 <code>CPU</code>与 <code>Cache</code>之间直接通信，并将 <code>CPU</code>与 <code>Cache</code>或与更多的局部设备相连。</li>
+<li>系统总线。用于在主存与 <code>Cache</code>之间传输信息，I&#x2F;O 设备与主存之间的传输不必通过 <code>CPU</code>。</li>
+<li>扩展总线。将局域网、小型计算机接口 <code>SCSI</code>、调制解调器 <code>Modem</code>以及串行接口等都连接起来，并通过这些接口又可与各类 I&#x2F;O 设备相连，可支持相当多的 I&#x2F;O 设备。扩展总线通过扩展总线接口可与系统总线相连，实现这两种总线之间的信息传递，提高工作效率。</li>
+</ul>
+<h3 id="常见的总线标准"><a href="#常见的总线标准" class="headerlink" title="常见的总线标准"></a>常见的总线标准</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712211414179.png" alt="image-20230712211414179"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230712211421722.png" alt="image-20230712211421722"></p>
+<h3 id="总线的性能指标"><a href="#总线的性能指标" class="headerlink" title="总线的性能指标"></a>总线的性能指标</h3><ol>
+<li>总线的传输周期。指一次总线操作所需的时间（包括申请阶段、寻址阶段、传输阶段和结束阶段），简称总线周期。总线传输周期通常由若干总线时钟周期构成。</li>
+<li>总线时钟周期。即机器的时钟周期。计算机有一个统一的时钟，以控制整个计算机的各个部件，总线也要受此时钟的控制。</li>
+<li>总线的工作效率。总线上各种操作的频率，为总线周期的倒数。实际上指 1 秒内传送几次数据。若总线周期 &#x3D; N 个时钟周期，则总线的工作频率 &#x3D; 时钟频率&#x2F;N。</li>
+<li>总线的时钟频率。即机器的时钟频率，它为时钟周期的倒数。</li>
+<li>总线宽度。又称总线位宽，它是总线上同时能够传输的数据位数，通常指数据总线的根数，如 32 根称为 32 位总线。</li>
+<li>总线带宽。可理解为总线的数据传输率，即单位时间内总线上可传输数据的位数，通常用每秒传送信息的字节数来衡量，单位可用字节&#x2F;秒（B&#x2F;s）表示。总线带宽 &#x3D; 总线工作频率×(总线宽度&#x2F;8)。</li>
+<li>总线复用。总线复用是指一种信号线在不同的时间传输不同的信息，因此可以使用较少的线传输更多的信息，从而节省空间和成本。</li>
+<li>信号线数。地址总线、数据总线和控制总线 3 种总线数的总和称为信号线数。其中，总线的最主要性能指标为总线宽度、总线（工作）频率、总线带宽，总线带宽是指总线本身所能达到的最高传输速率，它是衡量总线性能的重要指标。</li>
+</ol>
+<blockquote>
+<p>三者关系：总线带宽 &#x3D; 总线宽度×总线频率。</p>
+<p>例如，总线工作频率为 22MHz，总线宽度为 16 位，则总线带宽 &#x3D; 22×(16&#x2F;8)&#x3D;44。</p>
+</blockquote>
+<h3 id="错题小结-18"><a href="#错题小结-18" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>挂接在总线上的多个部件，只能分时向总线发送数据，但可同时向总线接收数据。</li>
+<li>在总线上，同一时刻只能有一个主设备控制总线传输操作。</li>
+<li>系统总线用来连接CPU、主存和外设部件。</li>
+<li>在现代微机主板上，采用局部总线技术的作用是节省系统的总带宽。</li>
+<li>并行总线传输不一定比串行总线传输快。</li>
+</ol>
+<h2 id="总线事务和定时"><a href="#总线事务和定时" class="headerlink" title="总线事务和定时"></a>总线事务和定时</h2><p>总线定时：总线在双方交换数据的过程中需要时间上配合关系的控制。（实质是一种协议或者规则）</p>
+<p>总线事务：从请求总线到完成总线使用的操作序列。（在一个总线周期中发生的一系列活动）</p>
+<h3 id="1-总线事务"><a href="#1-总线事务" class="headerlink" title="1.总线事务"></a>1.总线事务</h3><ol>
+<li>请求阶段：主设备发出总线传输请求并且获得总线控制权。</li>
+<li>仲裁阶段：总线仲裁机构决定将下一个传输周期的总线使用权授予某个申请者。</li>
+<li>寻址阶段：主设备通过总线给出要访问的从设备地址及有关命令，启动从模块。</li>
+<li>传输阶段：主模块和从模块进行数据交换，可单向或双向进行数据传送。（一般只能传输一个字长的数据）</li>
+<li>释放阶段：主模块的有关信息均从系统总线上撤除，让出总线使用权。</li>
+</ol>
+<p>突发传送方式能够进行连续成组数据的传送，其寻址阶段发送的是连续数据单元的首地址，在传输阶段传送多个连续单元的数据，每个时钟周期可以传送一个字长的信息，但是不释放总线，直到一组数据全部传送完毕后，再释放总线。</p>
+<h3 id="2-同步定时方式"><a href="#2-同步定时方式" class="headerlink" title="2.同步定时方式"></a>2.同步定时方式</h3><p>系统采用一个统一的时钟信号来协调发送和接收双方的传送定时关系。</p>
+<p>优点：传送速度快，具有较高的传输速率；总线控制逻辑简单</p>
+<p>缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性验证，可靠性较差</p>
+<p>适用于总线长度较短及总线所接部件的存储时间比较接近的系统。</p>
+<h3 id="3-异步定时方式"><a href="#3-异步定时方式" class="headerlink" title="3.异步定时方式"></a>3.异步定时方式</h3><p>没有统一的时钟，也没有固定的时间间隔，完全依靠传送双方相互制约的“握手”信号来实现定时控制。</p>
+<p>优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合。</p>
+<p>缺点：比同步稍复杂一些，速度比同步方式慢。</p>
+<h4 id="1）不互锁方式"><a href="#1）不互锁方式" class="headerlink" title="1）不互锁方式"></a>1）不互锁方式</h4><p>主设备发出“请求”信号后，不必等到接到从设备的“回答”信号，而是过一段时间便撤销“请求”信号。而从设备在接到“请求”信号后，发出“回答”信号，并过一段时间便撤销“回答”信号。</p>
+<h4 id="2）半互锁方式"><a href="#2）半互锁方式" class="headerlink" title="2）半互锁方式"></a>2）半互锁方式</h4><p><em>主设备发出“请求”信号后，必须等到接到从设备的“回答”信号，才能撤销“请求”信号。（互锁关系）</em>而从设备在接到“请求”信号后，发出“回答”信号，但不必等到获知主设备的“请求”信号已经撤销，而是过一段时间便撤销“回答”信号。</p>
+<h4 id="3）全互锁方式"><a href="#3）全互锁方式" class="headerlink" title="3）全互锁方式"></a>3）全互锁方式</h4><p><em>主设备发出“请求”信号后，必须等到接到从设备的“回答”信号，才能撤销“请求”信号。（互锁关系）而从设备在接到“请求”信号后，发出“回答”信号，必需等到获知主设备的“请求”信号已经撤销，才能撤销“回答”信号。</em></p>
+<h4 id="请求和回答信号的互锁"><a href="#请求和回答信号的互锁" class="headerlink" title="请求和回答信号的互锁"></a>请求和回答信号的互锁</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-8cd4dbbab040e9c5d43f9bca2b3d2278_720w.webp" alt="img"></p>
+<h3 id="错题小结-19"><a href="#错题小结-19" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>在异步总线中，传送操作按需分配时间</li>
+<li>总线的异步通信方式是不采用时钟信号，只采用“握手”信号。</li>
+<li>同步总线由时钟信号定时，但时钟频率不一定等于工作频率，因为一个事务不一定在一个时钟周期内完成。</li>
+</ol>
+<h1 id="输入-输出系统"><a href="#输入-输出系统" class="headerlink" title="输入&#x2F;输出系统"></a>输入&#x2F;输出系统</h1><h2 id="IO系统基本概念"><a href="#IO系统基本概念" class="headerlink" title="IO系统基本概念"></a>IO系统基本概念</h2><h3 id="输入-输出系统-1"><a href="#输入-输出系统-1" class="headerlink" title="输入&#x2F;输出系统"></a>输入&#x2F;输出系统</h3><h3 id="I-O控制方式"><a href="#I-O控制方式" class="headerlink" title="I&#x2F;O控制方式"></a>I&#x2F;O控制方式</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002400499.png" alt="image-20230713002400499"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002424307.png" alt="image-20230713002424307"></p>
+<h3 id="外部设备"><a href="#外部设备" class="headerlink" title="外部设备"></a>外部设备</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002612263.png" alt="image-20230713002612263"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230713002629423.png" alt="image-20230713002629423"></p>
+<h3 id="错题小结-20"><a href="#错题小结-20" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>I&#x2F;O设备通过设备控制器于主板的系统总线相连接</li>
+<li>通道程序存放在主存而非通道中，由通道从主存中取出并执行。通道程序有通道执行，且只能在具有通道的I&#x2F;O系统中执行。</li>
+<li>打字机从打字原理的角度来分，可分为击打式和非击打式两种；从能否打出汉字来分，可分为点阵式打字机和活字式打字机。</li>
+</ol>
+<h2 id="I-O-接口"><a href="#I-O-接口" class="headerlink" title="I&#x2F;O 接口"></a>I&#x2F;O 接口</h2><p>I&#x2F;O 接口，又称 I&#x2F;O 控制器，是主机和外设之间的交接界面，通过接口可以实现主机和外设之间的信息交换。主机和外设具有各自的工作特点，它们在信息形式和工作速度上具有很大的差异，接口正是为了解决这些差异而设置的。</p>
+<h3 id="I-O-接口功能"><a href="#I-O-接口功能" class="headerlink" title="I&#x2F;O 接口功能"></a>I&#x2F;O 接口功能</h3><p>I&#x2F;O 接口的主要功能如下：</p>
+<ol>
+<li>实现主机和外设的通信联络控制。解决主机与外设时序配合问题，协调不同工作速度的外设和主机之间交换信息，以保证整个计算机系统能统一、协调地工作。</li>
+<li>进行地址译码和设备选择。<code>CPU</code>送来选择外设的地址码后，接口必须对地址进行译码以产生设备选择信息，使主机能和指定外设交换信息。</li>
+<li>实现数据缓冲。<code>CPU</code>与外设之间的速度往往不匹配，为消除速度差异，接口必须设置数据缓冲寄存器，用于数据的暂存，以避免因速度不一致而丢失数据。</li>
+<li>信号格式的转换。外设与主机两者的电平、数据格式都可能存在差异，接口应提供计算机与外设的信号格式的转换功能，如电平转换、<code>并/串</code>或<code>串/并</code>转换、<code>模/数</code>或<code>数/模</code>转换等。</li>
+<li>传送控制命令和状态信息。<code>CPU</code>要启动某一外设时，通过接口中的命令寄存器向外设发出启动命令；外设准备就绪时，则将<code>准备好</code>状态信息送回接口中的状态寄存器，并反馈给 CPU。外设向 <code>CPU</code>提出中断请求和 <code>DMA</code>请求时，<code>CPU</code>也应有相应的响应信号反馈给外设。</li>
+</ol>
+<h3 id="I-O-接口结构"><a href="#I-O-接口结构" class="headerlink" title="I&#x2F;O 接口结构"></a>I&#x2F;O 接口结构</h3><p>为使 I&#x2F;O 接口实现基本功能，需要具有相应的逻辑电路，基本结构如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/modb_20211227_51decc3e-66c0-11ec-b728-fa163eb4f6be.png" alt="img"></p>
+<p><code>CPU</code>与外设之间的信息传送，实质上是对接口中的某些寄存器（即端口）进行读或写，如传送数据是对数据端口 <code>DBR</code><br>进行读写操作。</p>
+<ul>
+<li>内部接口：内部接口与系统总线相连，实质上是与内存、<code>CPU</code>相连。数据的传输方式只能是并行传输。</li>
+<li>外部接口：外部接口通过接口电缆与外设相连，外部接口的数据传输可能是串行方式，因此 I&#x2F;O 接口需具有<code>串/并</code><br>转换功能。</li>
+</ul>
+<blockquote>
+<p>接口和端口不相同，端口是指接口电路中可以进行读&#x2F;写的寄存器，若干端口加上相应的控制逻辑才可以组成接口。</p>
+</blockquote>
+<h3 id="I-O-接口类型"><a href="#I-O-接口类型" class="headerlink" title="I&#x2F;O 接口类型"></a>I&#x2F;O 接口类型</h3><p>从不同的角度看，I&#x2F;O 接口可以分为不同的类型。</p>
+<ul>
+<li>按数据传送方式可分为并行接口和串行接口，接口要完成数据格式的转换。并行接口是将一个字节或一个字的所有位同时传送；串行接口是在设备与接口间一位一位传送。</li>
+<li>按主机访问 I&#x2F;O 设备的控制方式可分为程序查询接口、中断接口和 DMA 接口等。</li>
+<li>按功能选择的灵活性可分为可编程接口和不可编程接口。</li>
+</ul>
+<blockquote>
+<p>数据传送方式指的是外设和接口一侧的传送方式，而在主机和接口一侧，数据总是并行传送的。</p>
+</blockquote>
+<h3 id="I-O-端口"><a href="#I-O-端口" class="headerlink" title="I&#x2F;O 端口"></a>I&#x2F;O 端口</h3><p>I&#x2F;O 端口是指接口电路中可被 <code>CPU</code>直接访问的寄存器，主要有数据端口、状态端口和控制端口，若干端口加上相应的控制逻辑电路组成接口。通常，<code>CPU</code>能对数据端口执行读写操作，但对状态端口只能执行读操作，对控制端口只能执行写操作。</p>
+<p>I&#x2F;O 端口要想能够被 <code>CPU</code>访问，必须要有端口地址，每个端口对应一个端口地址。而对 I&#x2F;O 端口的编址方式有与存储器统一编址和独立编址两种。</p>
+<h3 id="统一编址"><a href="#统一编址" class="headerlink" title="统一编址"></a>统一编址</h3><p>统一编址，又称存储器映射方式，是指把 I&#x2F;O 端口当作存储器的单元进行地址分配，这种方式 <code>CPU</code>不需要设置专门的 I&#x2F;O 指令，用统一的访存指令就可以访问 I&#x2F;O 端口。</p>
+<p>该编址方式的优点是不需要设置专门的输入&#x2F;输出指令，可使 <code>CPU</code>访问 I&#x2F;O 的操作更灵活、更方便，还可使端口有较大的编址空间。而其缺点是端口占用存储器地址，使内存容量变小，而且利用存储器编址的 I&#x2F;O 设备进行数据输入&#x2F;输出操作，执行速度较慢。</p>
+<h3 id="独立编址"><a href="#独立编址" class="headerlink" title="独立编址"></a>独立编址</h3><p>独立编址，又称 I&#x2F;O 映射方式，是指 I&#x2F;O 端口地址与存储器地址无关，独立编址 <code>CPU</code>需要设置专门的输入&#x2F;输出指令访问端口。</p>
+<p>独立编址的优点是 I&#x2F;O 指令与存储器指令有明显区别，程序编制清晰，便于理解。其缺点是 I&#x2F;O 指令少，一般只能对端口进行传送操作，尤其需要 <code>CPU</code>提供存储器读&#x2F;写、I&#x2F;O 设备读&#x2F;写两组控制信号，增加了控制的复杂性。</p>
+<h3 id="错题小结-21"><a href="#错题小结-21" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li>磁盘驱动器向盘片磁道记录数据时采用串行方式写入。</li>
+<li>I&#x2F;O指令实现的数据传送通常发生在CPU寄存器和I&#x2F;O端口之间。</li>
+</ol>
+<h2 id="I-O方式"><a href="#I-O方式" class="headerlink" title="I&#x2F;O方式"></a>I&#x2F;O方式</h2><h3 id="错题小结-22"><a href="#错题小结-22" class="headerlink" title="错题小结"></a>错题小结</h3><ol>
+<li><p>外部事件如Esc键退出运行的程序等，属于外中断。</p>
+</li>
+<li><p>Cache完全是由硬件实现的，不会涉及中断层面。</p>
+</li>
+<li><p>虚拟存储器失效如缺页等，会发出缺页中断，属于内中断。</p>
+</li>
+<li><p>浮点数运算下溢，直接当作机器零处理，不会引发中断。</p>
+</li>
+<li><p>浮点数运算上溢，表示超过了浮点数的表示范围，属于内中断。</p>
+</li>
+<li><p>中断服务程序的最后指令是中断返回指令而不是无条件转移指令。中断返回指令与无条件转移指令不同的是，它不仅要修改PC值，而且要将CPU中的所有寄存器都恢复到中断前的状态。</p>
+</li>
+<li><p>关于中断的分类和优先级</p>
+<p>1.机器校验中断：高速程序发生了设备故障，比如电源故障，主存出错等</p>
+<p>2.访管中断：用户程序需要操作系统接入，调用操作系统服务等</p>
+<p>3.程序性中断：包括指令和数据的格式错误，程序执行中出现异常等</p>
+<p>4.外部中断：来自机器外部，包括定时器中断、外部信号中断、中断键中断等</p>
+<p>5.IO中断：由IO控制器产生，用于发送信号通知操作完成</p>
+<p>6.重启中断</p>
+</li>
+<li><p>设置中断屏蔽标志可以概念多个中断服务程序执行完毕的顺序（执行顺序）。</p>
+</li>
+<li><p>DMA的数据传送不经过CPU，但需要经过DMA控制器中的数据缓冲寄存器（DMAC）。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/02/Computer%20composition%20principle/" data-id="clqwg479t0003k4vfgx2uc7y6" data-title="Computer composition principle" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer-composition-principle/" rel="tag">Computer composition principle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/02/computer%20network/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Computer network
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/02/algorithm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">algorithm</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-composition-principle/" rel="tag">Computer composition principle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-network/" rel="tag">Computer network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-XV6-labs-2021/" rel="tag">OS_XV6_labs_2021</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-Structure/" rel="tag">data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Computer-composition-principle/" style="font-size: 10px;">Computer composition principle</a> <a href="/tags/Computer-network/" style="font-size: 10px;">Computer network</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OS-XV6-labs-2021/" style="font-size: 10px;">OS_XV6_labs_2021</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-Structure/" style="font-size: 10px;">data Structure</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/02/computer%20network/">Computer network</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/Computer%20composition%20principle/">Computer composition principle</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/algorithm/">algorithm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/typescript/">typescript</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/os/">os</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

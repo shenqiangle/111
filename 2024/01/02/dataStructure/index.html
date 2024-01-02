@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>data Structure | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.数据结构1.线性表2.栈、队列和数组 n个不同元素进栈，出栈元素不同排列的个数为$\frac{1}{n+1}C_{2n}^{n}$  采用共享栈的好处是节省存储空间，降低发生上溢的可能。  将递归算法转换为非递归算法，通常需要借助栈来实现这种转换。但不是必定的，比如斐波那契数列。  前序遍历需要借助栈来实现。  特殊矩阵压缩元素下标之间的对应关系：$$对称矩阵：k &#x3D;\begin{c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data Structure">
+<meta property="og:url" content="http://example.com/2024/01/02/dataStructure/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.数据结构1.线性表2.栈、队列和数组 n个不同元素进栈，出栈元素不同排列的个数为$\frac{1}{n+1}C_{2n}^{n}$  采用共享栈的好处是节省存储空间，降低发生上溢的可能。  将递归算法转换为非递归算法，通常需要借助栈来实现这种转换。但不是必定的，比如斐波那契数列。  前序遍历需要借助栈来实现。  特殊矩阵压缩元素下标之间的对应关系：$$对称矩阵：k &#x3D;\begin{c">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230414175822589.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230414234826493.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230415150457665.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161230886.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161250033.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161314257.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230510160255610.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155442769.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155509401.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155516345.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155540313.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155731220.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619164155434.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619164501119.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619194616002.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619195405159.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619200521839.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625111923314.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625111956279.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625112306359.png">
+<meta property="article:published_time" content="2024-01-02T14:29:13.358Z">
+<meta property="article:modified_time" content="2024-01-02T14:30:42.636Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="data Structure">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230414175822589.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-dataStructure" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/02/dataStructure/" class="article-date">
+  <time class="dt-published" datetime="2024-01-02T14:29:13.358Z" itemprop="datePublished">2024-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      data Structure
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h1><h2 id="1-线性表"><a href="#1-线性表" class="headerlink" title="1.线性表"></a>1.线性表</h2><h2 id="2-栈、队列和数组"><a href="#2-栈、队列和数组" class="headerlink" title="2.栈、队列和数组"></a>2.栈、队列和数组</h2><ol>
+<li><p>n个不同元素进栈，出栈元素不同排列的个数为$\frac{1}{n+1}C_{2n}^{n}$</p>
+</li>
+<li><p>采用共享栈的好处是节省存储空间，降低发生上溢的可能。</p>
+</li>
+<li><p>将递归算法转换为非递归算法，通常需要借助栈来实现这种转换。但不是必定的，比如斐波那契数列。</p>
+</li>
+<li><p>前序遍历需要借助栈来实现。</p>
+</li>
+<li><p>特殊矩阵压缩元素下标之间的对应关系：<br>$$<br>对称矩阵：<br>k &#x3D;<br>\begin{cases}<br>\frac{i*(i-1)}{2}+j-1，i\geq j(下三角区和主对角线元素）\<br>\frac{j*(j-1)}{2}+i-1, i &lt; j（上三角区元素）\<br>\end{cases}<br>\<br>下三角矩阵：<br>k &#x3D;<br>\begin{cases}<br>\frac{i*(i-1)}{2}+j-1, i\geq j(下三角区和主对角线元素）\<br>\frac{n*(n+1)}{2}, i&lt;j（上三角区元素）\<br>\end{cases}<br>\<br>上三角矩阵：<br>k &#x3D;<br>\begin{cases}<br>\frac{(i-1)*（2n-i+2)}{2}+j-i, i\leq j(上三角区和主对角线元素）\<br>\frac{n*(n+1)}{2}, i&gt;j（下三角区元素）\<br>\end{cases}<br>\<br>三对角矩阵：<br>下标为k &#x3D; 2i+j-3,且i&#x3D; \lfloor \frac{k+1}{3}+1 \rfloor<br>\<br>稀疏矩阵：<br>使用三元组（行标，列标，值）存储，但会失去随机存取的特性。<br>$$</p>
+</li>
+</ol>
+<h2 id="3-串"><a href="#3-串" class="headerlink" title="3.串"></a>3.串</h2><h2 id="4-树与二叉树"><a href="#4-树与二叉树" class="headerlink" title="4. 树与二叉树"></a>4. 树与二叉树</h2><h3 id="1-树"><a href="#1-树" class="headerlink" title="1.树"></a>1.树</h3><h4 id="1-定义（部分）"><a href="#1-定义（部分）" class="headerlink" title="1.定义（部分）"></a>1.定义（部分）</h4><ol>
+<li>树中一个结点的孩子个数称为该结点的度，树的所有结点中度最大的结点的度称为树的度。</li>
+<li>度为0的结点称为叶子结点，度大于0的结点称为分支结点。</li>
+<li>结点的深度是从根节点开始自顶向下逐层累加的，结点的高度是从叶节点开始自底向上逐层累加的。</li>
+<li>树的高度、深度是树中结点的最大层数。</li>
+<li>有序树和无序树是不同的。</li>
+<li>路径是由两个结点之间所经过的结点序列构成的，路径长度是路径上所经过的边的个数。</li>
+<li>树的路径长度是从树根到每个结点的路径长度的总和。</li>
+<li>由于树中的分支是有向的，即从双亲指向孩子，所以树中的路径是从上向下的，同一双亲的孩子之间不存在路径。</li>
+<li>森林是多棵互不相交的树的集合。</li>
+</ol>
+<h4 id="2-树的性质"><a href="#2-树的性质" class="headerlink" title="2. 树的性质"></a>2. 树的性质</h4><ol>
+<li><p>树中的结点数等于所有结点的度数之和加1.</p>
+</li>
+<li><p>度为m的树第i层上至多有m^(i-1)个结点(i&gt;&#x3D;1)。<br>$$<br>m^(i-1) (i&gt;&#x3D;1)<br>$$</p>
+</li>
+<li><p>高度为h的m叉树至多有(m^h-1)&#x2F;(m-1)个结点。<br>$$<br>(m^h-1)&#x2F;(m-1)<br>$$</p>
+</li>
+<li><p>具有n个结点的m叉树的最小高度为<br>$$<br>\lceil \log_{m}(n(m-1)+1)\rceil<br>$$</p>
+</li>
+</ol>
+<h3 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h3><h4 id="1-定义（部分）-1"><a href="#1-定义（部分）-1" class="headerlink" title="1.定义（部分）"></a>1.定义（部分）</h4><ol>
+<li><p>二叉树为有序树，若将其左右子树颠倒，则成为另一棵不同的二叉树，即使树中结点只有一棵子树，也要区分它是左子树还是右子树。</p>
+</li>
+<li><p>二叉树的物种基本形态：空二叉树、只有根节点、只有左子树、只有右子树、左右子树都有。</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230414175822589.png" alt="image-20230414175822589"></p>
+<ol start="3">
+<li>二叉树和度为2的有序树的区别：<ol>
+<li>度为2的树至少有3个结点，而二叉树可以为空。</li>
+<li>度为2的有序树的孩子的左右次序是相对于另一孩子而言的，若某个结点只有一个孩子，则这个孩子就无需区分其左右次序，而二叉树无论其孩子数是否为2，均需确定其左右次序，而二叉树的结点次序不是相对与另一结点而言的，而是确定的。</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-特殊二叉树"><a href="#2-特殊二叉树" class="headerlink" title="2.特殊二叉树"></a>2.特殊二叉树</h4><h5 id="1-满二叉树"><a href="#1-满二叉树" class="headerlink" title="1. 满二叉树"></a>1. 满二叉树</h5><ul>
+<li><p>除叶节点外的每个结点度数均为2</p>
+</li>
+<li><p>对于编号为i的结点，若有双亲，则其双亲为$\lfloor i&#x2F;2 \rfloor$</p>
+<p>若有左孩子，则左孩子为2i，若有右孩子，则右孩子为2i+1</p>
+</li>
+</ul>
+<h5 id="2-完全二叉树"><a href="#2-完全二叉树" class="headerlink" title="2. 完全二叉树"></a>2. 完全二叉树</h5><ul>
+<li><p>若$i&lt;\lfloor i&#x2F;2 \rfloor$则结点i为分支结点，否则为叶结点</p>
+</li>
+<li><p>叶结点只可能在最大层次的两层上出现，对于最大层次上的叶结点，都依次排列在该层最左边的位置上</p>
+</li>
+<li><p>若存在度为1的结点，则只可能有1个，且该结点只有左孩子而无右孩子（重要特征）</p>
+</li>
+<li><p>按层序编号后，一旦出现某节点（编号为i）为叶结点或只有左孩子，则编号大于i的结点均为叶结点</p>
+</li>
+<li><p>若n为奇数，则每个分支结点都有左右孩子，若n为偶数，则编号最大的分支结点（编号为n&#x2F;2）只有左孩子而无右孩子，其余分支结点左右孩子都有</p>
+</li>
+</ul>
+<h5 id="3-二叉排序树"><a href="#3-二叉排序树" class="headerlink" title="3. 二叉排序树"></a>3. 二叉排序树</h5><ul>
+<li>左子树上的所有结点的关键字均小于根节点的关键字</li>
+<li>右子树上的所有结点的关键字均大于根节点的关键字</li>
+<li>左子树和右子树又各为一棵二叉排序树</li>
+</ul>
+<h5 id="4-平衡二叉树"><a href="#4-平衡二叉树" class="headerlink" title="4. 平衡二叉树"></a>4. 平衡二叉树</h5><ul>
+<li>树上任意一个结点的左子树和右子树的深度之差不超过1</li>
+</ul>
+<h4 id="3-二叉树的性质"><a href="#3-二叉树的性质" class="headerlink" title="3. 二叉树的性质"></a>3. 二叉树的性质</h4><ol>
+<li><p>非空二叉树上的叶结点数等于度为2的结点数+1，即$n_0 &#x3D; n_2 + 1$</p>
+<p>拓展到任意一棵树，结点数量为n，则边的数量为 n - 1</p>
+</li>
+<li><p>非空二叉树上第k层至多有2^(k-1)^个结点（k&gt;&#x3D;1)</p>
+</li>
+<li><p>高度为h的二叉树至多有2^h^-1个结点（h&gt;&#x3D;1）</p>
+</li>
+<li><p>对完全二叉树（从上到下，从左到右依次编号1，2…)</p>
+<ul>
+<li><p>当i &gt; 1，结点i的双亲的编号为 $\lfloor i&#x2F;2 \rfloor$</p>
+</li>
+<li><p>当2i &lt;&#x3D; n ,结点i的左孩子编号为2i，否则无左孩子</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>当2i + 1 &lt;&#x3D; n, 结点i的右孩子编号为2i + 1，否则无右孩子</p>
+</li>
+<li><p>结点i所在层次（深度）为$\lfloor log_2i \rfloor + 1$</p>
+</li>
+</ul>
+<ol start="5">
+<li><p>具有n个结点的完全二叉树的高度为$\lfloor log_2n \rfloor + 1 或 \lceil log_2(n+1) \rceil$</p>
+</li>
+<li><p>补充</p>
+<ul>
+<li><p>对于一棵二叉树，其度数为1的结点若存在，则其数量必为奇数</p>
+</li>
+<li><p>对于一棵高度为h的满k叉树，其编号为i的第一个孩子结点(若存在)的编号为j, j满足$j &#x3D; (i-1)*k +2$</p>
+<p>依此可推导出其第m个子女的编号为$(i-1)*k +m + 1 (1&lt;&#x3D;m&lt;&#x3D;k)$</p>
+<p>相应的，编号为i的结点的双亲结点（若存在）的编号为$\lfloor (i-2)&#x2F;m \rfloor + 1$</p>
+<p>推导过程如图:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230414234826493.png" alt="image-20230414234826493"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-二叉树的遍历和线索二叉树"><a href="#3-二叉树的遍历和线索二叉树" class="headerlink" title="3. 二叉树的遍历和线索二叉树"></a>3. 二叉树的遍历和线索二叉树</h3><h4 id="1-二叉树的遍历"><a href="#1-二叉树的遍历" class="headerlink" title="1.二叉树的遍历"></a>1.二叉树的遍历</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">binaryTreeNode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="type">int</span> number;</span><br><span class="line">    binaryTreeNode *lchild, *rchild;</span><br><span class="line">&#125;binaryTreeNode,*binaryTree;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>先序遍历</li>
+<li>中序遍历</li>
+<li>后序遍历</li>
+<li>递归算法和非递归算法的转换</li>
+<li>层次遍历</li>
+<li>由遍历序列构造二叉树</li>
+</ol>
+<h4 id="2-线索二叉树"><a href="#2-线索二叉树" class="headerlink" title="2.线索二叉树"></a>2.线索二叉树</h4><h5 id="1-线索二叉树的基本概念"><a href="#1-线索二叉树的基本概念" class="headerlink" title="1. 线索二叉树的基本概念"></a>1. 线索二叉树的基本概念</h5><ol>
+<li><p>规定：若无左子树，令lchild指向其前驱结点；若无右子树，令rchild指向其后继结点。如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230415150457665.png" alt="image-20230415150457665"></p>
+<p>其中标志域的含义：</p>
+<blockquote>
+<p><code>ltag</code> &#x3D; 0, <code>lchild</code>域指示结点的左孩子<br><code>ltag</code> &#x3D; 1，<code>lchild</code>指示结点的前驱</p>
+<p><code>rtag</code> &#x3D; 0, <code>rchild</code>域指示结点的右孩子<br><code>rtag</code> &#x3D; 1，<code>rchild</code>指示结点的后继</p>
+</blockquote>
+<p>线索二叉树的存储结构描述如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ThreadNode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    ThreadNode *lchild,*rchild;</span><br><span class="line">    <span class="type">int</span> ltag,rtag;</span><br><span class="line">&#125;ThreadNode,*Threadtree;</span><br></pre></td></tr></table></figure>
+
+<p>此种结构又被称为线索链表，加上线索的二叉树称为线索二叉树</p>
+</li>
+</ol>
+<h5 id="2-中序线索二叉树的构造"><a href="#2-中序线索二叉树的构造" class="headerlink" title="2. 中序线索二叉树的构造"></a>2. 中序线索二叉树的构造</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ThreadNode</span>&#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    ThreadNode *lchild,*rchild;</span><br><span class="line">    <span class="type">int</span> ltag,rtag;</span><br><span class="line">&#125;ThreadNode,*Threadtree;</span><br><span class="line"><span class="comment">//通过中序遍历对二叉树线索化的递归算法如下：</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InThread</span><span class="params">(Threadtree &amp;p,Threadtree &amp;pre)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">        <span class="built_in">InThread</span>(p-&gt;lchild,pre);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;lchild == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            p-&gt;lchild = pre;</span><br><span class="line">            p-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pre != <span class="literal">nullptr</span> &amp;&amp; pre-&gt;rchild == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            pre-&gt;rchild = p;</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = p;</span><br><span class="line">        <span class="built_in">InThread</span>(p-&gt;rchild,pre);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过中序遍历建立线索二叉树的主过程算法如下：</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateInThread</span><span class="params">(Threadtree T)</span></span>&#123;</span><br><span class="line">    Threadtree pre = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(T!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">        <span class="built_in">InThread</span>(T,pre);</span><br><span class="line">        pre-&gt;rchild = <span class="literal">nullptr</span>;</span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求中序线索二叉树中中序序列下的第一个结点：</span></span><br><span class="line"><span class="function">ThreadNode *<span class="title">Firstnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;ltag==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;lchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求中序线索二叉树中结点p在中序序列下的后继：</span></span><br><span class="line"><span class="function">ThreadNode *<span class="title">Nextnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;rtag == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Firstnode</span>(p-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p-&gt;rchild;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-中序线索二叉树的遍历"><a href="#3-中序线索二叉树的遍历" class="headerlink" title="3. 中序线索二叉树的遍历"></a>3. 中序线索二叉树的遍历</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用上面两个算法，可以写出不含头节点的中序线索二叉树的中序遍历的算法：</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Inorder</span><span class="params">(ThreadNode *T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = <span class="built_in">Firstnode</span>(T);p!=<span class="literal">nullptr</span>;p=<span class="built_in">Nextnode</span>(p))&#123;</span><br><span class="line">        <span class="comment">//visit(p);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-先序线索二叉树和后序线索二叉树"><a href="#4-先序线索二叉树和后序线索二叉树" class="headerlink" title="4. 先序线索二叉树和后序线索二叉树"></a>4. 先序线索二叉树和后序线索二叉树</h5><h3 id="4-树、森林"><a href="#4-树、森林" class="headerlink" title="4. 树、森林"></a>4. 树、森林</h3><h4 id="1-树的存储结构"><a href="#1-树的存储结构" class="headerlink" title="1. 树的存储结构"></a>1. 树的存储结构</h4><ol>
+<li>双亲表示法</li>
+<li>孩子表示法</li>
+<li>孩子兄弟表示法</li>
+</ol>
+<h4 id="2-树、森林与二叉树的转换"><a href="#2-树、森林与二叉树的转换" class="headerlink" title="2. 树、森林与二叉树的转换"></a>2. 树、森林与二叉树的转换</h4><ol>
+<li><p>树与二叉树的对应关系：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161230886.png" alt="image-20230425161230886"></p>
+</li>
+<li><p>森林与二叉树的对应关系：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161250033.png" alt="image-20230425161250033"></p>
+</li>
+</ol>
+<h4 id="3-树和森林的遍历"><a href="#3-树和森林的遍历" class="headerlink" title="3. 树和森林的遍历"></a>3. 树和森林的遍历</h4><ol>
+<li><p>树的遍历：</p>
+<ul>
+<li>先根遍历</li>
+<li>后根遍历</li>
+</ul>
+</li>
+<li><p>森林的遍历</p>
+<ul>
+<li>先序遍历</li>
+<li>中序遍历</li>
+</ul>
+</li>
+<li><p>树和森林的遍历与二叉树的遍历的对应关系：</p>
+<table>
+<thead>
+<tr>
+<th align="left">树</th>
+<th>森林</th>
+<th>二叉树</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先根遍历</td>
+<td>先序遍历</td>
+<td>先序遍历</td>
+</tr>
+<tr>
+<td align="left">后根遍历</td>
+<td>中序遍历</td>
+<td>中序遍历</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230425161314257.png" alt="image-20230425161314257"></p>
+<h3 id="5-树与二叉树的应用"><a href="#5-树与二叉树的应用" class="headerlink" title="5. 树与二叉树的应用"></a>5. 树与二叉树的应用</h3><h5 id="1-哈夫曼树和哈夫曼编码"><a href="#1-哈夫曼树和哈夫曼编码" class="headerlink" title="1. 哈夫曼树和哈夫曼编码"></a>1. 哈夫曼树和哈夫曼编码</h5><ol>
+<li><p>哈夫曼树定义<br>$$<br>WPL &#x3D; \sum_{i&#x3D;1}^{n}w_{i}l_{i}<br>$$</p>
+</li>
+<li><p>哈夫曼树构造</p>
+<p><strong>注意权值排列要有一定规律，从左到右或从右到左</strong></p>
+</li>
+<li><p>哈夫曼编码</p>
+<p>哈夫曼编码相对于等长编码具有压缩数据的效果，利用哈夫曼树可以设计出总长度最短的二进制前缀编码。</p>
+</li>
+</ol>
+<h5 id="2-并查集"><a href="#2-并查集" class="headerlink" title="2. 并查集"></a>2. 并查集</h5><h5 id="3-哈夫曼树应用"><a href="#3-哈夫曼树应用" class="headerlink" title="3. 哈夫曼树应用"></a>3. 哈夫曼树应用</h5><ol>
+<li><p>两个不等长有序表的合并最坏情况下的比较次数：m+n-1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">分析过程：</span><br><span class="line">设置两个指针分别指向两个表（A,B）当前要比较的结点；</span><br><span class="line">不妨设：p为A的工作指针，q为B的工作指针</span><br><span class="line"></span><br><span class="line">初始时，两个指针都指向各自的首结点。</span><br><span class="line">开始比较：</span><br><span class="line">p和q比（A_1和B_1比）,假设A_1小，则p后移一位指向A_2;</span><br><span class="line">再让A_2和B_1比，此时B_1小，q后移指向B_2；</span><br><span class="line">此时A_2和B_2比，此时A_2小，p后移指向A_3；</span><br><span class="line">此时A_3和B_2比，此时B_2小，q后移指向B_3;…</span><br><span class="line">…</span><br><span class="line">发现，q和p两个工作指针，依次后移，你走一个，我走一个，两个表全部都走一遍是最坏的情况！</span><br><span class="line">都走一遍那不是 m+n次？？？</span><br><span class="line"></span><br><span class="line">减一是因为：</span><br><span class="line">p和q是依次后移的，肯定会有一个指针先走完整个表，不可能出现两个表同时到达终点吧！依次后移啊喂！</span><br><span class="line">最坏的情况就是，p走完了，q还差一个，不用比了啊，没有对手！ -1！</span><br><span class="line"></span><br><span class="line">这就是为什么是 m+n-1!</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="6-二叉树相关性质补充"><a href="#6-二叉树相关性质补充" class="headerlink" title="6.二叉树相关性质补充"></a>6.二叉树相关性质补充</h3><ul>
+<li>二叉树中序遍历的最后一个结点一定是从根开始沿右子女指针链走到底的结点（参考书P140 第一题）</li>
+<li>设m, n 为一棵二叉树上的两个结点，在中序遍历时，n在m前的条件是：n在m左方</li>
+<li>设m, n 为一棵二叉树上的两个结点，在后序遍历时，n在m前的条件是：n是m子孙</li>
+<li>在二叉树中有两个结点m和n，若m是n的祖先，则使用后序遍历可以找到从m到n的路径（参考书p141 第五题）</li>
+<li>前序遍历需要借助栈。二叉树的前序序列和中序序列的关系相当于以前序序列作为入栈次序，以中序序列作为出栈次序。（参考书P141 第十二题）</li>
+<li>先序序列和后序序列只可唯一确定树的根结点，但无法划分左右子树。</li>
+<li>二叉树是一种逻辑结构，但线索二叉树是加上线索后的链表结构，即他是二叉树在计算机内部的一种存储结构，所以是一种物理结构。</li>
+<li>后序二叉树的遍历仍需要栈的支持（参考书P142 第二十五题）</li>
+<li>二叉树的前序序列和后序序列正好相反，说明该二叉树高度等于结点数，不存在兄弟结点。</li>
+</ul>
+<h2 id="5-图"><a href="#5-图" class="headerlink" title="5.图"></a>5.图</h2><h3 id="1-图的基本概念"><a href="#1-图的基本概念" class="headerlink" title="1. 图的基本概念"></a>1. 图的基本概念</h3><h4 id="1-图的定义"><a href="#1-图的定义" class="headerlink" title="1. 图的定义"></a>1. 图的定义</h4><ol>
+<li>线性表可以为空表，树可以为空树，但图不可以是空图。图中不能一个顶点也没有，图的顶点集V一定非空，但边集E可以为空，此时图中只有顶点没有边。</li>
+<li>有向图</li>
+<li>无向图</li>
+<li>简单图、多重图<ul>
+<li>简单图： 不存在重复边，不存在顶点到自身的边</li>
+<li>多重图： 图中某两个顶点之间的边数大于1条，有允许顶点通过1条边和自身关联</li>
+</ul>
+</li>
+<li>完全图（也称简单完全图）</li>
+<li>子图</li>
+<li>连通、连通图和连通分量</li>
+<li>强连通图、强连通分量</li>
+<li>生成树、生成森林</li>
+<li>顶点的度、入度和出度</li>
+<li>边的权和网</li>
+<li>稠密图、稀疏图</li>
+<li>路径、路径长度和回路</li>
+<li>简单路径、简单回路</li>
+<li>距离</li>
+<li>有向树</li>
+</ol>
+<h3 id="2-图的存储及基本操作"><a href="#2-图的存储及基本操作" class="headerlink" title="2. 图的存储及基本操作"></a>2. 图的存储及基本操作</h3><h4 id="1-邻接矩阵法"><a href="#1-邻接矩阵法" class="headerlink" title="1. 邻接矩阵法"></a>1. 邻接矩阵法</h4><ul>
+<li><p>用一个一维数组存储图中顶点的信息</p>
+</li>
+<li><p>用一个二维数组存储图中边的信息</p>
+<blockquote>
+<p>注意：</p>
+<p>无向图的邻接矩阵的对称矩阵，对规模特大的邻接矩阵可采用压缩存储</p>
+<p>邻接矩阵表示法的空间复杂度为O(n^2)，其中n为图的顶点数|V|</p>
+<p>稠密图适合使用邻接矩阵的存储表示</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-邻接表法"><a href="#2-邻接表法" class="headerlink" title="2. 邻接表法"></a>2. 邻接表法</h4><p>图的邻接表存储结构定义如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxVertexNum 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span>&#123;<span class="comment">//边表结点</span></span><br><span class="line">    <span class="type">int</span> adjvex;</span><br><span class="line">   	ArcNode *next;</span><br><span class="line">    <span class="comment">//Infotype info;</span></span><br><span class="line">&#125;ArcNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">VNode</span>&#123;<span class="comment">//顶点表结点</span></span><br><span class="line">    VertexType data;</span><br><span class="line">    ArcNode *first;</span><br><span class="line">&#125;VNode,AdjList[MaxVertexNum];</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;<span class="comment">//邻接表</span></span><br><span class="line">    AdjList vertices;</span><br><span class="line">    <span class="type">int</span> vexnum,arcnum;</span><br><span class="line">&#125;ALGraph;</span><br></pre></td></tr></table></figure>
+
+<p>图的邻接表存储方法具有以下特点：</p>
+<ol>
+<li><p>若G为无向图，则所需的存储空间为<br>$$<br>O(|V| + 2*|E|)<br>$$<br>若G为有向图，则所需的存储空间为：<br>$$<br>O(|V| + |E|)<br>$$</p>
+</li>
+<li><p>对于稀疏图，使用邻接表表示将极大地节省存储空间</p>
+</li>
+<li><p>若要查询给定一节点的所有邻边，使用邻接表较快；<br>若要查询两个节点间是否存在边，则使用邻接矩阵可以马上查到</p>
+</li>
+<li><p>对于邻接表而言，求给定一个顶点的出度只需计算其邻接表中的结点个数，但求其顶点的入度则需要遍历全部的邻接表。因此，可以采取逆邻接表的存储方式加速求解给定顶点的入度。</p>
+</li>
+<li><p>图的邻接表表示并不唯一，因为各边结点的链接次序是随意的。</p>
+</li>
+</ol>
+<h4 id="3-十字链表（有向图）"><a href="#3-十字链表（有向图）" class="headerlink" title="3. 十字链表（有向图）"></a>3. 十字链表（有向图）</h4><h4 id="4-邻接多重表（无向图）"><a href="#4-邻接多重表（无向图）" class="headerlink" title="4. 邻接多重表（无向图）"></a>4. 邻接多重表（无向图）</h4><h4 id="5-图的基本操作"><a href="#5-图的基本操作" class="headerlink" title="5. 图的基本操作"></a>5. 图的基本操作</h4><h3 id="3-图的遍历"><a href="#3-图的遍历" class="headerlink" title="3. 图的遍历"></a>3. 图的遍历</h3><h4 id="1-广度优先搜索"><a href="#1-广度优先搜索" class="headerlink" title="1. 广度优先搜索"></a>1. 广度优先搜索</h4><h5 id="1-BFS算法的性能分析"><a href="#1-BFS算法的性能分析" class="headerlink" title="1. BFS算法的性能分析"></a>1. BFS算法的性能分析</h5><ol>
+<li>无论是邻接表还是邻接矩阵的存储方式，BFS算法都需要借助一个辅助队列Q，n个顶点均需入队一次，在最坏的情况下，空间复杂度为$$ O(|v|) $$</li>
+<li>采用邻接表存储方式时，时间复杂度为$$ O(|V| +|E|) $$</li>
+<li>采用邻接矩阵存储方式时，时间复杂度为$$ O(|V|^2 ) $$</li>
+</ol>
+<h5 id="2-BFS算法求解单源最短路径问题"><a href="#2-BFS算法求解单源最短路径问题" class="headerlink" title="2. BFS算法求解单源最短路径问题"></a>2. BFS算法求解单源最短路径问题</h5><h5 id="3-广度优先生成树"><a href="#3-广度优先生成树" class="headerlink" title="3. 广度优先生成树"></a>3. 广度优先生成树</h5><h4 id="2-深度优先搜索"><a href="#2-深度优先搜索" class="headerlink" title="2. 深度优先搜索"></a>2. 深度优先搜索</h4><h5 id="1-DFS算法的性能分析"><a href="#1-DFS算法的性能分析" class="headerlink" title="1. DFS算法的性能分析"></a>1. DFS算法的性能分析</h5><ol>
+<li>DFS算法是一个递归算法，需要借助一个递归工作栈，其空间复杂度为$$ O(|V|) $$</li>
+<li>采用邻接表存储方式时，时间复杂度为$$ O(|V| +|E|) $$</li>
+<li>采用邻接矩阵存储方式时，时间复杂度为$$ O(|V|^2 ) $$</li>
+</ol>
+<h5 id="2-深度优先的生成树和生成森林"><a href="#2-深度优先的生成树和生成森林" class="headerlink" title="2. 深度优先的生成树和生成森林"></a>2. 深度优先的生成树和生成森林</h5><h4 id="3-图的遍历和图的连通性"><a href="#3-图的遍历和图的连通性" class="headerlink" title="3. 图的遍历和图的连通性"></a>3. 图的遍历和图的连通性</h4><h3 id="4-图的应用"><a href="#4-图的应用" class="headerlink" title="4. 图的应用"></a>4. 图的应用</h3><h4 id="1-最小生成树"><a href="#1-最小生成树" class="headerlink" title="1. 最小生成树"></a>1. 最小生成树</h4><blockquote>
+<p>最小生成树性质：</p>
+<ol>
+<li>最小生成树并不唯一，即树形不唯一；当图G中的各边权值互不相等时，G的最小生成树是唯一的；若无向连通图G的边数比顶点数少1，即G本身为一棵树时候，G的最小生成树就是它本身。</li>
+<li>最小生成树的权值之和总是唯一的。</li>
+<li>最小生成树的边数为顶点数减1。</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>prim算法</p>
+<p>时间复杂度为$$ O(|V|^2)$$，不依赖于边的数量，适用于求解边稠密图的最小生成树</p>
+</li>
+<li><p>Kruskal算法</p>
+<p>采用堆来存放边的集合，每次选择最小权值的边只需$$ O(log_2{|E|})$$的时间，此外，由于生成树T中的所有边可视为一个等价类，因此每次添加新的边的过程类似于求解等价类的过程，因此可以采用并查集的数据结构来描述T，从而构造T的时间复杂度为$$O(|E|log_2|E|) $$。因此Kruskal算法适合于边稀疏而顶点较多的图。</p>
+</li>
+</ol>
+<h4 id="2-最短路径"><a href="#2-最短路径" class="headerlink" title="2. 最短路径"></a>2. 最短路径</h4><ol>
+<li><p>Dijkstra算法（单源最短路径，即某一顶点到其他各顶点的最短路径）</p>
+<p>Dijkstra算法是基于贪心策略的，使用邻接矩阵时，时间复杂度为 $$O(|V|^2)$$  , 使用带权的邻接表时，虽然修改dist[]的时间可以减少，但由于在dist[]中选择最小分量的时间不变，时间复杂度仍为 $O(|V|^2)$ ,另外，求解源点到某个特定顶点的最短路径和求解源点到其他所有顶点的最短路径一样复杂，时间复杂度也为 $$O(|V|^2)$$</p>
+<blockquote>
+<p>值得注意的是，边上带有负权值时，Dijkstra算法并不适用。</p>
+</blockquote>
+</li>
+<li><p>FLoyd算法（每队顶点间的最短路径）</p>
+<p>Floyd算法的时间复杂度是$O(|V|)$,不过由于其代码很紧凑，且并不包含其他复杂的数据结构，因此隐含的常数系数是非常小的，即使对于中等规模的输入来说，它仍然是相当有效的。</p>
+<blockquote>
+<p>Floyd算法允许图中带有负权值的边，但不允许有包含带负权值的边组成的回路。</p>
+<p>Floyd算法同样适用于带权无向图，因为带权无向图可视为权din值相同往返二重边的有向图。</p>
+<p>也可以用单源最短路径算法来解决每对顶点之间的最短路径问题。轮流将每个顶点最为源点，并且在所有边权值均非负时，运行一次Dijkstra算法，其时间复杂度为$O(|V|^2) * |V| &#x3D; O(|V|^3)$</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="3-有向无环图描述表达式"><a href="#3-有向无环图描述表达式" class="headerlink" title="3. 有向无环图描述表达式"></a>3. 有向无环图描述表达式</h4><ol>
+<li><p>定义</p>
+<p>有向无环图：若一个有向图中不存在环，则称为有向无环图，简称DAG图。</p>
+<p>有向无环图是描述含有公共子式的的表达式的有效工具。例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230510160255610.png"></p>
+</li>
+</ol>
+<h4 id="4-拓扑排序"><a href="#4-拓扑排序" class="headerlink" title="4.拓扑排序"></a>4.拓扑排序</h4><p>​	1. AOV 网：若用DAG图表示一个工程，其顶点表示活动，用有向边&lt; V<del>i</del> ,  V<del>j</del>&gt;表示活动V<del>i</del> 必须先于活动V<del>j</del> 进行的这样一种关系，，则将这种有向图称为<strong>顶点表示活动的网络</strong>, 记为AOV网。	在AOV网中，活动V<del>i</del>是活动V<del>j</del>的直接前驱，活动V<del>j</del>是活动V<del>i</del>的直接后继，这种前驱和后继关系具有传递性，且任何活动V<del>i</del>不能以它自己作为自己的前驱或后继。</p>
+<p>​	2. 拓扑排序：在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序：</p>
+<ul>
+<li><p>每个顶点出现且只出现一次</p>
+</li>
+<li><p>若顶点A在序列中排在顶点B的前面，则在图中不存在从顶点B在顶点A的路径</p>
+<blockquote>
+<p>拓扑排序实现： 从AOV网中选择一个没有前驱的顶点并输出，从网中删除该顶点和所有以它为起点的有向边。重复以上步骤知道当前AOV网为空或当前网中不存在无前驱的结点为止，后一种情况说明有向图中必然有环。</p>
+<p>逆拓扑排序：选择没有后继的结点</p>
+</blockquote>
+</li>
+</ul>
+<ol start="3">
+<li>由于输出每个顶点的同时还要删除以它为起点的边，故采用<strong>邻接表</strong>存储时拓扑排序的时间复杂度为<strong>O(|V| + |E|)</strong>, 采用<strong>邻接矩阵</strong>存储时拓扑排序的时间复杂度为**O(|V|^2^)**，此外，利用上一节的深度优先遍历也可实现拓扑排序。</li>
+<li>对于一般的图来说，若其邻接矩阵为三角矩阵，则存在拓扑序列，反之不一定成立。</li>
+</ol>
+<h4 id="5-关键路径"><a href="#5-关键路径" class="headerlink" title="5. 关键路径"></a>5. 关键路径</h4><ol>
+<li>AOE网： 在带权有向图中，以顶点表示事件，以有向边表示活动，以边上的权值表示完成该活动的开销，称之为<strong>用边表示的网络</strong>，简称<strong>AOE网</strong>。AOE网和AOV网都是有向无环图，不同在于它们的边和顶点代表的含义是不同的，AOE网中的边有权值，而AOV网中的边无权值，仅表示顶点之间的前后关系。</li>
+<li>AOE网具有一下两个性质：<ul>
+<li>只有在某顶点所代表的事件发生后，从该顶点出发的各有向边所代表的活动才能开始。</li>
+<li>只有在进入某顶点的各有向边所代表的活动都已结束时，该顶点所代表的事件才能发生。</li>
+</ul>
+</li>
+<li>在AOE网中，从源点到汇点的所有路径中，具有最大路径长度路径称为关键路径，而把关键路径上的活动称为关键活动。</li>
+</ol>
+<h3 id="5-图相关性质补充"><a href="#5-图相关性质补充" class="headerlink" title="5. 图相关性质补充"></a>5. 图相关性质补充</h3><ol>
+<li><p>有向图的拓扑有序序列唯一，图中每个顶点的入度和出度不一定最多为1.参考P227T08</p>
+</li>
+<li><p>在拓扑排序算法中为暂存入度为0的节点，可以使用栈，也可以使用队列。参考同上。</p>
+</li>
+<li><p>若一个有向图的邻接矩阵为三角矩阵（对角线以下的元素为0），则图中必不存在环，因此其拓扑序列必然存在。参考P227T11</p>
+</li>
+<li><p>有向无环图的拓扑序列唯一并不能确定该图。参考P227T12</p>
+</li>
+<li><p>使用Prim算法从不同顶点开始得到的最小生成树不一定相同。参考P228T18</p>
+</li>
+<li><p>某个活动的时间余量 &#x3D; Ve - Vl。</p>
+</li>
+</ol>
+<h2 id="6-查找"><a href="#6-查找" class="headerlink" title="6.查找"></a>6.查找</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li><p>在数据集合中寻找满足某种条件的数据元素的过程称为查找。</p>
+</li>
+<li><p>查找表（查找结构）</p>
+<p>用于查找的数据集合称为查找表。对查找表进行的操作一般有4种：</p>
+<ul>
+<li>查询某个特定的数据元素是否在查找表中</li>
+<li>检索满足条件的某个特定数据元素的各种属性</li>
+<li>在查找表种插入一个数据元素</li>
+<li>在查找表中删除某个数据元素</li>
+</ul>
+</li>
+<li><p>静态查找表</p>
+<p>无需动态地插入或删除的查找表称为静态查找表。</p>
+<p>适合静态查找表的方法有：顺序查找，折半查找。散列查找等；</p>
+<p>适合动态查找表的查找方法有：二叉排序树的查找，散列查找等。</p>
+</li>
+<li><p>关键字</p>
+<p>数据元素中唯一表示该元素中的某个数据项的值。</p>
+</li>
+<li><p>平均查找长度</p>
+<p>在查找过程中，一次查找的长度是指需要比较的关键字次数，而平均查找长度则是所有查找过程中进行关键字的比较次数的平均值，其数学定义为</p>
+<p>$$<br>ASL &#x3D; \sum_{i&#x3D;1}^nP_iC_i<br>$$</p>
+<p>式中，n是查找表的长度，P<del>i</del>是查找第i个数据元素的概率，一般认为每个数据元素的查找概率相等，即P<del>i</del> &#x3D; 1&#x2F;n；C<del>i</del>是找到第i个数据元素所需进行的比较次数，平均查找长度是衡量算法效率的最主要的指标。</p>
+</li>
+</ol>
+<h3 id="顺序查找与折半查找"><a href="#顺序查找与折半查找" class="headerlink" title="顺序查找与折半查找"></a>顺序查找与折半查找</h3><h4 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">   ElemType *elem; <span class="comment">//0号单元留空</span></span><br><span class="line">   <span class="type">int</span> TableLen;</span><br><span class="line">&#125;SSTable;</span><br><span class="line"><span class="type">int</span> <span class="title function_">Search_Seq</span><span class="params">(SSTable ST,ElemType key)</span>&#123;</span><br><span class="line">   ST.elem[<span class="number">0</span>] = key;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = ST.TableLen;ST.elem[i]!=key;--i);</span><br><span class="line">   <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   注意此处“哨兵”的引入，可避免很多不必要的判断语句。</p>
+<p>   当查找成功时，顺序查找的平均长度为<br>$$<br>   ASL_{成功} &#x3D; \sum_{i&#x3D;1}^nP_i(n-i+1)<br>$$<br>   当每个元素的查找概率相等，即P<del>i</del> &#x3D; 1&#x2F;n时，有<br>$$<br>   ASL_{成功} &#x3D; \sum_{i&#x3D;1}^nP_i(n-i+1) &#x3D; \frac{n+1}{2}<br>$$<br>   查找不成功时<br>$$<br>   ASL_{不成功} &#x3D; n + 1<br>$$<br>   综上，顺序查找的缺点是当n较大时，平均查找长度较大，效率低；优点是对数据元素的存储没有要求，顺序、链式存储皆可。需注意，对线性的链表只能进行顺序查找。</p>
+<blockquote>
+<p>对于有序表的顺序查找，其查找成功的平均查找长度与一般线性表的顺序查找一样。其查找不成功的平均查找长度在相等查找概率下的情形为<br>   $$<br>   ASL_{不成功} &#x3D; \sum_{j&#x3D;1}^nq_j(l_j-1) &#x3D; \frac{1+2+…+n+n}{n+1} &#x3D; \frac{n}{2} + \frac{n}{n+1}<br>   $$<br>注意，有序线性表的顺序查找表和后面的折半查找的思想是不一样的，且有序线性表的顺序查找可以是链式存储结构。</p>
+</blockquote>
+<h4 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h4><p>   折半查找又称二分查找，它仅适用于有序的顺序表。<br>   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Binary_Search</span><span class="params">(SSTable L,ElemType key)</span>&#123;</span><br><span class="line">   <span class="type">int</span> low = <span class="number">0</span>,high = L.TableLen - <span class="number">1</span>,mid;</span><br><span class="line">   <span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">      mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">if</span>(L.elem[mid] == key)&#123;</span><br><span class="line">         <span class="keyword">return</span> mid;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(L.elem[mid]&gt;key)&#123;</span><br><span class="line">         high = mid + <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">         low = mid + <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>   查找成功的平均查找长度为（等概率情况下）<br>$$<br>   ASL &#x3D; \frac{n}{1}\sum_{i&#x3D;1}{n}l_i &#x3D; \frac{1}{n}(1\times1+2\times2+…+h\times2^{h-1}) &#x3D; \frac{n+1}{n}\log_2(n+1)-1\approx\log_2(n+1)-1<br>$$<br>   式中，h是树的高度，并且元素个数为n时树高为$h &#x3D; \lceil\log_2(n+1)\rceil$。所以，折半查找的时间复杂度为$O(\log_2n)$，平均情况下比顺序查找的效率高。</p>
+<blockquote>
+<p>由于折半查找需要方便地定位查找区域，所以它要求线性表必须具有随机存取的特性。因此，该查找法仅适合于顺序存储结构，不适合于链式存储结构，且要求元素按关键字有序排列。</p>
+</blockquote>
+<h4 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h4><p>   分块查找又称索引顺序查找，它吸取了顺序查找和折半查找各自的优点，既有动态结构，又适于快速查找。</p>
+<p>   设索引查找和块内查找的平均查找长度为L<del>1</del>,L<del>s</del>,则分块查找的平均查找长度为$ASL &#x3D; L_1+L_s$</p>
+<p>   设长度为n的查找表均匀地分为b块，每块有s个记录，在等概率情况下，若在块内和索引表中顺序查找，则平均查找长度为：<br>$$<br>   ASL &#x3D; L_1+L_s &#x3D; \frac{b+1}{2}+\frac{s+1}{2} &#x3D; \frac{s^2+2s+n}{2s}<br>$$<br>   此时，若$s &#x3D; \sqrt{n}$，则平均查找长度取最小值$\sqrt{n}+1$</p>
+<h4 id="性质补充"><a href="#性质补充" class="headerlink" title="性质补充"></a>性质补充</h4><p>   折半查找算法在选取中间节点时，要么采用向上取整的方式，要么采用向下取整的方式。可凭借此来判断某棵树是否能称为折半查找判定树。参考P255T21</p>
+<p>   由于折半查找的判定树是一棵二叉排序树，对于一个序列是否满足构成折半查找中关键字比较序列，可以将此序列化为排序树，看其是否符合要求。参考T254T19</p>
+<h3 id="树型查找"><a href="#树型查找" class="headerlink" title="树型查找"></a>树型查找</h3><h4 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h4><p>   构造一棵二叉排序树不是为了排序，而是为了提高查找，插入、删除关键字的速度。二叉排序树这种非线性结构也有利于插入和删除的实现。</p>
+<ol>
+<li><p>二叉排序树的定义</p>
+</li>
+<li><p>二叉排序树的查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BSTNode *<span class="title function_">BST_Search</span><span class="params">(BiTree T,ElemType key)</span>&#123;</span><br><span class="line">   <span class="keyword">while</span>(T!=<span class="literal">NULL</span>&amp;&amp;key!=T-&gt;data)&#123;</span><br><span class="line">      <span class="keyword">if</span>(key&lt;t-&gt;data)T = T-&gt;lchild;</span><br><span class="line">      <span class="keyword">else</span> T = T-&gt;rchild;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>二叉排序树的插入</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">BST_Insert</span><span class="params">(BiTree &amp;T,KeyType k)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(T==<span class="literal">NULL</span>)&#123;</span><br><span class="line">      T = (BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BSTNode));</span><br><span class="line">      T-&gt;data = k;</span><br><span class="line">      T-&gt;lchild = T-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> <span class="keyword">if</span>(k==T-&gt;data)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">else</span> <span class="keyword">if</span>(k&lt;T-&gt;data)</span><br><span class="line">      <span class="keyword">return</span> BST_Insert(T-&gt;lchild,k);</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">return</span> BST_Insert(T-&gt;rchild,k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>二叉排序树的构造</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Creat_BST</span><span class="params">(BiTree &amp;T,KeyType str[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   T = <span class="literal">NULL</span>;</span><br><span class="line">   <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">while</span>(i&lt;n)&#123;</span><br><span class="line">      BST_Insert(T,str[i]);</span><br><span class="line">      i++;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>二叉排序树的删除</p>
+</li>
+</ol>
+<ul>
+<li>若被删除结点z是叶节点，则直接删除，不会破坏二叉排序树的性质。</li>
+<li>若结点z只有一棵左子树或右子树，则让z的子树成为z父节点的子树，替代z的位置。</li>
+<li>若结点z有左右两棵子树，则令z的直接后继（或直接前驱）替代z，然后从二叉排序树中删去这个直接后继（或直接前驱），这样就转换成了第一种或第二种情况。</li>
+</ul>
+<ol start="6">
+<li>二叉排序树的查找效率分析</li>
+</ol>
+<h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><ol>
+<li><p>平衡二叉树的定义</p>
+<p>任意结点的左右子树高度差的绝对值不超过1，将这样的二叉树称为平衡二叉树，或称AVL树。定义结点左子树与右子树的高度差为该节点的平衡因子，则平衡二叉树的平衡因子的值只可能是-1，0或1。</p>
+</li>
+<li><p>平衡二叉树的插入</p>
+<p>平衡二叉树的插入过程的前半部分与二叉排序树相同，但在新节点chacha入后，若造成查找路径上的某个结点不再平衡，则需要做出相应的调整。可将调整的规律归纳为下列四种情况：</p>
+<ol>
+<li><p>LL平衡旋转（右单旋转）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155442769.png" alt="image-20230613155442769"></p>
+</li>
+<li><p>RR平衡旋转（左单旋转）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155509401.png" alt="image-20230613155509401"></p>
+</li>
+<li><p>LR平衡旋转（先左后右双旋转）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155516345.png" alt="image-20230613155516345"></p>
+</li>
+<li><p>RL平衡旋转（先右后左双旋转） </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155540313.png" alt="image-20230613155540313"></p>
+</li>
+<li><p>平衡二叉树的构造</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230613155731220.png" alt="image-20230613155731220"></p>
+</li>
+</ol>
+</li>
+<li><p>平衡二叉树的删除</p>
+<p>删除节点w（依据二叉排序树的删除方法）后，若导致不平衡，则从节点w开始向上回溯，找到第一个不平衡的节点z（即最小不平衡子树），y为节点z的高度最高的孩子节点，x是节点y的高度最高的孩子节点。然后对以z为子根的子树进行平衡调整，其中x，y，z可能的位置有4种情况：</p>
+<ul>
+<li>y是z的左孩子，x是y的左孩子（LL，右单旋转）</li>
+<li>y是z的右孩子，x是y的右孩子（RR，左单旋转）</li>
+<li>y是z的右孩子，x是y的左孩子（RL，先右后左双旋转）</li>
+<li>y是z的左孩子，x是y的右孩子（LR，先左后右双旋转）</li>
+</ul>
+</li>
+<li><p>平衡二叉树的查找</p>
+<p>以n<del>h</del>表示深度为h的平衡树中含有的最少节点数，显然有n<del>0</del> &#x3D; 0，n<del>1</del> &#x3D; 1，n<del>2</del> &#x3D; 2，并且有n<del>h</del> &#x3D; n<del>h-1</del> + n<del>h-2</del> + 1。其中n<del>h</del>为构造此高度的平衡二叉树所需的最少结点数。</p>
+</li>
+</ol>
+<h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><ol>
+<li><p>红黑树的定义</p>
+<p>红黑树是满足如下红黑性质的二叉排序树：</p>
+<ul>
+<li>每个节点或是红色的，或是黑色的。</li>
+<li>根节点是黑色的。</li>
+<li>叶节点（虚构的外部节点、NULL节点）都是黑色的。</li>
+<li>不存在两个相邻的红节点（即红节点的父节点和孩子节点均是黑色的）。</li>
+<li>h对每个结点，从该结点到任意一个叶结点的简单路径上，所含黑结点的数量相同。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>从某结点出发（不含该节点）到达一个叶节点的任意一个简单路径上的黑节点总数称为该结点的黑高（记为bh），黑高的性质是由性质5决定的。根节点的黑高称为红黑树的黑高。</p>
+<blockquote>
+<p>结论1：从根到叶节点的最长路径不大于最短路径的2倍。</p>
+</blockquote>
+<blockquote>
+<p> 结论2：有n个内部结点的红黑树的高度$h\leq 2\log_2(n+1)$.</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><p>红黑树的插入</p>
+<p>与二叉排序树插入类似，但需要进行调整（重新着色或旋转操作），以满足红黑树的性质。</p>
+<blockquote>
+<p>结论3：新插入红黑树中的结点初始着为红色。</p>
+</blockquote>
+<p>设节点z为新插入的结点，插入过程描述如下：<strong>（参考书P270）</strong></p>
+<ol>
+<li><p>用二叉查找树插入法插入，并将结点z着为红色，若结点z的父节点为黑色，则无需做任何调整，此时就是一棵标准的红黑树。</p>
+</li>
+<li><p>如果结点z是根节点，将z着为黑色（树的黑高增1），结束。</p>
+</li>
+<li><p>如果结点z不是根节点，并且z的父节点z.p是红色的，则分以下三种情况，区别在于z的叔结点y的颜色不同，因z.p是红色的，插入前的树是合法的，根据性质2和4，爷结点z.p.p必然存在且为黑色。性质4只在z和z.p之间被破坏了。</p>
+<p><strong>以下情况建立在z.p为z.p.p的左孩子节点的基础上</strong></p>
+<p>情况1：z的叔结点y是黑色的，且z是一个右孩子（LR，先做一个左旋转变为情况2）<br>情况2：z的叔结点y是黑色的，且z是一个左孩子（LL，并交换z.p和z.p.p的颜色）</p>
+<p><strong>若z.p是z.p.p的右孩子，则还有两种对称的情况: RL和RR。</strong></p>
+<p>情况3：（z是左孩子或右孩子无影响）,z的父节点z.p和叔节点y都是红色的，因为爷节点z.p.p是黑色的，将z.p和y都着为黑色，将z.p.p着为红色，以在局部保持性质4和5，然后，把z.p.p作为新节点z来重复循环，指针z在树中上移两层。</p>
+</li>
+</ol>
+</li>
+<li><p>红黑树的删除</p>
+<p>红黑树的插入操作容易导致连续的两个红节点，破坏性质4。而删除操作容易造成子树黑高的变化（删除黑节点会导致根节点发哦叶节点间的黑节点数量减少），破坏性质5.</p>
+<p>删除过程也是先执行二叉查找树的删除方法，若待删节点有两个孩子，不能直接删除，而要找到该节点的中序后继（或前驱）填补，即右子树中最小的节点，然后转换为删除该后继节点。由于后继节点至多只有一个孩子，这样就转换为待删节点是终端节点或仅有一个孩子的情况。</p>
+<p>最终，删除一个节点有以下两种情况：</p>
+<p>情况比较复杂，参考书P272-P274,这里不作赘述</p>
+</li>
+</ol>
+<h3 id="B树和B-树"><a href="#B树和B-树" class="headerlink" title="B树和B+树"></a>B树和B+树</h3><h4 id="B树及其基本操作"><a href="#B树及其基本操作" class="headerlink" title="B树及其基本操作"></a>B树及其基本操作</h4><p>所谓m阶B树是所有结点的平衡因子均等于0的m路平衡查找树。</p>
+<p>一棵m阶B树或为空树，或为满足如下特性的m叉树：</p>
+<ol>
+<li><p>树中每个结点至多有m棵子树，即至多含有m-1关键字</p>
+</li>
+<li><p>若根结点不是叶结点，则至少有两棵子树</p>
+</li>
+<li><p>除根结点外的所有非叶结点至少有$\lceil m&#x2F;2\rceil$棵子树，即至少含有$\lceil m&#x2F;2\rceil -1$个关键字。</p>
+</li>
+<li><p>所有非叶结点的结构如下：</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619164155434.png"/>
+</li>
+<li><p>所有的叶结点都出现在同一层次上，并且不带信息（可视为外部结点或类似于折半查找判定树的查找失败结点，实际上这些结点不存在，指向这些结点的指针为空。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619164501119.png" alt="image-20230619164501119"></p>
+</li>
+</ol>
+<h5 id="1-B树的高度-磁盘存取次数"><a href="#1-B树的高度-磁盘存取次数" class="headerlink" title="1. B树的高度(磁盘存取次数)"></a>1. B树的高度(磁盘存取次数)</h5><p>B树的大部分操作所需的磁盘存取次数与B树的高度成正比。</p>
+<p>若$n\geq1$，则对任意一棵包含n个关键字、高度为h、阶数为m的B树：</p>
+<ol>
+<li><p>因为B树中每个结点最多有m棵子树，m-1个关键字，所以在一棵高度为h的m阶B树中有：<br>$$<br>h\geq \log_m(n+1)<br>$$</p>
+</li>
+<li><p>若让每个结点中的关键字个数达到最少，则容纳同样多关键字的B树高度达到最大。 第一层至少有1个结点；第二层至少有两个结点；除根结点外的每个非叶结点至少有$\lceil m&#x2F;2\rceil$棵子树，则第三层至少有$2\lceil m&#x2F;2\rceil$个结点。。。。。第h+1层至少有$2(\lceil m&#x2F;2\rceil)^{h-1}$个结点，注意到第h+1层是不包含任何信息的叶结点。</p>
+</li>
+</ol>
+<p>对于关键字个数为n的B树，叶结点即查找不成功的结点n+1，由此有$n+1\geq 2(\lceil m&#x2F;2\rceil)^{h-1}$，即$h\leq \log_{\lceil m&#x2F;2\rceil}((n+1)&#x2F;2)+1$</p>
+<h5 id="2-B树的查找"><a href="#2-B树的查找" class="headerlink" title="2. B树的查找"></a>2. B树的查找</h5><ol>
+<li><p>在B树中找结点</p>
+</li>
+<li><p>在结点内找关键字</p>
+<blockquote>
+<p>由于B树常存储在磁盘上，因此前一个查找操作是在磁盘上进行的，而后一个查找操作是在内存中进行的，即在找到目标结点后，先将结点信息读入内存，然后在节点内采用顺序查找法或折半查找法。</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="3-B树的插入"><a href="#3-B树的插入" class="headerlink" title="3. B树的插入"></a>3. B树的插入</h5><ol>
+<li><p>定位</p>
+</li>
+<li><p>插入</p>
+<p>当插入后的结点关键字个数小于m，可以直接插入；当插入后结点关键字个数大于m-1时，必须对结点进行分裂。分裂的方法如下：</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619194616002.png"/></li>
+</ol>
+<h5 id="4-B树的删除"><a href="#4-B树的删除" class="headerlink" title="4. B树的删除"></a>4. B树的删除</h5><p>要使得删除后的结点中的关键字个数$\geq \lceil m&#x2F;2\rceil -1$，因此涉及结点的“合并”问题</p>
+<p>当被删关键字k不在终端节点（最底层的非叶结点）中时，可以用k的前驱（或后继）k`来替代k，然后在相应的结点中删除k`，关键字k`必定落在某个终端结点中，则转换成了被删关键字在终端结点中的情形。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619195405159.png" alt="image-20230619195405159"></p>
+<h4 id="B-树的基本概念"><a href="#B-树的基本概念" class="headerlink" title="B+树的基本概念"></a>B+树的基本概念</h4><p>B+树是应数据库所需而出现的一种B树的变形树。</p>
+<p>一棵m阶的B+树需满足下列条件：</p>
+<ol>
+<li>每个分支节点最多有m棵子树（孩子结点）</li>
+<li>非叶根结点至少有两棵子树，其他两个分支结点至少有$\lceil m&#x2F;2\rceil$棵子树</li>
+<li><strong>结点的子树个数与关键字树相等</strong></li>
+<li>所有叶结点包含全部关键字及指向相应记录的指针，叶结点中将关键字按大小顺序排列，并且相邻叶结点按大小顺序相互连接起来。</li>
+<li>所有分支结点（可视为索引的索引）中仅包含它的各个子结点（即下一级的索引块）中关键字的最大值及指向其子结点的指针。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230619200521839.png" alt="image-20230619200521839"></p>
+<h3 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h3><h4 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h4><p>散列函数：一个把查找表中的关键字映射成该关键字对应的地址的函数，记为Hash（key） &#x3D; Addr（这里的地址可以是数组下标、索引或内存地址等）</p>
+<p>散列函数可能会把两个或两个以上的不同关键字映射到同一地址，称这种情况为冲突，这些发生碰撞的不同关键字称为同义词。</p>
+<p>散列表：根据关键字而直接进行访问的数据结构。也就是说，散列表建立了关键字和存储地址之间的一种直接映射关系。</p>
+<p>理想情况下，对散列表进行查找的时间复杂度为O(1)</p>
+<h4 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h4><p>   在构造散列函数时需要注意以下几点：</p>
+<p>1.散列函数的定义域必须包含全部需要存储的关键字，而值域的范围则依赖于散列表的大小或地址范围。</p>
+<p>2.散列函数计算出来的地址应该能等概率、均匀地分布在整个地址空间中，从而减少冲突的发生。</p>
+<p>3.散列函数应尽量简单，能够在较短的时间内计算出任意一个关键字对应的散列地址。</p>
+<p>   下面是常用的散列函数。</p>
+<ol>
+<li><p>直接定址法<br>$$<br>H(key) &#x3D; key或H(key) &#x3D; a\times key + b\<br>a,b为常数。<br>$$<br>   这种方法适合于关键字分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+<li><p>除留余数法</p>
+</li>
+</ol>
+<p>假设散列表表长为m，取一个不大于m但最接近或等于m的质数p，利用以下公式把关键字转换成散列地址。散列函数为<br>$$<br>H(key) &#x3D; key%p<br>$$<br>      除留余数法的关键是选好p，使得每个关键字通过该函数转换后等概率地映射到散列空间上的任意一个地址，从而尽可能减少冲突的可能性。</p>
+<ol start="3">
+<li>数字分析法</li>
+</ol>
+<p>适合于已知的关键字集合，若更换关键字，则需要重新构造新的散列函数。</p>
+<ol start="4">
+<li>平方取中法</li>
+</ol>
+<p>适合于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+<h4 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h4><ol>
+<li>开放定址法</li>
+</ol>
+<p>$$<br>H_i &#x3D; (H(key)+d_i)%m\<br>H(key)为散列函数；\<br>i &#x3D; 0, 1, 2, … k(k&lt;m-1);\<br>m表示散列表表长;\<br>d_i为增量序列。<br>$$</p>
+<p>取增量序列的方法：</p>
+<pre><code>  1. 线性探测法
+
+  2. 平方探测法
+
+  3. 双散列法
+
+  4. 伪随机序列法
+</code></pre>
+<ol start="2">
+<li>拉链法（链接法，chaining）</li>
+</ol>
+<p>为了避免非同义词发生冲突，可以把所有的同义词存储在一个线性链表中，这个线性链表由其散列地址唯一标识。</p>
+<p>拉链法适用于经常插入和删除的情况。</p>
+<h4 id="散列查找及性能分析"><a href="#散列查找及性能分析" class="headerlink" title="散列查找及性能分析"></a>散列查找及性能分析</h4><p><strong>注意平均查找长度的计算</strong></p>
+<p>散列表的装填因子一般记为$\alpha$，定义为一个表的装满程度，即<br>$$<br>\alpha &#x3D; \frac{表中记录数}{散列表长度}<br>$$<br>散列表的平均查找长度依赖于散列表的装填因子$\alpha$，而不直接依赖于n和m。直观地看，$\alpha$越大，表示装填的记录越慢，发生冲突的可能性越大。</p>
+<h2 id="7-排序"><a href="#7-排序" class="headerlink" title="7. 排序"></a>7. 排序</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><h4 id="排序的定义"><a href="#排序的定义" class="headerlink" title="排序的定义"></a>排序的定义</h4><p>排序，就是重新排列表中的元素，使表中的元素满足按关键字有序的过程。</p>
+<p>算法的稳定性：若两个元素关键字相同，排序前与排序后两个元素的相对排序不变，则称这个排序算法是稳定的，否则称排序算法是不稳定的。</p>
+<p>在排序过程中，根据数据元素是否完全在内存中，可将排序算法分为两类</p>
+<ol>
+<li><p>内部排序</p>
+<p>在排序期间元素全部存放在内存中的排序。</p>
+</li>
+<li><p>外部排序</p>
+<p>在排序期间元素无法全部同时存放在内存中，必须在排序的过程中根据要求不断地在内、外存之间移动的排序。</p>
+</li>
+</ol>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   <span class="type">int</span> i,j;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">2</span>; i&lt;n; i++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(A[i]&lt;A[i<span class="number">-1</span>])&#123;</span><br><span class="line">         A[<span class="number">0</span>] = A[i];</span><br><span class="line">         <span class="keyword">for</span>(j=i<span class="number">-1</span>;A[<span class="number">0</span>]&lt;A[j];j--)&#123;</span><br><span class="line">            A[j+<span class="number">1</span>] = A[j];</span><br><span class="line">         &#125;</span><br><span class="line">         A[j+<span class="number">1</span>] = A[<span class="number">0</span>];</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析如下：</p>
+<blockquote>
+<p>空间效率：仅使用了常数个辅助单元，因此空间复杂度为O(1)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：在排序过程中，向有序子表中逐个地插入元素的操作进行了n-1趟，每趟操作都分为比较关键字和移动元素，而比较次数和移动次数取决于待排序表的初始状态。</p>
+<p>在最好情况下，表中元素已有序，此时每插入一个元素，都只需比较一次而不用移动元素，因而时间复杂度为O(n)</p>
+<p>在最坏情况下，表中元素恰好逆序，总的比较次数和移动次数都达到最大，总的时间复杂度为$O(n^2)$</p>
+<p>平均情况下，考虑待排序表中元素是随机的，此时可以取上述最好与最坏情况的平均值作为平均情况下的时间复杂度，总的比较次数与总的移动次数均约为$n^2&#x2F;4$</p>
+</blockquote>
+<blockquote>
+<p>因此，直接插入排序的时间复杂度为$O(n^2)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：由于每次插入元素时总是从后向前比较再移动，所以不会出现相同元素相对位置发生变化的情况，即直接插入排序是一个稳定的排序方法。</p>
+</blockquote>
+<blockquote>
+<p>适用性：直接插入排序算法适用于顺序存储和链式存储的线性表。为链式存储时，可以从前往后查找指定元素的位置。</p>
+</blockquote>
+<h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   <span class="type">int</span> i,j,high,low;</span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">      A[<span class="number">0</span>] = A[i];</span><br><span class="line">      low=<span class="number">1</span>;high=i<span class="number">-1</span>;</span><br><span class="line">      <span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">         <span class="type">int</span> mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">         <span class="keyword">if</span>(A[mid]&gt;A[<span class="number">0</span>])</span><br><span class="line">            high=mid<span class="number">-1</span>;</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">            low=mid+<span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span>(j=i<span class="number">-1</span>;j&gt;=high+<span class="number">1</span>;j--)&#123;</span><br><span class="line">         A[j+<span class="number">1</span>] = A[j];</span><br><span class="line">      &#125;</span><br><span class="line">      A[high+<span class="number">1</span>] = A[<span class="number">0</span>];</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析如下：</p>
+<blockquote>
+<p>从上述算法中，不难看出折半插入排序<strong>仅减少了比较元素的次数</strong>，约为$O(n\log_2n)$，该比较次数与待排序表的初始状态无关，仅取决于表中的元素个数n，而元素的移动次数并未改变，它依赖于待排序表的初始状态。</p>
+<p>因此，折半插入排序的时间复杂度仍为$O(n^2)$,但对于数据量不很大的排序表，折半插入排序往往能表现出很好的性能。</p>
+<p>折半插入排序是一种稳定的排序方法。</p>
+</blockquote>
+<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ShellSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   <span class="type">int</span> dk,i,j;</span><br><span class="line">   <span class="keyword">for</span>(dk = n/<span class="number">2</span>;dk &gt;= <span class="number">1</span>;dk = dk/<span class="number">2</span>)&#123;</span><br><span class="line">      <span class="keyword">for</span>(i = dk+<span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">         <span class="keyword">if</span>(A[i] &lt; A[i-dk])&#123;</span><br><span class="line">            A[<span class="number">0</span>] = A[j];</span><br><span class="line">            <span class="keyword">for</span>(j = i-dk;j&gt;<span class="number">0</span>&amp;&amp;A[<span class="number">0</span>]&lt;A[j];j-=dk)&#123;</span><br><span class="line">               A[j+dk] = A[j];</span><br><span class="line">            &#125;</span><br><span class="line">            A[j+dk] = A[<span class="number">0</span>];</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：仅使用了常数个辅助单元，因此空间复杂度为O(1)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：在某个特定范围时，希尔排序的时间复杂度约为$(O^{1.3})$，在最坏情况下希尔排序的时间复杂度为$O(n^2)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：不稳定。</p>
+</blockquote>
+<blockquote>
+<p>适用性：仅适用于线性表为顺序存储的情况。</p>
+</blockquote>
+<h3 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">BubbleSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">      <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> j = n<span class="number">-1</span>;j&gt;i;j--)&#123;</span><br><span class="line">         <span class="keyword">if</span>(A[j<span class="number">-1</span>]&gt;A[j])&#123;</span><br><span class="line">            swap(A[j<span class="number">-1</span>],A[j]);</span><br><span class="line">            flag = <span class="literal">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(flag == <span class="literal">false</span>)&#123;</span><br><span class="line">         <span class="keyword">return</span>;<span class="comment">//已有序</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：仅使用了常数个辅助单元，因而空间复杂度为O(1)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：</p>
+<p>最好情况(有序):比较次数n-1，移动次数0，时间复杂度O(n)</p>
+<p>最坏情况(逆序):比较次数$\frac{n(n-1)}{2}$，移动次数$\frac{3n(n-1)}{2}$</p>
+<p>从而，最坏情况下的时间复杂度为$O(n^2)$，平均时间复杂度为$O(n^2)$。</p>
+</blockquote>
+<blockquote>
+<p>稳定性：稳定。</p>
+</blockquote>
+<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">QuickSort</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(low&lt;high)&#123;</span><br><span class="line">      <span class="type">int</span> pivotpos = Partition(A,low,high);</span><br><span class="line">      QuickSort(A,low,pivotpos<span class="number">-1</span>);</span><br><span class="line">      QuickSort(A,pivotpos+<span class="number">1</span>,high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>  <span class="title function_">Partition</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">   ElemType pivot = A[low];</span><br><span class="line">   <span class="keyword">while</span>(low&lt;high)&#123;</span><br><span class="line">      <span class="keyword">while</span>(low&lt;high&amp;&amp;A[high]&gt;=pivot) --high;</span><br><span class="line">      A[low] = A[high];</span><br><span class="line">      <span class="keyword">while</span>(low&lt;high&amp;&amp;A[low]&lt;=pivot) ++low;</span><br><span class="line">      A[high] = A[low];</span><br><span class="line">   &#125;</span><br><span class="line">   A[low] = pivot;</span><br><span class="line">   <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：最好情况下，$O(\log_2n)$,最坏情况下，$O(n)$</p>
+<p>平均情况下：$O(\log_2n)$</p>
+</blockquote>
+<blockquote>
+<p>时间效率：最好情况下，$O(n\log_2n)$,最坏情况下，$O(n^2)$</p>
+<p>平均情况下：$O(n\log_2n)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：不稳定。</p>
+</blockquote>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">SelectSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">      <span class="type">int</span> min = i;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> j = i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">         <span class="keyword">if</span>(A[min]&gt;A[j]) min = j;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(min != i)swap(A[i],A[min]);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：O(1)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：</p>
+<p>移动次数：0~3(n-1)，与序列初始状态有关</p>
+<p>比较次数：n(n-1)&#x2F;2，与序列初始状态无关</p>
+<p>时间复杂度：$O(n^2)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：不稳定。</p>
+</blockquote>
+<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">BulidMaxHeap</span><span class="params">(ElemType A[],<span class="type">int</span> len)</span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=len/<span class="number">2</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">      HeadAdjust(A,i,len);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">HeadAdjust</span><span class="params">(ElemType A[],<span class="type">int</span> k,<span class="type">int</span> len)</span>&#123;</span><br><span class="line">   A[<span class="number">0</span>] = A[k];</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>*k;i&lt;=len;i*=<span class="number">2</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(i&lt;len&amp;&amp;A[i]&lt;A[i+<span class="number">1</span>])&#123;</span><br><span class="line">         i++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(A[<span class="number">0</span>]&gt;=A[i])<span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">         A[k] = A[i];</span><br><span class="line">         k = i;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   A[k] = A[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">HeapSort</span><span class="params">(ElemType A[],<span class="type">int</span> len)</span>&#123;</span><br><span class="line">   BulidMaxHeap(A,len);</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i = len;i&gt;<span class="number">1</span>;i--)&#123;</span><br><span class="line">      swap(A[i],A[<span class="number">1</span>]);</span><br><span class="line">      HeadAdjust(A,<span class="number">1</span>,i<span class="number">-1</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>堆排序适用于关键字较多的情况。</p>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：O(1)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：<br>建堆时间为O(n),之后有n-1次向下调整操作，每次调整的时间为O(h),故在最好、最坏以及平均情况下，堆排序的时间复杂度为$O(n\log_2n)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：不稳定。 </p>
+</blockquote>
+<h3 id="归并排序和基数排序"><a href="#归并排序和基数排序" class="headerlink" title="归并排序和基数排序"></a>归并排序和基数排序</h3><h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">ElemType *B = (ElemType *)<span class="built_in">malloc</span>((n+<span class="number">1</span>)*sizeod(ElemType));</span><br><span class="line"><span class="type">void</span> <span class="title function_">Merge</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> mid,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">   <span class="type">int</span> i,j,k;</span><br><span class="line">   <span class="keyword">for</span>(k = low;k&lt;high;k++)</span><br><span class="line">   &#123;</span><br><span class="line">      B[k] = A[k];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span>(i = low,j=mid+<span class="number">1</span>,k=i;i&lt;=mid&amp;&amp;j&lt;=high;k++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(B[i]&lt;B[j])</span><br><span class="line">         A[k] = B[i++];</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">         A[k] = B[j++];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">while</span>(i&lt;=mid) A[k++] = B[i++];</span><br><span class="line">   <span class="keyword">while</span>(j&lt;=high) A[k++] = B[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">MergeSort</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(low&lt;high)&#123;</span><br><span class="line">      <span class="type">int</span> mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">      MergeSort(A,low,mid);</span><br><span class="line">      MergeSort(A,mid+<span class="number">1</span>,high);</span><br><span class="line">      Merge(A,low,mid,high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<blockquote>
+<p>空间效率：O(n)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：每趟归并的时间复杂度为O(n),共需进行$\lceil \log_2n\rceil$趟归并，所以算法的时间复杂度为$O(n\log_2n)$</p>
+</blockquote>
+<blockquote>
+<p>稳定性：稳定。</p>
+</blockquote>
+<blockquote>
+<p>注意：一般而言，对于N个元素进行k路归并排序时，排序的趟数m满足$k^m &#x3D; N$，从而$m&#x3D;\log_kN$，又考虑到m为整数，所以$m &#x3D; \lceil log_kN\rceil$。这和前面的2路归并是一致的。</p>
+</blockquote>
+<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p>性能分析：</p>
+<blockquote>
+<p>空间效率：一趟排序需要的辅助存储空间为r（r个队列：r个队头指针和队尾指针），但以后的排序中会重复使用这些队列，所以基数排序的空间复杂度为O(r)</p>
+</blockquote>
+<blockquote>
+<p>时间效率：进行d趟分配与收集，一趟分配需要O(n),一趟收集需要O(r),所以基数排序的时间复杂度为O(d(n+r)),它与序列的初始状态无关。</p>
+</blockquote>
+<blockquote>
+<p>稳定性：稳定。</p>
+</blockquote>
+<h3 id="各种内部排序算法的比较及应用"><a href="#各种内部排序算法的比较及应用" class="headerlink" title="各种内部排序算法的比较及应用"></a>各种内部排序算法的比较及应用</h3><h4 id="内部排序算法的比较"><a href="#内部排序算法的比较" class="headerlink" title="内部排序算法的比较"></a>内部排序算法的比较</h4><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625111923314.png"/>
+
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625111956279.png" alt="image-20230625111956279"></p>
+<h4 id="内部排序算法的应用"><a href="#内部排序算法的应用" class="headerlink" title="内部排序算法的应用"></a>内部排序算法的应用</h4><ol>
+<li><p>选取排序方法需要考虑的因素</p>
+<ol>
+<li><p>待排序的元素数目n</p>
+</li>
+<li><p>元素本身信息量的大小</p>
+</li>
+<li><p>关键字的结构及其分布情况</p>
+</li>
+<li><p>稳定性的要求</p>
+</li>
+<li><p>语言工具的条件，存储结构及辅助空间的大小等。</p>
+</li>
+</ol>
+</li>
+<li><p>排序算法小结</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230625112306359.png" alt="image-20230625112306359"></p>
+</li>
+</ol>
+<h3 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h3><p>主要内容：</p>
+<ol>
+<li><p>外部排序指待排序文件较大，内存一次放不下，需存放在外存的文件的排序。</p>
+</li>
+<li><p>为减少平衡归并中外存读写次数所采取的方法：增大归并路数和减少归并段个数。</p>
+</li>
+<li><p>利用败者树增大归并路数。</p>
+</li>
+<li><p>利用置换-选择排序增大归并段长度来减少归并段个数。</p>
+</li>
+<li><p>由长度不等的归并段，进行多路平衡归并，需要构造最佳归并树。</p>
+</li>
+</ol>
+<h4 id="外部排序的基本概念"><a href="#外部排序的基本概念" class="headerlink" title="外部排序的基本概念"></a>外部排序的基本概念</h4><h4 id="外部排序的方法"><a href="#外部排序的方法" class="headerlink" title="外部排序的方法"></a>外部排序的方法</h4><h4 id="多路平衡归并与败者树"><a href="#多路平衡归并与败者树" class="headerlink" title="多路平衡归并与败者树"></a>多路平衡归并与败者树</h4><h4 id="置换-选择排序（生成初始归并段）"><a href="#置换-选择排序（生成初始归并段）" class="headerlink" title="置换-选择排序（生成初始归并段）"></a>置换-选择排序（生成初始归并段）</h4><h4 id="最佳归并树"><a href="#最佳归并树" class="headerlink" title="最佳归并树"></a>最佳归并树</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/02/dataStructure/" data-id="clqwg6y2s0000b0vf3r2n46vs" data-title="data Structure" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-Structure/" rel="tag">data Structure</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/02/Latex%E8%AF%AD%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/31/JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-composition-principle/" rel="tag">Computer composition principle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-network/" rel="tag">Computer network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-XV6-labs-2021/" rel="tag">OS_XV6_labs_2021</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-Structure/" rel="tag">data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Computer-composition-principle/" style="font-size: 10px;">Computer composition principle</a> <a href="/tags/Computer-network/" style="font-size: 10px;">Computer network</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OS-XV6-labs-2021/" style="font-size: 10px;">OS_XV6_labs_2021</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-Structure/" style="font-size: 10px;">data Structure</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/02/computer%20network/">Computer network</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/Computer%20composition%20principle/">Computer composition principle</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/algorithm/">algorithm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/typescript/">typescript</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/os/">os</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

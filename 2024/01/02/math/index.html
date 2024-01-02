@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Math | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="高数笔记1.常见泰勒展开指数函数泰勒级数展开式  双曲函数泰勒级数展开式  三角函数泰勒级数展开式(公式)  反三角函数泰勒级数展开式  对数函数泰勒级数展开式  2. 积分基本公式【1】基本积分表 【2】常用积分公式 3.定积分的应用1.平面图形的面积 2. 旋转体体积  3. 曲线弧长 4. 旋转体侧面积 4. 常微分方程1. 可分离变量的方程可表示为形如$$g(y)dy &#x3D; f(x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Math">
+<meta property="og:url" content="http://example.com/2024/01/02/math/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="高数笔记1.常见泰勒展开指数函数泰勒级数展开式  双曲函数泰勒级数展开式  三角函数泰勒级数展开式(公式)  反三角函数泰勒级数展开式  对数函数泰勒级数展开式  2. 积分基本公式【1】基本积分表 【2】常用积分公式 3.定积分的应用1.平面图形的面积 2. 旋转体体积  3. 曲线弧长 4. 旋转体侧面积 4. 常微分方程1. 可分离变量的方程可表示为形如$$g(y)dy &#x3D; f(x">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-c5641fe2ed117b1aad374162c8fa4131_b.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-abc86a01c13f583754997e1a40259976_b.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-af016ea06bf01de04d78f06a7f5c54be_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-70f2e5b2c04e24dc3a12a15753c9bcb1_b.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-df5a17ab6b4b5a0d99ff0d1540e80f2b_b.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-0855b8f2b620f94422d4e0c419cb0e58_720w.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-997b1a2db6748766b3fc840150b82635_720w.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172850798.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172916366.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172907564.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172933245.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419173001757.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018094938103.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018095004948.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212401990.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212855305.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212418835.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230603101112099.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604190443180.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604190457241.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210400911.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210431206.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210749601.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213337804.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213353624.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213248337.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213456460.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220139503.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220204593.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220906444.png">
+<meta property="og:image" content="c:\Users\zhenghaosheng\AppData\Roaming\Typora\typora-user-images\image-20230604221131320.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222356492.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222422051.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222624243.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222746926.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605092453791.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605092638801.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605094948338.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095048845.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095357224.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095549797.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102003492.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102040672.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102103375.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102146679.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103306098.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103328522.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103732143.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103814915.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605104224619.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605104307242.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605105124198.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605105300240.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605110453629.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212404003.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212617223.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212851055.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605213559080.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605215240293.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605220235069.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605220837882.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605221013377.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605222619411.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605223203290.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605225048434.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605225833038.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606092140264.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606094051373.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606094330635.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606143416585.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606144346037.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606144403762.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606152216691.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606152535723.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153009484.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153119720.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153146531.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153558745.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153721782.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606155326546.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606170824189.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606171413050.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606171205932.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607170852094.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607184358657.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185442867.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185704541.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185741720.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185848786.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185938516.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607190712873.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607190906476.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191010922.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191607137.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191620856.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191900717.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607192221262.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607192855606.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607193052481.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607193155730.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144200902.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144226334.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144239348.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144359474.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145353644.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145543812.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145625014.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150518689.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150607602.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150919677.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150954909.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610151152063.png">
+<meta property="article:published_time" content="2024-01-02T14:29:16.921Z">
+<meta property="article:modified_time" content="2023-10-24T01:27:56.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Math">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-c5641fe2ed117b1aad374162c8fa4131_b.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-math" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/01/02/math/" class="article-date">
+  <time class="dt-published" datetime="2024-01-02T14:29:16.921Z" itemprop="datePublished">2024-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Math
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="高数笔记"><a href="#高数笔记" class="headerlink" title="高数笔记"></a>高数笔记</h1><h2 id="1-常见泰勒展开"><a href="#1-常见泰勒展开" class="headerlink" title="1.常见泰勒展开"></a>1.常见泰勒展开</h2><p>指数函数泰勒级数展开式</p>
+<p><img src="https://pic2.zhimg.com/v2-c5641fe2ed117b1aad374162c8fa4131_b.jpg" alt="动图封面"></p>
+<p>双曲函数泰勒级数展开式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-abc86a01c13f583754997e1a40259976_b.jpg" alt="动图封面"></p>
+<p>三角函数泰勒级数展开式(公式)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-af016ea06bf01de04d78f06a7f5c54be_b.jpg" alt="动图封面"></p>
+<p>反三角函数泰勒级数展开式</p>
+<p><img src="https://pic2.zhimg.com/v2-70f2e5b2c04e24dc3a12a15753c9bcb1_b.webp" alt="动图"></p>
+<p>对数函数泰勒级数展开式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-df5a17ab6b4b5a0d99ff0d1540e80f2b_b.jpg" alt="动图封面"></p>
+<h2 id="2-积分基本公式"><a href="#2-积分基本公式" class="headerlink" title="2. 积分基本公式"></a>2. 积分基本公式</h2><h3 id="【1】基本积分表"><a href="#【1】基本积分表" class="headerlink" title="【1】基本积分表"></a>【1】基本积分表</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-0855b8f2b620f94422d4e0c419cb0e58_720w.webp" alt="img"></p>
+<h3 id="【2】常用积分公式"><a href="#【2】常用积分公式" class="headerlink" title="【2】常用积分公式"></a>【2】常用积分公式</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/v2-997b1a2db6748766b3fc840150b82635_720w.webp" alt="img"></p>
+<h2 id="3-定积分的应用"><a href="#3-定积分的应用" class="headerlink" title="3.定积分的应用"></a>3.定积分的应用</h2><h3 id="1-平面图形的面积"><a href="#1-平面图形的面积" class="headerlink" title="1.平面图形的面积"></a>1.平面图形的面积</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172850798.png" alt="image-20230419172850798"></p>
+<h3 id="2-旋转体体积"><a href="#2-旋转体体积" class="headerlink" title="2. 旋转体体积"></a>2. 旋转体体积</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172916366.png" alt="image-20230419172916366"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172907564.png" alt="image-20230419172907564"></p>
+<h3 id="3-曲线弧长"><a href="#3-曲线弧长" class="headerlink" title="3. 曲线弧长"></a>3. 曲线弧长</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419172933245.png" alt="image-20230419172933245"></p>
+<h3 id="4-旋转体侧面积"><a href="#4-旋转体侧面积" class="headerlink" title="4. 旋转体侧面积"></a>4. 旋转体侧面积</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230419173001757.png" alt="image-20230419173001757"></p>
+<h2 id="4-常微分方程"><a href="#4-常微分方程" class="headerlink" title="4. 常微分方程"></a>4. 常微分方程</h2><h3 id="1-可分离变量的方程"><a href="#1-可分离变量的方程" class="headerlink" title="1. 可分离变量的方程"></a>1. 可分离变量的方程</h3><p>可表示为形如<br>$$<br>g(y)dy &#x3D; f(x)dx<br>$$<br>的方程，称为可分离变量的方程，求解的方法是两端积分<br>$$<br>\int g(y)dy &#x3D; \int f(x)dx<br>$$</p>
+<h3 id="2-齐次微分方程"><a href="#2-齐次微分方程" class="headerlink" title="2. 齐次微分方程"></a>2. 齐次微分方程</h3><p>能化为<br>$$<br>dy&#x2F;dx &#x3D; \phi(y&#x2F;x)<br>$$<br>的微分方程称为齐次微分方程。</p>
+<p>求解齐次微分方程的一般方法：令u &#x3D; y&#x2F;x， 则y ‘  &#x3D; u + xu’ ，从而将原方程化为<br>$$<br>xu’ &#x3D; \phi(u) -u<br>$$<br>此方程为可分离变量的方程</p>
+<h3 id="3-一阶线性微分方程"><a href="#3-一阶线性微分方程" class="headerlink" title="3. 一阶线性微分方程"></a>3. 一阶线性微分方程</h3><p>形如 y’ + p(x)y &#x3D; q(x) 的方程称为一阶线性微分方程</p>
+<p>求解一阶线性微分方程的一般方法：常数变易法，或直接利用以下通解公式<br>$$<br>y &#x3D; e^{-\int p(x)dx}[\int q(x)e^{\int p(x)dx}dx + C]<br>$$</p>
+<h3 id="4-可降阶的高阶方程"><a href="#4-可降阶的高阶方程" class="headerlink" title="4. 可降阶的高阶方程"></a>4. 可降阶的高阶方程</h3><p>三种类型的高阶方程<br>$$<br>y^{(n)} &#x3D; f(x)<br>$$</p>
+<p>$$<br>y’’ &#x3D; f(x, y’)<br>$$</p>
+<p>$$<br>y’’ &#x3D; f(y,y’)<br>$$</p>
+<h3 id="5-高阶线性微分方程"><a href="#5-高阶线性微分方程" class="headerlink" title="5. 高阶线性微分方程"></a>5. 高阶线性微分方程</h3><h4 id="1-线性微分方程的解的结构"><a href="#1-线性微分方程的解的结构" class="headerlink" title="1. 线性微分方程的解的结构"></a>1. 线性微分方程的解的结构</h4><p>这里只讨论二阶线性微分方程，其结论可推广到更高阶的方程，二阶线性微分方程的一般形式为：<br>$$<br>y’’ +p(x)y’ + q(x)y &#x3D; f(x)<br>$$<br>这里的p(x), q(x), f(x)均为连续函数，当方程右端的f(x) 为0时，称为二阶线性齐次方程，否则称为二阶线性非齐次方程</p>
+<p>齐次方程<br>$$<br>y’’ +p(x)y’ + q(x)y &#x3D; 0<br>$$<br>非齐次方程<br>$$<br>y’’ +p(x)y’ + q(x)y &#x3D; f(x)<br>$$</p>
+<blockquote>
+<p>定理：</p>
+</blockquote>
+<ol>
+<li><p>若y1(x)和y2(x)是齐次方程的的两个线性无关的特解，那么<br>$$<br>y &#x3D; C_1y_1(x) + C_2y_2(x)<br>$$<br>就是该齐次方程的通解</p>
+</li>
+<li><p>若y<em>是非齐次方程的一个特解，y1(x)和y2(x)是齐次方程的的两个线性无关的特解，则<br>$$<br>y &#x3D; C_1y_1(x) + C_2y_2(x) + y^</em>(x)<br>$$<br>是非齐次微分方程的通解</p>
+</li>
+<li><p>如果y1*(x), y2*(x)是非齐次方程的两个特解，则<br>$$<br>y(x) &#x3D; y_2^*(x) - y_1^*(x)<br>$$<br>是齐次微分方程的解</p>
+</li>
+<li><p>如果如果y1*(x), y2*(x)分别是<br>$$<br>y’’ +p(x)y’ + q(x)y &#x3D; f_1(x)\<br>y’’ +p(x)y’ + q(x)y &#x3D; f_2(x)<br>$$<br>的特解，则y1*(x) + y2*(x)是方程<br>$$<br>y’’ +p(x)y’ + q(x)y &#x3D; f_1(x) + f_2(x)<br>$$<br>的一个特解</p>
+</li>
+</ol>
+<h4 id="2-常系数齐次线性微分方程"><a href="#2-常系数齐次线性微分方程" class="headerlink" title="2. 常系数齐次线性微分方程"></a>2. 常系数齐次线性微分方程</h4><p>二阶常系数线性齐次微分方程的一般形式为<br>$$<br>y’’ + py’ + qy &#x3D; 0<br>$$<br>其特征方程为<br>$$<br>r^2 + pr + q &#x3D; 0<br>$$<br>设r$_1$, r$_2$为该方程的两个根</p>
+<ol>
+<li><p>若r$_1$，r$_2$为两个不想等的实特征根，则方程的通解为<br>$$<br>y &#x3D; C_1e^{r_1x}+C_2e^{r_2x}<br>$$</p>
+</li>
+<li><p>若r$_1$ &#x3D; r$_2$为二重实特征根，则方程的通解为<br>$$<br>y &#x3D; (C_1+C_2x)e^{r_1x}<br>$$</p>
+</li>
+<li><p>若$r_1 &#x3D;\alpha + i\beta$ ，$ r_2 &#x3D; \alpha - i\beta$为一对共轭复根，则方程的通解为<br>$$<br>y &#x3D; e^{\alpha x}(C_1cos\beta x+C_2sin\beta x)<br>$$</p>
+</li>
+</ol>
+<h2 id="5-函数、极限、连续"><a href="#5-函数、极限、连续" class="headerlink" title="5.函数、极限、连续"></a>5.函数、极限、连续</h2><ol>
+<li><p>f’(x)有界，则f(x)有界</p>
+</li>
+<li><p>f’(x<del>0</del>)&gt;0，得不到一定存在x<del>0</del>的某邻域，在此邻域内f(x)单调增，反例如下：<br>$$<br>f(x) &#x3D;<br>\begin{cases}<br>x + 2x^2sin(\frac{1}{x}),x\neq 0 \<br>0, x &#x3D; 0<br>\end{cases}<br>\<br>$$</p>
+</li>
+</ol>
+<p>此时在x&#x3D;0的任何邻域内都存在导数为负的点，从而f(x)在x &#x3D; 0的任何邻域内都不单调增</p>
+<ol start="3">
+<li><p>函数在x<del>0</del>点的极限值是否存在仅与函数在x<del>0</del>的去心邻域内的函数值无关，与函数是否在该点有无定义无关</p>
+</li>
+<li><p>需要求左右极限的情况：</p>
+<ol>
+<li>分段函数分界点的极限</li>
+<li>e$^{\infty}$型极限</li>
+<li>$arctan\infty$型极限</li>
+</ol>
+</li>
+<li><p>极限的局部有界性：</p>
+<p>某一点极限存在，在这一点的某去心邻域有界。反之，函数在某点的某去心邻域有界，不可推出该点极限存在，反例为$sin\frac{1}{x}$</p>
+</li>
+<li><p>极限的保号性：</p>
+<p>极限大于0，函数值大于0（极限值报函数值）</p>
+<p>函数值大于等于0，极限大于等于0（函数值保极限值）</p>
+<p>相应地，可推出保序性。</p>
+</li>
+<li><p>求解n项和的极限，多用夹逼准则；求解递推公式，多用单调有界准则。</p>
+</li>
+<li><p>常用不等式：<br>$$<br>tanx &lt; x &lt; sinx, x\in (0, \Pi &#x2F;2)\<br>\frac{x}{1+x} &lt; ln(1+x) &lt; x, x\in(0,+\infty)\<br>ln^\alpha x \ll x^\beta \ll a^x, x\rightarrow +\infty\<br>ln^\alpha n \ll n^\beta \ll a^n \ll n! \ll n^n, n \rightarrow \infty(其中\alpha &gt;0,\beta &gt;0,a&gt;1)<br>$$</p>
+</li>
+<li><p>无穷大量和无界变量的关系</p>
+</li>
+<li><p>$n\rightarrow \infty,a_n &#x3D; a，那么|a_n| &#x3D; |a|$，但反之不成立；</p>
+<p>$n\rightarrow \infty,a_n &#x3D; 0的充要条件是|a_n| &#x3D; 0$</p>
+</li>
+<li><p>注意洛必达法则使用的三个要求</p>
+</li>
+<li><p>求解极限时，若分子或分母不可使用加减法则，考虑提取公因子或使用拉格朗日定理进而求解，若分子拆开后各部分的极限仍然存在则将其拆开后求解极限，此时并不违反无穷小的加减代换法则。</p>
+</li>
+<li><p>利用单调有界准则求极限，先证有界，再证单调</p>
+</li>
+<li><p>关于夹逼定理的一般使用规律：</p>
+<p>当变化部分的最大值与主体部分相比较是次量级就用夹逼原理，而当变化部分的最大值与其主体部分相比较是同量级就用定积分定义；</p>
+<p>分子与分母同时变化时优先考虑分母变化。</p>
+</li>
+<li><p>对于n项连乘的数列极限，常用方法为夹逼原理或取对数化为n项和</p>
+</li>
+<li><p>对于递推关系定义的数列：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018094938103.png" alt="image-20231018094938103"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018095004948.png" alt="image-20231018095004948"></p>
+</li>
+</ol>
+<h2 id="6-一元函数微分学"><a href="#6-一元函数微分学" class="headerlink" title="6.一元函数微分学"></a>6.一元函数微分学</h2><ol>
+<li><p>连续、可导与可微的关系。反例：$f(x) &#x3D; \begin{cases}x^2sin\frac{1}{x},x\neq 0\0,x&#x3D;0 \end{cases}$处处可导，但x趋于0的导数不存在，从而f‘(x)再x &#x3D; 0处也不连续</p>
+</li>
+<li><p>关于高阶导数求导：</p>
+<ol>
+<li><p>使用定义</p>
+</li>
+<li><p>常用公式：<br>$$<br>(sinx)^{(n)} &#x3D; sin(x+\frac{n\pi}{2})\<br>(cosx)^{(n)} &#x3D; cos(x+\frac{n\pi}{2})\<br>(u\pm v)^{(n)} &#x3D; u^{(n)} + v^{(n)}\<br>(uv)^{(n)} &#x3D; \sum_{k&#x3D;0}^{n}C_n^ku^{(k)}v^{(n-k)}\<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>分段函数在分界点处的导数一般都要用定义求</p>
+</li>
+<li><p>f(x) &#x3D; g(x)|x - a|，其中g(x)在x &#x3D; a处连续，则f(x)在x &#x3D; a 处可导的充要条件是g(a) &#x3D; 0</p>
+</li>
+<li><p>f(x)可导$\nleftrightarrow$|f(x)|可导</p>
+<p>$$<br>设f(x)连续：\<br>若f(x_0)\neq 0,则|f(x)|在x_0处可导\Leftrightarrow f(x)在x_0处可导\<br>若f(x_0)&#x3D; 0,则|f(x)|在x_0处可导\Leftrightarrow f(x_0) &#x3D; 0\<br>$$</p>
+</li>
+<li><p>$对于极坐标方程r &#x3D; f(\theta)，x &#x3D; f(\theta)cos\theta,y &#x3D; f(\theta)\sin\theta$</p>
+</li>
+<li><p>y &#x3D; f(g(x))，y’ &#x3D; f’(g(x))g’(x)，此时若g’(x) 不存在，并不能断定y’不存在，需用定义再次验证</p>
+</li>
+<li><p>f(x)的反函数是g(x),$g’’(x) &#x3D; -\frac{f’’(x)}{f’(x)^3}$</p>
+</li>
+<li><p>泰勒级数$f(x) &#x3D; \sum_{n&#x3D;0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n$</p>
+</li>
+<li><p>泰勒公式</p>
+</li>
+<li><p>曲率公式：$K &#x3D; \begin{cases}\frac{|y’’|}{(1+y’^2)^{3&#x2F;2}},y &#x3D; y(x)\\frac{|y’’x’-y’x’’|}{(x’^2+y’^2)^{3&#x2F;2}},参数方程\end{cases}$</p>
+</li>
+<li><p>曲率半径R &#x3D; 1&#x2F;K</p>
+</li>
+<li><p>证明根的存在性：零点定理、罗尔定理</p>
+</li>
+<li><p>求根的个数：单调性、罗尔定理推论</p>
+</li>
+<li><p>题目出现f(x) + f’(x) ,考虑构造$e^xf(x)$</p>
+</li>
+<li><p>与微分中值定理有关的证明题：</p>
+<ol>
+<li><p>$证明存在一个点\xi \in(a,b),使F(\xi,f(\xi),f’(\xi)) &#x3D; 0$</p>
+<p>分析法，微分方程法 P81-86</p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212401990.png"/>
+
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212855305.png" alt="image-20231018212855305"></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20231018212418835.png"/>
+</li>
+<li><p>$证明存在两个中值点,\xi,\eta\in(a,b),使F[\xi,\eta,f(\xi),f(\eta),f’(\xi),f’(\eta)] &#x3D; 0$</p>
+<ol>
+<li><p>不要求两个点不相同</p>
+<p>在同一区间上用两次中值定理（拉格朗日、柯西）</p>
+</li>
+<li><p>要求两个点不相同</p>
+<p>将区间（a，b）分为两个子区间，在两个子区间上分别用拉格朗日中值定理</p>
+</li>
+</ol>
+</li>
+<li><p>$证明存在一个中值点\xi\in(a,b),使F[\xi,f^{(n)}(\xi)]\geq0(n&gt;&#x3D;2)$</p>
+<p>用拉格朗日余项的泰勒公式，其中x<del>0</del>点选题目中提供函数值和导数值信息多的点。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="7-一元函数积分学"><a href="#7-一元函数积分学" class="headerlink" title="7. 一元函数积分学"></a>7. 一元函数积分学</h2><ol>
+<li><p>原函数存在性定理：</p>
+<ol>
+<li>若f（x）在区间I上连续，则f（x）在区间I上必有原函数</li>
+<li>若f（x）在区间I上有第一类间断点，则f（x）在区间I上没有原函数</li>
+</ol>
+</li>
+<li><p>三种主要积分法：</p>
+<ol>
+<li>第一类换元法（凑微分法）</li>
+<li>第二类换元法</li>
+<li>分部积分法</li>
+</ol>
+</li>
+<li><p>常见的不可积的积分：<br>$$<br>\int e^{x^2}dx\<br>\int \frac{sinx}{x}dx\<br>\int \frac{cosx}{x}dx\<br>$$</p>
+</li>
+<li><p>有理函数积分：</p>
+<ol>
+<li>一般方法（部分分式法）</li>
+<li>特殊方法（加项减项拆项或凑微分降幂）</li>
+</ol>
+</li>
+<li><p>三角有理式积分</p>
+<ol>
+<li>万能代换令 tan(x&#x2F;2) &#x3D; t</li>
+<li>关于sinx的奇函数，凑dcosx</li>
+<li>关于cosx的奇函数，凑dsinx</li>
+<li>关于两者的奇函数，凑dtanx</li>
+</ol>
+</li>
+<li><p>简单无理函数积分<br>$$<br>\int R(x,\sqrt[n]{\frac{ax+b}{cx+d}})dx<br>$$<br>令根式为t，将其化为有理函数积分进行运算</p>
+</li>
+<li><p>分母为二次式，考虑配方构成a^2 +&#x2F;- x^2的形式</p>
+</li>
+<li><p>出现根号内1+x^2 ，考虑令x &#x3D; tan（t）</p>
+</li>
+<li><p>出现1+cosx，考虑将其转化为cos（x&#x2F;2）</p>
+</li>
+<li><p>积分函数为分段函数时，考虑分界点连续</p>
+</li>
+<li><p>定积分的可积性：</p>
+<ol>
+<li><p>必要性：</p>
+<p>积分存在，则积分函数的导数必有界</p>
+</li>
+<li><p>充分性：</p>
+<ol>
+<li>若积分函数在[a,b]连续，则积分必定存在</li>
+<li>若积分函数在[a,b]有界，且只有有限个间断点，则积分必定存在</li>
+<li>若积分函数在[a,b]只有有限个第一类间断点，则积分必定存在，</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>使用牛顿-莱布尼兹公式的前提是f(x)在闭区间上连续</p>
+</li>
+<li><p>$$<br>\int _0 ^{\frac{\pi}{2}} sin^nxdx &#x3D; \int _0 ^{\frac{\pi}{2}} cos^nxdx &#x3D; \begin{cases}<br>\frac{n-1}{n} *\frac{n-3}{n-2}…… * \frac{2}{3},n为大于1的奇数\<br>\frac{n-1}{n} *\frac{n-3}{n-2}…… * \frac{1}{2} * \frac{\pi}{2},n为偶数\end{cases}\<br>\int _0 ^\pi xf(sinx)dx &#x3D; \frac{\pi}{2}\int _0 ^\pi f(sinx)dx，其中f(x)连续<br>$$</p>
+</li>
+<li><p>积分中值定理<br>$$<br>\int _a^bf(x)dx &#x3D; f(\xi)(b-a)，其中f(x)在[a,b]上连续，a&lt;\xi&lt;b<br>$$</p>
+</li>
+<li><p>广义积分中值定理<br>$$<br>\int_a^bf(x)g(x)dx &#x3D; f(\xi)\int_a^bg(x)dx,a\leq \xi \leq b<br>其中f(x),g(x)在[a,b]上连续，且g(x)不变号<br>$$</p>
+</li>
+<li><p>求解有关定积分的极限：</p>
+<ol>
+<li>使用中值定理</li>
+<li>夹逼</li>
+<li>广义积分中值定理</li>
+<li>洛必达法则</li>
+<li>等价无穷小代换</li>
+</ol>
+</li>
+<li><p>关注区间对称，考虑奇偶性</p>
+</li>
+<li><p>当被积函数的原函数不易求出的定积分计算时，可令x &#x3D; 上限 + 下限 - t，此类代换区间不变</p>
+</li>
+<li><p>柯西积分不等式<br>$$<br>(\int_a^bf(x)g(x)dx)^2 \leq \int_a^bf^2(x)dx \int_a^bg^2(x)dx<br>$$</p>
+</li>
+<li></li>
+</ol>
+<h1 id="高数题型"><a href="#高数题型" class="headerlink" title="高数题型"></a>高数题型</h1><ol>
+<li>递推关系定义的数列求数列极限存在并求极限（P34-P37）</li>
+<li>微分中值定理三类题型</li>
+<li>求解有关定积分的极限：<ol>
+<li>使用中值定理</li>
+<li>夹逼</li>
+<li>广义积分中值定理</li>
+<li>洛必达法则</li>
+<li>等价无穷小代换</li>
+</ol>
+</li>
+</ol>
+<h1 id="线代笔记"><a href="#线代笔记" class="headerlink" title="线代笔记"></a>线代笔记</h1><h2 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h2><h3 id="存在与唯一性问题："><a href="#存在与唯一性问题：" class="headerlink" title="存在与唯一性问题："></a>存在与唯一性问题：</h3><ol>
+<li>方程组是否相容，即它是否至少有一个解？</li>
+<li>若它有解，它是否只有一个解，即解是否唯一？</li>
+</ol>
+<h3 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h3><p>每个矩阵行等价于唯一的简化阶梯形矩阵</p>
+<h3 id="定理2"><a href="#定理2" class="headerlink" title="定理2"></a>定理2</h3><p>线性方程组相容的充要条件是增广矩阵的最右列不是主元列</p>
+<h3 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h3><p>若A是m<em>n矩阵，它的各列为*<em>a</em></em><del>1</del>，<strong>a</strong><del>2</del>，…，<strong>a</strong><del>n</del>，而<strong>b</strong>属于R^m^，则矩阵方程 A<strong>x</strong> &#x3D; <strong>b</strong>  与向量方程 x<del>1</del> <strong>a</strong><del>1</del> + x<del>2</del> <strong>a</strong><del>2</del> + … + x<del>n</del> <strong>a</strong><del>n</del>&#x3D;<strong>b</strong></p>
+<p>有相同的解集，它又与增广矩阵为[<strong>a</strong><del>1</del>	<strong>a</strong><del>2</del>	…	<strong>a</strong><del>n</del>	<strong>b</strong>]的线性方程组有相同的解集。</p>
+<h3 id="定理4"><a href="#定理4" class="headerlink" title="定理4"></a>定理4</h3><p>设A是m*n矩阵，则下列命题是逻辑上等价的，也就是说，对某个A，它们都成立或者都不成立</p>
+<ol>
+<li>对R^m^中每个<strong>b</strong>，方程A<strong>x</strong> &#x3D; <strong>b</strong>有解</li>
+<li>对R^m^中每个<strong>b</strong>都是A的列的一个线性组合</li>
+<li>A的各列生成R^m^</li>
+<li>A在每一行都有一个主元位置</li>
+</ol>
+<h3 id="定理5"><a href="#定理5" class="headerlink" title="定理5"></a>定理5</h3><p>若A是m*n矩阵，<strong>u</strong>和<strong>v</strong>是R^n^中向量，c是标量，则</p>
+<ol>
+<li>A( <strong>u</strong> + <strong>v</strong>) &#x3D; A<strong>u</strong>  +  A<strong>v</strong></li>
+<li>A(c<strong>u</strong>) &#x3D; c(A<strong>u</strong>)</li>
+</ol>
+<h3 id="定理6"><a href="#定理6" class="headerlink" title="定理6"></a>定理6</h3><p>设方程A<strong>x</strong> &#x3D; <strong>b</strong> 对某个<strong>b</strong>是相容的，<strong>p</strong>为一个特解，则A<strong>x</strong> &#x3D; <strong>b</strong>的解集是所有形如 <strong>w</strong> &#x3D; <strong>p</strong> + <strong>v</strong><del>h</del>的向量的集，其中<strong>v</strong><del>h</del></p>
+<p>是齐次方程A<strong>x</strong> &#x3D; 0的任意一个解</p>
+<h3 id="定理7（线性相关集的特征）"><a href="#定理7（线性相关集的特征）" class="headerlink" title="定理7（线性相关集的特征）"></a>定理7（线性相关集的特征）</h3><p>两个或更多个向量的集合S &#x3D; {<strong>v</strong><del>1</del>，<strong>v</strong><del>2</del>，…，<strong>v</strong><del>p</del>}线性相关，当前仅当S中至少有一个向量是其它向量的线性组合。事实上，若S线性相关，且<strong>v</strong><del>1</del> !&#x3D; 0 ，则某个<strong>v</strong><del>j</del>（j&gt;1）是它前面向量的线性组合。</p>
+<h3 id="定理8"><a href="#定理8" class="headerlink" title="定理8"></a>定理8</h3><p>若一个向量组的向量个数超过每个向量的元素个数，那么这个向量组线性相关，就是说，R^n^中任意向量组[<strong>v</strong><del>1</del>，<strong>v</strong><del>2</del>，…，<strong>v</strong><del>p</del>]当p&gt;n时线性相关</p>
+<h3 id="定理9"><a href="#定理9" class="headerlink" title="定理9"></a>定理9</h3><p>若R^n^中向量组{<strong>v</strong><del>1</del>，<strong>v</strong><del>2</del>，…，<strong>v</strong><del>p</del>}包含零向量，则它线性相关。</p>
+<h3 id="定理10"><a href="#定理10" class="headerlink" title="定理10"></a>定理10</h3><p>设T:R^n^ -&gt; R^m^为线性变换，则存在唯一的矩阵A，使得对R^n^中一切<strong>x</strong>，有 T(<strong>x</strong>) &#x3D; A <strong>x</strong></p>
+<p>事实上，A是m<em>n矩阵，它的第j列是向量T(<strong>e</strong><del>j</del>)，其中*<em>e</em></em><del>j</del>是R^n^中单位矩阵<strong>I</strong><del>n</del>的第j列： A &#x3D; [T(<strong>e</strong><del>1</del>)，T(<strong>e</strong><del>2</del>)，…，T(<strong>e</strong><del>n</del>)]</p>
+<h3 id="定理11"><a href="#定理11" class="headerlink" title="定理11"></a>定理11</h3><p>设T:R^n^ -&gt; R^m^为线性变换，则T是一对一的当且仅当方程A <strong>x</strong> &#x3D; 0仅有平凡解</p>
+<h3 id="定理12"><a href="#定理12" class="headerlink" title="定理12"></a>定理12</h3><p>设T:R^n^ -&gt; R^m^为线性变换，设A为T的标准矩阵，则</p>
+<ol>
+<li>T把R^n^映上到R^m^，当前仅当A的列生成R^m^。</li>
+<li>T是一对一的，当且仅当A的列线性无关。</li>
+</ol>
+<h2 id="矩阵代数"><a href="#矩阵代数" class="headerlink" title="矩阵代数"></a>矩阵代数</h2><h3 id="定理1："><a href="#定理1：" class="headerlink" title="定理1："></a>定理1：</h3><p>设A，B，C是相同维数的矩阵，r与s为数，则有</p>
+<ol>
+<li>A + B &#x3D; B + A</li>
+<li>(A + B) + C &#x3D; A + (B + C)</li>
+<li>A + 0 &#x3D; A</li>
+<li>r(A + B)  &#x3D; rA + rB</li>
+<li>(r + s)A &#x3D; rA + sA</li>
+<li>r(sA) &#x3D; (rs)A</li>
+</ol>
+<h3 id="定理2："><a href="#定理2：" class="headerlink" title="定理2："></a>定理2：</h3><p>设A为m*n矩阵，B和C的维数使下列各式的乘积有定义：</p>
+<ol>
+<li><p>A(BC) &#x3D; (AB)C		(乘法结合律)</p>
+</li>
+<li><p>A(B+C) &#x3D; AB + AC		(乘法左分配律)</p>
+</li>
+<li><p>(B+C)A  &#x3D; BA + CA	(乘法右分配律)</p>
+</li>
+<li><p>r(AB) &#x3D; (rA)B &#x3D; A(rB)，r为任意数</p>
+</li>
+<li><p>I<del>m</del>A &#x3D; A &#x3D; AI<del>n</del>	(矩阵乘法的恒等式)</p>
+</li>
+</ol>
+<h3 id="定理3："><a href="#定理3：" class="headerlink" title="定理3："></a>定理3：</h3><ol>
+<li>(A^T^)^T^ &#x3D; A</li>
+<li>(A + B)^T^ &#x3D; A^T^ + B^T^</li>
+<li>对任意数r，(rA)^T^ &#x3D; rA^T^</li>
+<li>(AB)^T^ &#x3D; B^T^A^T^</li>
+</ol>
+<h3 id="定理4："><a href="#定理4：" class="headerlink" title="定理4："></a>定理4：</h3><p>设A &#x3D; $$\begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix}$$,若 $$ ad - bc \neq 0$$，则A可逆且$$ A^{-1} &#x3D; \frac{1}{ad-bc} \begin{bmatrix} d&amp;b \ -c&amp;a \end{bmatrix}$$，若$$ ad -bc &#x3D; 0$$,则A不可逆</p>
+<h3 id="定理5："><a href="#定理5：" class="headerlink" title="定理5："></a>定理5：</h3><p>若A是可逆$n\times n$矩阵，则对每一对$\mathbb{R^n}$中的<strong>b</strong>，方程A<strong>x</strong> &#x3D; <strong>b</strong>有唯一解<strong>x</strong> &#x3D; A^-1^ <strong>b</strong></p>
+<h3 id="定理6："><a href="#定理6：" class="headerlink" title="定理6："></a>定理6：</h3><ol>
+<li>若A是可逆矩阵，则A^-1^也可逆而且(A^-1^)^-1^ &#x3D; A</li>
+<li>若A和B都是$ n\times n $可逆矩阵，则AB也可逆，且其逆是A和B的逆矩阵按相反顺序的乘积，即<br>(AB)^-1^ &#x3D; B^-1^A^-1^</li>
+<li>若A可逆，则A^T^也可逆，且其逆是A^-1^的转置，即(A^T^)^-1^ &#x3D; (A^-1^)^T^</li>
+</ol>
+<h3 id="定理7："><a href="#定理7：" class="headerlink" title="定理7："></a>定理7：</h3><p>$n \times n$矩阵A是可逆的，当且仅当A行等价与I<del>n</del>，这时，把A化简为I<del>n</del>的一系列初等行变换同时把I<del>n</del>变成A^-1^</p>
+<h3 id="定理8：（可逆矩阵定理）"><a href="#定理8：（可逆矩阵定理）" class="headerlink" title="定理8：（可逆矩阵定理）"></a>定理8：（可逆矩阵定理）</h3><p>设A为$n \times n$矩阵，则下列命题是等价的，即对某一特定的A，它们同时为真或同时为假。</p>
+<ol>
+<li>A是可逆矩阵</li>
+<li>A行等价于$n \times n$单位矩阵</li>
+<li>A有n个主元位置</li>
+<li>方程A <strong>x</strong> &#x3D; <strong>0</strong> 仅有平凡解</li>
+<li>A的各列线性无关</li>
+<li>线性变换$x \mapsto Ax$是一对一的</li>
+<li>对$\mathbb{R^n}$中任意<strong>b</strong>，方程A <strong>x</strong> &#x3D; <strong>b</strong>至少有一个解</li>
+<li>A的各列生成$\mathbb{R^n}$</li>
+<li>线性变换$x \mapsto Ax$把$\mathbb{R^n}$映上到$\mathbb{R^n}$</li>
+<li>存在$n \times n$矩阵C使CA &#x3D; I</li>
+<li>存在$n \times n$矩阵D使AD &#x3D; I</li>
+<li>A^T^是可逆矩阵</li>
+</ol>
+<h3 id="定理9："><a href="#定理9：" class="headerlink" title="定理9："></a>定理9：</h3><p>（1）对所有$\mathbb{R^n}$中的<strong>x</strong>，S(T(<strong>x</strong>)) &#x3D; <strong>x</strong></p>
+<p>（2）对所有$\mathbb{R^n}$中的<strong>x</strong>，T(S(<strong>x</strong>)) &#x3D; <strong>x</strong></p>
+<p> 设T：$\mathbb{R^n} \rightarrow \mathbb{R^n}$为线性变换，A为T的标准矩阵，则T可逆当且仅当A是可逆矩阵，这时由$S(x) &#x3D; A^{-1}x$定义的线性变换S是满足（1）和（2）的唯一函数。</p>
+<h3 id="定理10：（AB的列行展开）"><a href="#定理10：（AB的列行展开）" class="headerlink" title="定理10：（AB的列行展开）"></a>定理10：（AB的列行展开）</h3><p>若A是$m\times n$矩阵，B是$n\times p$矩阵，则$AB &#x3D; [col_1(A) col_2(A) … col_n(A)]\begin{bmatrix}row_1(B)\row_2(B)\…\row_n(B)\end{bmatrix} &#x3D; col_1(A)row_1(B) +…+ col_n(A)row_n(B)$</p>
+<h3 id="定理11："><a href="#定理11：" class="headerlink" title="定理11："></a>定理11：</h3><p>设C为某一经济体系的消耗矩阵，<strong>d</strong>为最终需求，若C和<strong>d</strong>的元素非负，C的每一列的和小于1，则(I - C)^-1^存在，产出向量 <strong>x</strong> &#x3D; (I - C)^-1^ <strong>d</strong>有非负元素，且是下列方程的唯一解：<strong>x</strong> &#x3D; C<strong>x</strong> + <strong>d</strong></p>
+<h3 id="定理12："><a href="#定理12：" class="headerlink" title="定理12："></a>定理12：</h3><p>$m\times n$矩阵A的零空间是$\mathbb{R^n}$的子空间，等价地，n个未知数的m个齐次线性方程的方程组A <strong>x</strong> &#x3D; <strong>0</strong>的所有解的集合是$\mathbb{R^n}$的子空间</p>
+<h3 id="定理13："><a href="#定理13：" class="headerlink" title="定理13："></a>定理13：</h3><p>矩阵A的主元列构成A的列空间的基</p>
+<h3 id="定理14：（秩定理）"><a href="#定理14：（秩定理）" class="headerlink" title="定理14：	（秩定理）"></a>定理14：	（秩定理）</h3><p>如果一矩阵A有n列，则$rank A + dim Nul A &#x3D; n$</p>
+<h3 id="定理15：-（基定理）"><a href="#定理15：-（基定理）" class="headerlink" title="定理15： 	（基定理）"></a>定理15： 	（基定理）</h3><p>设H是$\mathbb{R^n}$的p维子空间，H中的任何恰好由p个元素组成的线性无关集构成H的一个基，并且，H中任何生成的H的p个向量集也构成H的一个基。</p>
+<h3 id="定理16：（可逆矩阵定理（续））"><a href="#定理16：（可逆矩阵定理（续））" class="headerlink" title="定理16：（可逆矩阵定理（续））"></a>定理16：（可逆矩阵定理（续））</h3><p>设A是一$n\times n$矩阵，则下面的每个命题与A是可逆矩阵的命题等价：</p>
+<ol>
+<li>A的列向量构成$\mathbb{R^n}$的一个基</li>
+<li>$Col\ A &#x3D; \mathbb{R^n}$</li>
+<li>$dim\ Col A &#x3D; n$</li>
+<li>$rank\ A &#x3D; n$</li>
+<li>$Nul\ A &#x3D; {0}$</li>
+<li>$dim\ NulA &#x3D; 0$</li>
+</ol>
+<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><h3 id="定理1：-1"><a href="#定理1：-1" class="headerlink" title="定理1："></a>定理1：</h3><p>$n\times$n矩阵A的行列式可按任意行或列的余因子展开式来计算，按第i行展开的余因子展开式为：<br>$$<br>det\ A &#x3D; a_{i1}C_{i1} + a_{i2}C_{i2} + … + a_{in}C_{in}<br>$$<br>按第j列的余因子展开式为：<br>$$<br>det\ A &#x3D; a_{1j}C_{1j} + a_{2j}C_{2j} + … + a_{nj}C_{nj}<br>$$</p>
+<h3 id="定理2：-1"><a href="#定理2：-1" class="headerlink" title="定理2："></a>定理2：</h3><p>若A为三角阵，则det A等于A的主对角线上元素的乘积</p>
+<h3 id="定理3：（行变换）"><a href="#定理3：（行变换）" class="headerlink" title="定理3：（行变换）"></a>定理3：（行变换）</h3><p>令A是一个方阵</p>
+<ol>
+<li>若A的某一行的倍数加到另一行得矩阵B，则$det B &#x3D; det A$</li>
+<li>若A的两行互换得到矩阵B，则$det B &#x3D; - det A$</li>
+<li>若A的某行乘以k倍得到矩阵B，则$det B &#x3D; k* det A$</li>
+</ol>
+<h3 id="定理4：-1"><a href="#定理4：-1" class="headerlink" title="定理4："></a>定理4：</h3><p>方阵A是可逆的当且仅当$det\ A \neq 0$</p>
+<h3 id="定理5：-1"><a href="#定理5：-1" class="headerlink" title="定理5："></a>定理5：</h3><p>若A为一个$n\times n$矩阵，则$det\ A^T &#x3D; det\ A$</p>
+<h3 id="定理6：（乘法的性质）"><a href="#定理6：（乘法的性质）" class="headerlink" title="定理6：（乘法的性质）"></a>定理6：（乘法的性质）</h3><p>若A和B均为$n\times n$矩阵，则$det\ AB &#x3D; (detA)(detB)$</p>
+<h3 id="定理7：（克拉默法则）"><a href="#定理7：（克拉默法则）" class="headerlink" title="定理7：（克拉默法则）"></a>定理7：（克拉默法则）</h3><p>设A是一个可逆的$n\times n$矩阵，对$\mathbb{R^n}$中任意向量<strong>b</strong>，方程A<strong>x</strong> &#x3D; <strong>b</strong>的唯一解可由下式给出：<br>$$<br>x_i &#x3D; \frac{det\ A_i(b)}{det\ A},i &#x3D; 1,2,..,n<br>$$</p>
+<h3 id="定理8：-（逆矩阵公式）"><a href="#定理8：-（逆矩阵公式）" class="headerlink" title="定理8： （逆矩阵公式）"></a>定理8： （逆矩阵公式）</h3><p>设A是一个可逆的$n\times n矩阵$，则$ A^{-1} &#x3D; \frac{1}{det\ A} adjA$,其中adj A称为伴随矩阵</p>
+<h3 id="定理9：-1"><a href="#定理9：-1" class="headerlink" title="定理9："></a>定理9：</h3><p>若A是一个$2\times 2$矩阵，则由A的列确定的平行四边形的面积为$|det\ A|$</p>
+<p>若A是一个$3\times 3$矩阵，则由A的列确定的平行六面体的体积为$|det\ A|$</p>
+<h3 id="定理10："><a href="#定理10：" class="headerlink" title="定理10："></a>定理10：</h3><p>设T：$\mathbb{R^n}\rightarrow \mathbb{R^n}$是由一个$2\times 2$矩阵A确定的线性变换，若S是$\mathbb{R^n}$中一个平行四边形，则<br>$$<br>{T(S)的面积} &#x3D; |det\ A| * {S的面积}<br>$$<br>若T是由一个$3\times 3$矩阵A确定的线性变换，而S是R^3^中的一个平行六面体，则<br>$$<br>{T(S)的体积} &#x3D; |det\ A| * {S的体积}<br>$$</p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><ol>
+<li>关于副对角线的行列式</li>
+</ol>
+<h1 id="begin-bmatrix-a-11-a-12-…-a-1-n-1-a-1n-a-21-a-22-…-a-2-n-1-0-…-…-…-…-…-a-n1-0-…-0-0-end-bmatrix"><a href="#begin-bmatrix-a-11-a-12-…-a-1-n-1-a-1n-a-21-a-22-…-a-2-n-1-0-…-…-…-…-…-a-n1-0-…-0-0-end-bmatrix" class="headerlink" title="$$\begin{bmatrix}a_{11}&amp;a_{12}&amp;…&amp;a_{1,n-1}&amp;a_{1n}\            a_{21}&amp;a_{22}&amp;…&amp;a_{2,n-1}&amp;0\            …&amp;…&amp;…&amp;…&amp;…\            a_{n1}&amp;0&amp;…&amp;0&amp;0            \end{bmatrix}"></a>$$<br>\begin{bmatrix}a_{11}&amp;a_{12}&amp;…&amp;a_{1,n-1}&amp;a_{1n}\<br>            a_{21}&amp;a_{22}&amp;…&amp;a_{2,n-1}&amp;0\<br>            …&amp;…&amp;…&amp;…&amp;…\<br>            a_{n1}&amp;0&amp;…&amp;0&amp;0<br>            \end{bmatrix}</h1><h1 id="begin-bmatrix-0-…-0-a-1n-0-…-a-2-n-1-a-2n-…-…-…-…-a-n1-…-a-n-n-1-a-nn-end-bmatrix"><a href="#begin-bmatrix-0-…-0-a-1n-0-…-a-2-n-1-a-2n-…-…-…-…-a-n1-…-a-n-n-1-a-nn-end-bmatrix" class="headerlink" title="\begin{bmatrix}0&amp;…&amp;0&amp;a_{1n}\0&amp;…&amp;a_{2,n-1}&amp;a_{2n}\…&amp;…&amp;…&amp;…\a_{n1}&amp;…&amp;a_{n,n-1}&amp;a_{nn}\end{bmatrix}"></a>\begin{bmatrix}0&amp;…&amp;0&amp;a_{1n}\<br>0&amp;…&amp;a_{2,n-1}&amp;a_{2n}\<br>…&amp;…&amp;…&amp;…\<br>a_{n1}&amp;…&amp;a_{n,n-1}&amp;a_{nn}\end{bmatrix}</h1><p>(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}…a_{n1}<br>$$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230603101112099.png" alt="image-20230603101112099"></p>
+<h2 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h2><h3 id="定理1：-2"><a href="#定理1：-2" class="headerlink" title="定理1："></a>定理1：</h3><p>若<strong>v<del>1</del></strong>,<strong>v<del>2</del></strong>, … **v<del>p</del>**在向量空间V中，则Span{<strong>v<del>1</del></strong>, … <strong>v<del>p</del></strong>}是V的一个子空间</p>
+<h3 id="定理2：-2"><a href="#定理2：-2" class="headerlink" title="定理2："></a>定理2：</h3><p>$m\times n$矩阵A的零空间是$\mathbb{R^n}$的一个子空间。等价地，m个方程，n个未知数的齐次线性方程组A<strong>x</strong> &#x3D; <strong>0</strong>的全体解的集合是$\mathbb{R^n}$的一个子空间</p>
+<h3 id="定理3：-1"><a href="#定理3：-1" class="headerlink" title="定理3："></a>定理3：</h3><p>$m\times n$矩阵A的列空间是$\mathbb{R^m}$的一个子空间</p>
+<h3 id="定理4：-2"><a href="#定理4：-2" class="headerlink" title="定理4："></a>定理4：</h3><p>两个或多个向量组成的有编号的向量集合{<strong>v<del>1</del></strong>, … ,<strong>v<del>p</del></strong>}（如果$v_1 \neq 0,$）是线性相关的，当且仅当某<strong>v<del>j</del><strong>（j&gt;1）是其前面向量</strong>v<del>1</del></strong>, …, **v<del>j-1</del>**的线性组合。</p>
+<h3 id="定理5：（生成集定理）"><a href="#定理5：（生成集定理）" class="headerlink" title="定理5：（生成集定理）"></a>定理5：（生成集定理）</h3><p>令S &#x3D; {<strong>v<del>1</del></strong>, … ,<strong>v<del>p</del></strong>}是V中的向量集，H &#x3D; Span{<strong>v<del>1</del></strong>, … ,<strong>v<del>p</del></strong>}</p>
+<ol>
+<li>若S中某一个向量（比如说是<strong>v</strong><del>k</del>）是S中其余向量的线性组合，则S中去掉<strong>v</strong><del>k</del>后形成的集合仍然可以生成H。</li>
+<li>若$H\neq {0}$，则S的某一子集是H的一个基。</li>
+</ol>
+<h3 id="定理6：-1"><a href="#定理6：-1" class="headerlink" title="定理6："></a>定理6：</h3><p>矩阵A的主元列构成Col A的一个基</p>
+<h3 id="定理7：（唯一表示定理）"><a href="#定理7：（唯一表示定理）" class="headerlink" title="定理7：（唯一表示定理）"></a>定理7：（唯一表示定理）</h3><p>令$\mathcal{B} &#x3D; $ {<strong>b<del>1</del></strong>, … ,<strong>b<del>n</del></strong>}是向量空间V的一个基，则对V中的每个向量<strong>x</strong>，存在唯一的一组数c<del>1</del>, …, c<del>n</del>使得 $x &#x3D; c_1\mathbf{b_1} +\ …\ +c_n\mathbf{b_n}$</p>
+<h3 id="定理8："><a href="#定理8：" class="headerlink" title="定理8："></a>定理8：</h3><p>令$\mathcal{B} &#x3D; $ {<strong>b<del>1</del></strong>, … ,<strong>b<del>n</del></strong>}是向量空间V的一个基，则坐标映射$\mathbf{x}\mapsto[\mathbf{x}]_{\mathcal{B}}$是一个由V映上到$\mathbb{R^n}$的一对一的线性变换</p>
+<h3 id="定理9：-2"><a href="#定理9：-2" class="headerlink" title="定理9："></a>定理9：</h3><p>若向量空间V具有一组基$\mathcal{B} &#x3D; $ {<strong>b<del>1</del></strong>, … ,<strong>b<del>n</del></strong>}，则V中任意包含多于n个向量的集合一定线性相关。</p>
+<h3 id="定理10：-1"><a href="#定理10：-1" class="headerlink" title="定理10："></a>定理10：</h3><p>若向量空间V有一组基含有n个向量，则V的另一组基一定恰好含有n个向量 </p>
+<h3 id="定理11：-1"><a href="#定理11：-1" class="headerlink" title="定理11："></a>定理11：</h3><p>令H是有限维向量空间V的子空间，若有必要的话，H中任一个线性无关集均可以扩充为H的一个基，H也是有限维的并且<br>$$<br>dim H \leq dimV<br>$$</p>
+<h3 id="定理12：（基定理）"><a href="#定理12：（基定理）" class="headerlink" title="定理12：（基定理）"></a>定理12：（基定理）</h3><p>令V是一个p维向量空间，$p\geq1$，V中任意含有p个元素的线性无关集必然是V的一个基。任意含有p个元素且生成V的集合自然是V的一个基。 </p>
+<h3 id="定理13：-1"><a href="#定理13：-1" class="headerlink" title="定理13："></a>定理13：</h3><p>若两个矩阵A和B行等价，则他们的行空间相同。若B是阶梯形矩阵，则B的非零行构成A的行空间的一个基同时也是B的行空间的一个基。</p>
+<h3 id="定理14：（秩定理）-1"><a href="#定理14：（秩定理）-1" class="headerlink" title="定理14：（秩定理）"></a>定理14：（秩定理）</h3><p>$m\times n$矩阵A的列空间和行空间的维数相等，这个公共的维数（即A的秩）还等于A的主元位置的个数且满足方程<br>$$<br>rank\ A + dim\ Nul\ A &#x3D; n<br>$$</p>
+<h3 id="定理15："><a href="#定理15：" class="headerlink" title="定理15："></a>定理15：</h3><p>设$\mathcal{B} &#x3D; $ {<strong>b<del>1</del></strong>, … ,<strong>b<del>n</del></strong>}和$\mathcal{C} &#x3D; $ {<strong>c<del>1</del></strong>, … ,<strong>c<del>n</del></strong>}是向量空间V的基，则存在一个$n\times n$矩阵$\mathop{P}\limits_{\mathcal{C}\leftarrow\mathcal{B}}$使得<br>$$<br>[\mathbf x]<em>{\mathcal{C}} &#x3D; \mathop{P}\limits</em>{\mathcal{C}\leftarrow\mathcal{B}}[\mathbf x]<em>{\mathcal{B}}<br>$$<br>$\mathop{P}\limits</em>{\mathcal{C}\leftarrow\mathcal{B}}$的列是基B中向量的C-坐标向量，即$\mathop{P}\limits_{\mathcal{C}\leftarrow\mathcal{B}} &#x3D; \begin{pmatrix}[\mathbf{b_1}<em>{\mathcal{C}}]&amp;[\mathbf{b_2}</em>{\mathcal{C}}]&amp;…&amp;[\mathbf{b_n}_{\mathcal{C}}]\end{pmatrix}$</p>
+<h2 id="特征值与特征向量"><a href="#特征值与特征向量" class="headerlink" title="特征值与特征向量"></a>特征值与特征向量</h2><h3 id="定理1：-3"><a href="#定理1：-3" class="headerlink" title="定理1："></a>定理1：</h3><p>三角矩阵的主对角线的元素是其特征值</p>
+<h3 id="定理2：-3"><a href="#定理2：-3" class="headerlink" title="定理2："></a>定理2：</h3><p>$\lambda_1,…,\lambda_r是n\times n$矩阵A相异的特征值，$\mathbf{v}_1,…,\mathbf{v}_r$对应的特征向量，那么向量集合{<strong>v<del>1</del></strong>, … ,<strong>v<del>r</del></strong>}线性无关</p>
+<h3 id="可逆矩阵定理（续）："><a href="#可逆矩阵定理（续）：" class="headerlink" title="可逆矩阵定理（续）："></a>可逆矩阵定理（续）：</h3><p>设A是$n\times n$矩阵，则A是可逆的当且仅当</p>
+<ol>
+<li><p>0不是A的特征值</p>
+</li>
+<li><p>A的行列式不等于0</p>
+</li>
+</ol>
+<h3 id="定理3：（行列式的性质）"><a href="#定理3：（行列式的性质）" class="headerlink" title="定理3：（行列式的性质）"></a>定理3：（行列式的性质）</h3><p>设A和B是$n\times n$矩阵</p>
+<ol>
+<li><p>A可逆的充要条件是$det\ A \neq 0$</p>
+</li>
+<li><p>$det\ AB &#x3D; (det\ A)(det\ B)$</p>
+</li>
+<li><p>$det\ A^T &#x3D; det\ A$</p>
+</li>
+<li><p>若a是三角形矩阵，那么det A是A主对角线元素的乘积</p>
+</li>
+<li><p>对A作行替换不改变其行列式值。作一次行交换，行列式值符号改变一次。数乘一行后，行列式值等于用此数乘原来的行列式值。</p>
+</li>
+</ol>
+<h3 id="定理4：-3"><a href="#定理4：-3" class="headerlink" title="定理4："></a>定理4：</h3><p>若$n\times n$矩阵A和B是相似的，那么它们有相同的特征多项式，从而有相同的特征值（和相同的重数）</p>
+<h3 id="定理5：（对角化定理）"><a href="#定理5：（对角化定理）" class="headerlink" title="定理5：（对角化定理）"></a>定理5：（对角化定理）</h3><p>$n\times n$矩阵A可对角化的充分必要条件是A有n个线性无关的特征向量</p>
+<h3 id="定理6：-2"><a href="#定理6：-2" class="headerlink" title="定理6："></a>定理6：</h3><p>有n个相异特征值的$n\times n$矩阵可对角化</p>
+<h3 id="定理7：-1"><a href="#定理7：-1" class="headerlink" title="定理7："></a>定理7：</h3><p>设A是$n\times n$矩阵，其相异的特征值是$\lambda_1,…,\lambda_p$</p>
+<ol>
+<li><p>对于$ 1\leq k\leq p,\lambda_k$的特征空间的维数小于或等于$\lambda_k$的代数重数</p>
+</li>
+<li><p>矩阵A可对角化的充分必要条件是所有不同特征空间的维数之和为n。即（i）特征对象式可完全分解为线性因子，（ii）每个$\lambda_k$的特征空间的维数等于$\lambda_k$的代数重数。</p>
+</li>
+<li><p>若A可对角化，$\mathcal{B}_k$是对应于$\lambda_k$的特征空间的基，则集合$\mathcal{B}_1,…,\mathcal{B}_p$中所有向量的集合是$\mathbb{R^n}$的特征向量基。</p>
+</li>
+</ol>
+<h1 id="线代上课笔记"><a href="#线代上课笔记" class="headerlink" title="线代上课笔记"></a>线代上课笔记</h1><h2 id="行列式-1"><a href="#行列式-1" class="headerlink" title="行列式"></a>行列式</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><p>不同行不同列元素乘积的代数和。</p>
+<h4 id="关于正负号（二三阶行列式）："><a href="#关于正负号（二三阶行列式）：" class="headerlink" title="关于正负号（二三阶行列式）："></a>关于正负号（二三阶行列式）：</h4><p>正对角线：+</p>
+<p>副对角线：-</p>
+<h4 id="排列、逆序、逆序数："><a href="#排列、逆序、逆序数：" class="headerlink" title="排列、逆序、逆序数："></a>排列、逆序、逆序数：</h4><p>1，2，。。。，n组成的有序数组称为n阶排列</p>
+<p>大的数排在小的数前面叫逆序，这两个数构成逆序</p>
+<p>一个排列的逆序的总数称为排列的逆序数，逆序数为偶数，偶排列，奇数，奇排列</p>
+<h4 id="关于正负号（n阶）："><a href="#关于正负号（n阶）：" class="headerlink" title="关于正负号（n阶）："></a>关于正负号（n阶）：</h4><p>逆序数为奇数，负号，偶数，正号</p>
+<h3 id="性质："><a href="#性质：" class="headerlink" title="性质："></a>性质：</h3><p>经过转置行列式值不变</p>
+<p>某行有公因数可提出 ，特别地，若某行元素全为0，则行列式值为0</p>
+<p>两行互换，行列式值变号，特别地，两行相同或两行成比例，行列式值为0</p>
+<p>如果行列式每一项都是两个数的和，则可以把行列式拆成两个行列式之和</p>
+<p>把某行的k倍加到另一行，行列式值不变  </p>
+<h3 id="行列式按行（列）展开公式"><a href="#行列式按行（列）展开公式" class="headerlink" title="行列式按行（列）展开公式"></a>行列式按行（列）展开公式</h3><h4 id="余子式："><a href="#余子式：" class="headerlink" title="余子式："></a>余子式：</h4><p>去掉某一行某一列元素后剩余的行列式，$M_{ij}$</p>
+<h4 id="代数余子式："><a href="#代数余子式：" class="headerlink" title="代数余子式："></a>代数余子式：</h4><p>与余子式相比，多了正负号，$A_{ij} &#x3D; (-1)^{i+j}M_{ij}$</p>
+<p> 特别地：  某一行的所有元素与另一行相应元素的代数余子式乘积之和等于0</p>
+<h4 id="重要公式："><a href="#重要公式：" class="headerlink" title="重要公式："></a>重要公式：</h4><p>对于三角矩阵，</p>
+<ol>
+<li><p>正对角线：行列式值为对角线元素的积，</p>
+</li>
+<li><p>副对角线：行列式值为$(-1)^{\frac{1}{2}n(n-1)}$乘以对角线元素的积</p>
+</li>
+</ol>
+<p>拉普拉斯行列式：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604190443180.png" alt="image-20230604190443180"></p>
+<p> 范德蒙行列式：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604190457241.png" alt="image-20230604190457241"></p>
+<h3 id="克拉默法则："><a href="#克拉默法则：" class="headerlink" title="克拉默法则："></a>克拉默法则：</h3><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210400911.png" alt="image-20230604210400911"></h4><p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210431206.png" alt="image-20230604210431206"></p>
+<h4 id="推论："><a href="#推论：" class="headerlink" title="推论："></a>推论：</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604210749601.png" alt="image-20230604210749601"></p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="概念、运算"><a href="#概念、运算" class="headerlink" title="概念、运算"></a>概念、运算</h3><p> 运算：矩阵加法、常数数乘、矩阵乘法</p>
+<p>矩阵乘法：结合律、分配律</p>
+<p>对角矩阵：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213337804.png" alt="image-20230604213337804"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213353624.png" alt="image-20230604213353624"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213248337.png" alt="image-20230604213248337"></p>
+<p>矩阵的转置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604213456460.png" alt="image-20230604213456460"></p>
+<h3 id="伴随矩阵、可逆矩阵"><a href="#伴随矩阵、可逆矩阵" class="headerlink" title="伴随矩阵、可逆矩阵"></a>伴随矩阵、可逆矩阵</h3><h4 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220139503.png" alt="image-20230604220139503"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220204593.png" alt="image-20230604220204593"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604220906444.png" alt="image-20230604220906444"></p>
+<p><img src="C:\Users\zhenghaosheng\AppData\Roaming\Typora\typora-user-images\image-20230604221131320.png" alt="image-20230604221131320"></p>
+<h4 id="性质推导："><a href="#性质推导：" class="headerlink" title="性质推导："></a>性质推导：</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/rgbhi/article/details/123286265">(109条消息) 伴随矩阵的性质-CSDN博客</a></p>
+<h4 id="可逆矩阵"><a href="#可逆矩阵" class="headerlink" title="可逆矩阵"></a>可逆矩阵</h4><p>AB &#x3D; BA &#x3D; E<br>B为A的逆矩阵，表示为A^-1^</p>
+<p>一个矩阵可逆，其逆矩阵唯一</p>
+<p>矩阵可逆，行列式不等于0  </p>
+<p><strong>推论：A，B是n阶矩阵，且AB &#x3D; E，则A^-1^ &#x3D; B</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222356492.png" alt="image-20230604222356492"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222422051.png" alt="image-20230604222422051"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222624243.png" alt="image-20230604222624243"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230604222746926.png" alt="image-20230604222746926"></p>
+<h3 id="初等变换、初等矩阵"><a href="#初等变换、初等矩阵" class="headerlink" title="初等变换、初等矩阵"></a>初等变换、初等矩阵</h3><h4 id="初等变换："><a href="#初等变换：" class="headerlink" title="初等变换："></a>初等变换：</h4><p>行变换：倍乘、互换、倍加</p>
+<p>列变换：</p>
+<h4 id="初等矩阵："><a href="#初等矩阵：" class="headerlink" title="初等矩阵："></a>初等矩阵：</h4><p>单位矩阵经过<strong>一次</strong>初等变换所得到的矩阵称为<strong>初等矩阵</strong></p>
+<p>初等矩阵P<strong>左乘矩阵A</strong>，其乘积PA就是矩阵A作一次与P同样的<strong>行变换</strong></p>
+<p>相应地，初等矩阵<strong>右乘矩阵A</strong>，其乘积AP就是矩阵A作一次与同样的<strong>列变换</strong></p>
+<p>初等矩阵均可逆，且其逆是<strong>同一类型</strong>的初等矩阵    </p>
+<h3 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h3><h4 id="分块矩阵的运算"><a href="#分块矩阵的运算" class="headerlink" title="分块矩阵的运算"></a>分块矩阵的运算</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605092453791.png" alt="image-20230605092453791"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605092638801.png" alt="image-20230605092638801"></p>
+<p>特别地：</p>
+<p><strong>遇到求方程组解，考虑按列分块；</strong><br><strong>遇到求向量、秩，考虑按行分块或按列分块</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605094948338.png" alt="image-20230605094948338"></p>
+<p><strong>C &#x3D; AB的列向量可由A的列向量线性表出</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095048845.png"/>
+
+<p><strong>C &#x3D; AB的行向量可由B的行向量线性表出</strong></p>
+<p><strong>特别地：若A可逆，则B &#x3D; A^-1^C，B的行向量可由C的行向量线性表出</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095357224.png"/>
+
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605095549797.png" alt="image-20230605095549797"></p>
+<h4 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102003492.png" alt="image-20230605102003492"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102040672.png" alt="image-20230605102040672"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102103375.png" alt="image-20230605102103375"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605102146679.png" alt="image-20230605102146679"></p>
+<h3 id="向量："><a href="#向量：" class="headerlink" title="向量："></a>向量：</h3><h4 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：</h4><p>n个数构成的有序数组称为n维向量  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103306098.png" alt="image-20230605103306098"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103328522.png" alt="image-20230605103328522"></p>
+<h4 id="Schmidt正交化"><a href="#Schmidt正交化" class="headerlink" title="Schmidt正交化"></a>Schmidt正交化</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103732143.png" alt="image-20230605103732143"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605103814915.png" alt="image-20230605103814915"></p>
+<h4 id="线性表出："><a href="#线性表出：" class="headerlink" title="线性表出："></a>线性表出：</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605104224619.png" alt="image-20230605104224619"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605104307242.png" alt="image-20230605104307242"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605105124198.png" alt="image-20230605105124198"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605105300240.png" alt="image-20230605105300240"></p>
+<h4 id="线性相关"><a href="#线性相关" class="headerlink" title="线性相关"></a>线性相关</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605110453629.png" alt="image-20230605110453629"></p>
+<p><strong>线性相关 &lt;&#x3D;&gt; 齐次方程组有非0解 &lt;&#x3D;&gt; 秩小于未知数的个数 &lt;&#x3D;&gt; 行列式 &#x3D;0</strong> </p>
+<h4 id="线性无关"><a href="#线性无关" class="headerlink" title="线性无关"></a>线性无关</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212404003.png" alt="image-20230605212404003"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212617223.png" alt="image-20230605212617223"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605212851055.png" alt="image-20230605212851055"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605213559080.png" alt="image-20230605213559080"></p>
+<h4 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605215240293.png" alt="image-20230605215240293"></p>
+<p> <strong>定理：经初等变换矩阵的秩不变</strong> </p>
+<p><strong>秩的性质</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605220235069.png" alt="image-20230605220235069"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605220837882.png" alt="image-20230605220837882"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605221013377.png" alt="image-20230605221013377"></p>
+<p><strong>r（A） &#x3D; A的列秩 &#x3D; A的行秩</strong></p>
+<h4 id="向量组的秩"><a href="#向量组的秩" class="headerlink" title="向量组的秩"></a>向量组的秩</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605222619411.png" alt="image-20230605222619411"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605223203290.png" alt="image-20230605223203290"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605225048434.png" alt="image-20230605225048434"></p>
+<p>矩阵等价：A经初等变换可变成B</p>
+<p>向量组等价：可互相线性表示</p>
+<p><strong>矩阵等价，向量组不一定等价</strong></p>
+<p><strong>若向量组1可由向量组2线性表示，则向量组1的秩$\leq$向量组2的秩</strong></p>
+<h4 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230605225833038.png" alt="image-20230605225833038"></p>
+<h3 id="方程组"><a href="#方程组" class="headerlink" title="方程组"></a>方程组</h3><h4 id="Ax-0"><a href="#Ax-0" class="headerlink" title="Ax &#x3D; 0"></a>Ax &#x3D; 0</h4><p>$A_{m\times n}x &#x3D; 0$必有零解，若有非零解,则</p>
+<p>r(A) &lt; n</p>
+<p>A的列向量组线性相关</p>
+<p>推论：</p>
+<p><strong>当m&lt;n时，Ax &#x3D; 0必有非0解</strong></p>
+<p><strong>当m&#x3D;n时，Ax &#x3D; 0有非0解&lt;&#x3D;&gt;|A| &#x3D; 0</strong></p>
+<p><strong>齐次方程组若有非0解，则有无数个解，其中线性相关的解（自由变量）  的个数为 n - r(A)</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606092140264.png" alt="image-20230606092140264"></p>
+<h4 id="Ax-b"><a href="#Ax-b" class="headerlink" title="Ax &#x3D; b"></a>Ax &#x3D; b</h4><p>可能无解、可能唯一解、可能多解</p>
+<p>注：$\overline{A}$为增广矩阵</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606094051373.png" alt="image-20230606094051373"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606094330635.png" alt="image-20230606094330635"></p>
+<h4 id="方程组应用"><a href="#方程组应用" class="headerlink" title="方程组应用"></a>方程组应用</h4><h4 id="公共解、同解"><a href="#公共解、同解" class="headerlink" title="公共解、同解"></a>公共解、同解</h4><h2 id="特征值、特征向量"><a href="#特征值、特征向量" class="headerlink" title="特征值、特征向量"></a>特征值、特征向量</h2><h3 id="特征值、特征向量-1"><a href="#特征值、特征向量-1" class="headerlink" title="特征值、特征向量"></a>特征值、特征向量</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606143416585.png" alt="image-20230606143416585"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606144346037.png" alt="image-20230606144346037"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606144403762.png" alt="image-20230606144403762"></p>
+<p>特征值有重根，特征向量不一定有多个<br>$$<br>Aa &#x3D; \lambda a\<br>A^2 a  &#x3D; \lambda^2 a\<br>(A+kE)a &#x3D; (\lambda + k)a<br>$$<br>A和A^T^的特征值相同，但特征向量不一定相同</p>
+<h3 id="相似矩阵"><a href="#相似矩阵" class="headerlink" title="相似矩阵"></a>相似矩阵</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606152216691.png" alt="image-20230606152216691"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606152535723.png" alt="image-20230606152535723"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153009484.png" alt="image-20230606153009484"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153119720.png" alt="image-20230606153119720"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153146531.png" alt="image-20230606153146531"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153558745.png" alt="image-20230606153558745"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606153721782.png" alt="image-20230606153721782"></p>
+<h4 id="相似对角化"><a href="#相似对角化" class="headerlink" title="相似对角化"></a>相似对角化</h4><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606155326546.png" alt="image-20230606155326546"></p>
+<h3 id="实对称矩阵"><a href="#实对称矩阵" class="headerlink" title="实对称矩阵"></a>实对称矩阵</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606170824189.png" alt="image-20230606170824189"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606171413050.png" alt="image-20230606171413050"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/image-20230606171205932.png" alt="image-20230606171205932"></p>
+<h2 id="二次型–与特征值、特征向量的关系"><a href="#二次型–与特征值、特征向量的关系" class="headerlink" title="二次型–与特征值、特征向量的关系"></a>二次型–与特征值、特征向量的关系</h2><h3 id="二次型概念"><a href="#二次型概念" class="headerlink" title="二次型概念"></a>二次型概念</h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607170852094.png" alt="image-20230607170852094"></p>
+<p><strong>其中A为对称矩阵，A^T^ &#x3D; A，称为二次型的矩阵</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607184358657.png" alt="image-20230607184358657"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185442867.png" alt="image-20230607185442867"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185704541.png" alt="image-20230607185704541"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185741720.png" alt="image-20230607185741720"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185848786.png" alt="image-20230607185848786"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607185938516.png" alt="image-20230607185938516"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607190712873.png" alt="image-20230607190712873"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607190906476.png" alt="image-20230607190906476"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191010922.png" alt="image-20230607191010922"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191607137.png" alt="image-20230607191607137"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191620856.png" alt="image-20230607191620856"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607191900717.png" alt="image-20230607191900717"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607192221262.png" alt="image-20230607192221262"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607192855606.png" alt="image-20230607192855606"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607193052481.png" alt="image-20230607193052481"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230607193155730.png" alt="image-20230607193155730"></p>
+<p><strong>使用配方法化二次型时，若原式不存在平方，可考虑进行平方差代换凑出平方</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144200902.png" alt="image-20230610144200902"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144226334.png" alt="image-20230610144226334"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144239348.png" alt="image-20230610144239348"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610144359474.png" alt="image-20230610144359474"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145353644.png" alt="image-20230610145353644"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145543812.png" alt="image-20230610145543812"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610145625014.png" alt="image-20230610145625014"></p>
+<h3 id="正定二次型"><a href="#正定二次型" class="headerlink" title="正定二次型"></a>正定二次型<img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150518689.png" alt="image-20230610150518689"></h3><p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150607602.png" alt="image-20230610150607602"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150919677.png" alt="image-20230610150919677"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610150954909.png" alt="image-20230610150954909"></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/shenqiangle/hexo_images/images/image-20230610151152063.png" alt="image-20230610151152063"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/01/02/math/" data-id="clqwg47a7000tk4vf4olvgl53" data-title="Math" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/02/npm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/01/02/Latex%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-composition-principle/" rel="tag">Computer composition principle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-network/" rel="tag">Computer network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS-XV6-labs-2021/" rel="tag">OS_XV6_labs_2021</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-Structure/" rel="tag">data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Computer-composition-principle/" style="font-size: 10px;">Computer composition principle</a> <a href="/tags/Computer-network/" style="font-size: 10px;">Computer network</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/OS-XV6-labs-2021/" style="font-size: 10px;">OS_XV6_labs_2021</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-Structure/" style="font-size: 10px;">data Structure</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/02/computer%20network/">Computer network</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/Computer%20composition%20principle/">Computer composition principle</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/algorithm/">algorithm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/typescript/">typescript</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/02/os/">os</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
